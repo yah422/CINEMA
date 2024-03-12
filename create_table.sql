@@ -1,3 +1,4 @@
+---------------------- CREATE DIFFERENT TABLE FOR THE DATABASE CINEMA -----------------------
 CREATE TABLE GENRECINE(
    id_genreCine INT AUTO_INCREMENT ,
    nom_genreCine VARCHAR(50),
@@ -65,3 +66,18 @@ CREATE TABLE jouer(
    FOREIGN KEY(id_acteur) REFERENCES ACTEUR(id_acteur),
    FOREIGN KEY(id_role) REFERENCES ROLEFILM(id_role)
 );
+
+--------------- ADD INFORMATION TO THE TABLE FILM ---------------------
+
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Inception', 2010, 148,  'Un voleur d élite est capable dinfiltrer les rêves des autres pour voler leurs secrets les plus précieux.', 4.5);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('La La Land', 2016, 128,  'Une romance musicale entre une actrice en herbe et un musicien de jazz passionné à Los Angeles.', 5);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('The Shawshank Redemption', 1994, 142, 'Un banquier injustement condamné à la prison de Shawshank maintient son espoir malgré les difficultés.', 4.9);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Pulp Fiction', 1994, 154,  'Plusieurs histoires entrelacées sur la vie criminelle à Los Angeles avec humour noir et violence.', 4.7);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('The Dark Knight', 2008, 152, 'Batman sallie avec le procureur et le lieutenant de Gotham City pour lutter contre le crime organisé.', 4.8);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Forrest Gump', 1994, 142,  'Un homme simple desprit partage son extraordinaire vie en participant à des moments clés de lhistoire américaine.', 4.6);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('The Godfather', 1972, 175,  'La saga de la famille Corleone, chef dune puissante famille mafieuse italo-américaine.', 4.9);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Schindlers Liste', 1993, 195, 'Lhistoire vraie dOskar Schindler, un homme daffaires allemand qui sauva plus de mille Juifs pendant lHolocauste.', 4.8);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Inglourious Basterds', 2009, 153,  'Un groupe de soldats juifs américains appelés "The Basterds" cherche à éliminer les nazis pendant la Seconde Guerre mondiale.', 4.4);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('The Matrix', 1999, 136, 'Un hacker découvre que le monde dans lequel il vit est une simulation informatique créée par des machines intelligentes.', 4.7);
+
+
