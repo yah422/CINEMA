@@ -95,6 +95,26 @@ VALUES
 ('Wachowskis', 'The', '1965-06-21', 'Autre'),
 ('ArkashaStevenson', 'Arkasha', '1992-12-8', 'Feminin');
 
+------------------------------------ ADD ACTORS REAL NAME ----------------------------------------
+
+------------------   La Malédiction : L'Origine   ------------------------
+
+('Nighy', 'Billr', '1949-12-12', 'Masculin'),
+('Ineson', 'Balph', '1969-12-15', 'Masculin'),
+('Dance', 'Charles', '1946-10-10', 'Masculin'),
+('Braga', 'Sonia', '1950-06-08', 'Feminin'),
+('Arcangeli', 'Andrea', '1993-08-03', 'Masculin'),
+('Caballero', 'Maria', '1998-06-13', 'Feminin');
+
+------------------- ADD ROLES ---------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('2', 'Father Harris');
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('3', 'Father Brennan');
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('4', 'Silvia');
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('5', 'Paolo');
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('6', 'Luz');
+
+
 
 
 
