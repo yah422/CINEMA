@@ -172,6 +172,15 @@ VALUES
   ('Willis', 'Bruce', '1955-03-19', 'M'),
   ('Roth', 'Tim', '1961-05-14', 'M');
 
+------------------- ADD ROLES de Pulp Fiction  --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
+(16, 'Pulp Fiction Vincent Vega Knoxville'),
+ (17, 'Jules Winnfield Washington'),
+ (18, 'Mia Wallace Paris'),
+ (19, 'Butch Coolidge 'Los Angeles'),
+ (20, 'Pumpkin Sacramento'),
+
 ----------------------- Acteurs de The Dark Knight ------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
@@ -180,6 +189,9 @@ VALUES
   ('Caine', 'Michael', '1933-03-14', 'M'),
   ('Eckhart', 'Aaron', '1968-03-12', 'M'),
   ('Oldman', 'Gary', '1958-03-21', 'M');
+
+
+   
  
 ------------------ Acteurs de Forrest Gump   ----------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
