@@ -79,5 +79,22 @@ INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_
 INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Schindlers Liste', 1993, 195, 'Lhistoire vraie dOskar Schindler, un homme daffaires allemand qui sauva plus de mille Juifs pendant lHolocauste.', 4.8);
 INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Inglourious Basterds', 2009, 153,  'Un groupe de soldats juifs américains appelés "The Basterds" cherche à éliminer les nazis pendant la Seconde Guerre mondiale.', 4.4);
 INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('The Matrix', 1999, 136, 'Un hacker découvre que le monde dans lequel il vit est une simulation informatique créée par des machines intelligentes.', 4.7);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Barbie', 2023, 120, 'Barbie, qui vit à Barbie Land, est expulsée du pays pour être loin d être une poupée à l apparence parfaite; n ayant nulle part où aller, elle part pour le monde humain et cherche le vrai bonheur.', 4.9);
+
+------------------- ADD INFORMATION TO THE TABLE PERSONNE ---------------------
+
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+('Nolan', 'Christopher', '1970-07-30', 'Masculin'),
+('Chazelle', 'Damien', '1985-01-19', 'Masculin'),
+('Darabont', 'Frank', '1959-01-28', 'Masculin'),
+('Tarantino', 'Quentin', '1963-03-27', 'Masculin'),
+('Zemeckis', 'Robert', '1952-05-14', 'Masculin'),
+('Coppola', 'Francis Ford', '1939-04-07', 'Masculin'),
+('Spielberg', 'Steven', '1946-12-18', 'Masculin'),
+('Wachowskis', 'The', '1965-06-21', 'Autre'),
+('Gerwig', 'Greta', '1983-08-04', 'Feminin');
+
+
 
 
