@@ -4,8 +4,13 @@ SELECT film.titre_film, film.anneeSortie_film, film.duree_film, realisateur.id_r
 FROM film
 INNER JOIN realisateur  ON film.id_film = realisateur.id_realisateur
 
+  
 b. Liste des films dont la durée excède 2h15 classés par durée (du + long au + court)
 
+SELECT titre_film, duree_film
+FROM film
+WHERE duree_film >135
+ORDER BY duree_film DESC
 
   
 c. Liste des films d’un réalisateur (en précisant l’année de sortie) 
