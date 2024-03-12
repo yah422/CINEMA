@@ -125,8 +125,12 @@ VALUES
   ('Cotillard', 'Marion', '1975-09-30', 'F');
 
 ------------------- ADD ROLES Inception ---------------------
-
-
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
+  (51, 'Dom Cobb'),
+  (52, 'Eames'),
+  (53, 'Ariadne'),
+  (54, 'Arthur'),
+  (55, 'Mal Cobb')
  
 ----------------- Acteurs de La La Land ------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
