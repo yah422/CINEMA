@@ -211,7 +211,17 @@ VALUES
   ('Kennedy', 'Haley Joel', '1988-12-14', 'M');
 
 
+------------------- ADD ROLES Forrest Gump  --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
+(26, 'Forrest Gump Mobile'),
+(27, 'Jenny Curran Phoenix'),
+(28, 'Lieutenant Dan Taylor New York'),
+(29, 'Mrs. Gump Culver City'),
+(30, 'Bubba Blue Fort Worth'),
+
 ------------------ Acteurs de The Godfather -------------------
+   
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
   ('Brando', 'Marlon', '1924-04-03', 'M'),
@@ -220,7 +230,17 @@ VALUES
   ('Duvall', 'Robert', '1931-01-05', 'M'),
   ('Keaton', 'Diane', '1946-01-05', 'F');
 
+------------------- ADD ROLES The Godfather  --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
+(31, 'Don Vito Corleone New York City'),
+(32, 'Michael Corleone Brooklyn'),
+(33, 'Sonny Corleone New York City'),
+(34, 'Tom Hagen Chicago'),
+(35, 'Kay Adams-Corleone New York City'),
+
 ----------------- Acteurs de Schindler's List ----------------
+   
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
   ('Neeson', 'Liam', '1952-06-07', 'M'),
@@ -228,8 +248,19 @@ VALUES
   ('Kingsley', 'Ben', '1943-12-31', 'M'),
   ('Sagall', 'Embeth', '1963-08-13', 'F'),
   ('Kruger', 'Caroline', '1976-05-23', 'F');
+
+
+------------------- ADD ROLES Schindler's List  --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
+(36, 'Oskar Schindler Svitavy'),
+(37, 'Amon Goeth Vienna'),
+(38, 'Itzhak Stern Sosnowiec'),
+(39, 'Emilie Schindler Alt Moletein'),
+(40, 'Helen Hirsch Lwow'),
  
 ------------------ Acteurs de Inglourious Basterds -----------------
+   
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
   ('Pitt', 'Brad', '1963-12-18', 'M'),
@@ -237,6 +268,16 @@ VALUES
   ('Laurent', 'Mélanie', '1983-02-21', 'F'),
   ('Fassbender', 'Michael', '1977-04-02', 'M'),
   ('Kruger', 'Diane', '1976-07-15', 'F');
+
+------------------- ADD ROLES Inglourious Basterds  --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
+(41, 'Lt Aldo Raine Knoxville'),
+(42, 'Hans Landa Gdansk'),
+(43, 'Shosanna Dreyfus Berlin'),
+(44, 'Fredrick Zoller Bad Nauheim'),
+(45, 'Bridget von Hammersmark Copenhagen'),
+
  
 ----------------- Acteurs de The Matrix --------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
@@ -246,5 +287,16 @@ VALUES
   ('Moss', 'Carrie-Anne', '1967-08-21', 'F'),
   ('Weaving', 'Hugo', '1960-04-04', 'M'),
   ('Pantoliano', 'Joe', '1951-09-12', 'M');
+
+
+------------------- ADD ROLES The Matrix --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
+(46,  'Neo Beirut'),
+(47, 'Morpheus Augusta'),
+(48, 'Trinity Vancouver'),
+(49, 'Agent Smith Ibadan'),
+(50, 'Cypher Haverhill');
+
 
 
