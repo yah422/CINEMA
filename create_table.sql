@@ -154,7 +154,7 @@ VALUES
   ('Brown', 'William', '1938-04-22', 'M'),
   ('Clancy Brown', 'Clancy', '1959-01-05', 'M');
 
-------------------- ADD ROLES  Lalaland  --------------------
+------------------- ADD ROLES de The Shawshank Redemptio  --------------------
 
 INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
 (11, 'Ellis Boyd Red Redding Memphis'),
