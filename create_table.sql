@@ -79,7 +79,7 @@ INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_
 INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Schindlers Liste', 1993, 195, 'Lhistoire vraie dOskar Schindler, un homme daffaires allemand qui sauva plus de mille Juifs pendant lHolocauste.', 4.8);
 INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Inglourious Basterds', 2009, 153,  'Un groupe de soldats juifs américains appelés "The Basterds" cherche à éliminer les nazis pendant la Seconde Guerre mondiale.', 4.4);
 INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('The Matrix', 1999, 136, 'Un hacker découvre que le monde dans lequel il vit est une simulation informatique créée par des machines intelligentes.', 4.7);
-INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('Barbie', 2023, 120, 'Barbie, qui vit à Barbie Land, est expulsée du pays pour être loin d être une poupée à l apparence parfaite; n ayant nulle part où aller, elle part pour le monde humain et cherche le vrai bonheur.', 4.9);
+INSERT INTO Film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film) VALUES ('La Malédiction : L Origine', 2024, 120, 'Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l Église, mais elle est confrontée à des ténèbres qui l amènent à remettre sa foi en question et à découvrir une terrifiante conspiration.', 4.3);
 
 ------------------- ADD INFORMATION TO THE TABLE PERSONNE ---------------------
 
@@ -93,7 +93,7 @@ VALUES
 ('Coppola', 'Francis Ford', '1939-04-07', 'Masculin'),
 ('Spielberg', 'Steven', '1946-12-18', 'Masculin'),
 ('Wachowskis', 'The', '1965-06-21', 'Autre'),
-('Gerwig', 'Greta', '1983-08-04', 'Feminin');
+('ArkashaStevenson', 'Arkasha', '1992-12-8', 'Feminin');
 
 
 
