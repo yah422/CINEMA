@@ -106,7 +106,7 @@ VALUES
 ('Arcangeli', 'Andrea', '1993-08-03', 'Masculin'),
 ('Caballero', 'Maria', '1998-06-13', 'Feminin');
 
-------------------- ADD ROLES ---------------------
+------------------- ADD ROLES  La Malédiction : L'Origine ---------------------
 
 INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('2', 'Father Harris');
 INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('3', 'Father Brennan');
@@ -123,6 +123,10 @@ VALUES
   ('Page', 'Ellen', '1987-02-21', 'F'),
   ('Gordon-Levitt', 'Joseph', '1981-02-17', 'M'),
   ('Cotillard', 'Marion', '1975-09-30', 'F');
+
+------------------- ADD ROLES Inception ---------------------
+
+
  
 ----------------- Acteurs de La La Land ------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
@@ -132,8 +136,17 @@ VALUES
   ('Legend', 'John', '1978-12-28', 'M'),
   ('Rosemarie', 'DeWitt', '1971-10-26', 'F'),
   ('Finn Wittrock', 'Finn', '1984-10-28', 'M');
- 
+
+------------------- ADD ROLES  Lalaland  ---------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
+(7, 'Sebastian London'),
+(8, 'Mia Scottsdale'),
+(9, 'Keith Springfield'),
+(10, 'Laura Flushing');
+
 ----------------- Acteurs de The Shawshank Redemption ---------------
+
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
   ('Freeman', 'Morgan', '1937-06-01', 'M'),
@@ -141,6 +154,15 @@ VALUES
   ('Gunton', 'Bob', '1945-11-15', 'M'),
   ('Brown', 'William', '1938-04-22', 'M'),
   ('Clancy Brown', 'Clancy', '1959-01-05', 'M');
+
+------------------- ADD ROLES  Lalaland  --------------------
+
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
+(11, 'Ellis Boyd Red Redding Memphis'),
+(12, 'Andy Dufresne Shawnee County'),
+(13, 'Warden Samuel Norton Los Angeles'),
+(14, 'Tommy Williams Lubbock'),
+(15, 'Captain Byron');
  
 ----------------- Acteurs de Pulp Fiction ---------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
