@@ -176,10 +176,11 @@ VALUES
 
 INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
 (16, 'Pulp Fiction Vincent Vega Knoxville'),
- (17, 'Jules Winnfield Washington'),
- (18, 'Mia Wallace Paris'),
- (19, 'Butch Coolidge 'Los Angeles'),
- (20, 'Pumpkin Sacramento'),
+(17, 'Jules Winnfield Washington'),
+(18, 'Mia Wallace Paris'),
+(19, 'Butch Coolidge Los Angeles'),
+(20, 'Pumpkin Sacramento');
+
 
 ----------------------- Acteurs de The Dark Knight ------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
@@ -190,7 +191,14 @@ VALUES
   ('Eckhart', 'Aaron', '1968-03-12', 'M'),
   ('Oldman', 'Gary', '1958-03-21', 'M');
 
+------------------- ADD ROLES The Dark Knight  --------------------
 
+INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
+(21, 'Bruce Wayne Batman'),
+(22, 'Joker Perth'),
+(23, 'Alfred Pennyworth London'),
+(24, 'Harvey Dent Two-Face Dublin'),
+(25, 'Jim Gordon Newark') ;
    
  
 ------------------ Acteurs de Forrest Gump   ----------------------
@@ -201,7 +209,8 @@ VALUES
   ('Sinise', 'Gary', '1955-03-17', 'M'),
   ('Field', 'Sally', '1946-11-06', 'F'),
   ('Kennedy', 'Haley Joel', '1988-12-14', 'M');
- 
+
+
 ------------------ Acteurs de The Godfather -------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
