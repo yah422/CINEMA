@@ -135,7 +135,6 @@ VALUES
   ('Stone', 'Emma', '1988-11-06', 'F'),
   ('Legend', 'John', '1978-12-28', 'M'),
   ('Rosemarie', 'DeWitt', '1971-10-26', 'F'),
-  ('Finn Wittrock', 'Finn', '1984-10-28', 'M');
 
 ------------------- ADD ROLES  Lalaland  ---------------------
 
