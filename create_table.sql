@@ -93,7 +93,7 @@ VALUES
 ('Coppola', 'Francis Ford', '1939-04-07', 'Masculin'),
 ('Spielberg', 'Steven', '1946-12-18', 'Masculin'),
 ('Wachowskis', 'The', '1965-06-21', 'Autre'),
-('ArkashaStevenson', 'Arkasha', '1992-12-8', 'Feminin');
+('Stevenson', 'Arkasha', '1992-12-8', 'Feminin');
 
 ------------------------------------ ADD ACTORS REAL NAME ----------------------------------------
 
