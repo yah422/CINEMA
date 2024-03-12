@@ -115,6 +115,94 @@ INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('5', 'Paolo
 INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES ('6', 'Luz');
 
 
+------------------- Acteurs de Inception ----------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('DiCaprio', 'Leonardo', '1974-11-11', 'M'),
+  ('Hardy', 'Tom', '1977-09-15', 'M'),
+  ('Page', 'Ellen', '1987-02-21', 'F'),
+  ('Gordon-Levitt', 'Joseph', '1981-02-17', 'M'),
+  ('Cotillard', 'Marion', '1975-09-30', 'F');
+ 
+----------------- Acteurs de La La Land ------------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Gosling', 'Ryan', '1980-11-12', 'M'),
+  ('Stone', 'Emma', '1988-11-06', 'F'),
+  ('Legend', 'John', '1978-12-28', 'M'),
+  ('Rosemarie', 'DeWitt', '1971-10-26', 'F'),
+  ('Finn Wittrock', 'Finn', '1984-10-28', 'M');
+ 
+----------------- Acteurs de The Shawshank Redemption ---------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Freeman', 'Morgan', '1937-06-01', 'M'),
+  ('Robbins', 'Tim', '1958-10-16', 'M'),
+  ('Gunton', 'Bob', '1945-11-15', 'M'),
+  ('Brown', 'William', '1938-04-22', 'M'),
+  ('Clancy Brown', 'Clancy', '1959-01-05', 'M');
+ 
+----------------- Acteurs de Pulp Fiction ---------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Travolta', 'John', '1954-02-18', 'M'),
+  ('Jackson', 'Samuel L.', '1948-12-21', 'M'),
+  ('Thurman', 'Uma', '1970-04-29', 'F'),
+  ('Willis', 'Bruce', '1955-03-19', 'M'),
+  ('Roth', 'Tim', '1961-05-14', 'M');
 
+----------------------- Acteurs de The Dark Knight ------------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Bale', 'Christian', '1974-01-30', 'M'),
+  ('Ledger', 'Heath', '1979-04-04', 'M'),
+  ('Caine', 'Michael', '1933-03-14', 'M'),
+  ('Eckhart', 'Aaron', '1968-03-12', 'M'),
+  ('Oldman', 'Gary', '1958-03-21', 'M');
+ 
+------------------ Acteurs de Forrest Gump   ----------------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Hanks', 'Tom', '1956-07-09', 'M'),
+  ('Wright', 'Robin', '1966-04-08', 'M'),
+  ('Sinise', 'Gary', '1955-03-17', 'M'),
+  ('Field', 'Sally', '1946-11-06', 'F'),
+  ('Kennedy', 'Haley Joel', '1988-12-14', 'M');
+ 
+------------------ Acteurs de The Godfather -------------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Brando', 'Marlon', '1924-04-03', 'M'),
+  ('Pacino', 'Al', '1940-04-25', 'M'),
+  ('Caan', 'James', '1940-03-26', 'M'),
+  ('Duvall', 'Robert', '1931-01-05', 'M'),
+  ('Keaton', 'Diane', '1946-01-05', 'F');
+
+----------------- Acteurs de Schindler's List ----------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Neeson', 'Liam', '1952-06-07', 'M'),
+  ('Fiennes', 'Ralph', '1962-12-22', 'M'),
+  ('Kingsley', 'Ben', '1943-12-31', 'M'),
+  ('Sagall', 'Embeth', '1963-08-13', 'F'),
+  ('Kruger', 'Caroline', '1976-05-23', 'F');
+ 
+------------------ Acteurs de Inglourious Basterds -----------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Pitt', 'Brad', '1963-12-18', 'M'),
+  ('Waltz', 'Christoph', '1956-10-04', 'M'),
+  ('Laurent', 'Mélanie', '1983-02-21', 'F'),
+  ('Fassbender', 'Michael', '1977-04-02', 'M'),
+  ('Kruger', 'Diane', '1976-07-15', 'F');
+ 
+----------------- Acteurs de The Matrix --------------------
+INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
+VALUES
+  ('Reeves', 'Keanu', '1964-09-02', 'M'),
+  ('Fishburne', 'Laurence', '1961-07-30', 'M'),
+  ('Moss', 'Carrie-Anne', '1967-08-21', 'F'),
+  ('Weaving', 'Hugo', '1960-04-04', 'M'),
+  ('Pantoliano', 'Joe', '1951-09-12', 'M');
 
 
