@@ -120,6 +120,14 @@ ORDER BY
   
 j. Nombre d’hommes et de femmes parmi les acteurs
 
+SELECT
+    sexe_personne,
+    COUNT(*) AS nombre_acteurs
+FROM
+    acteur
+INNER JOIN personne ON acteur.id_personne = personne.id_personne
+GROUP BY
+    sexe_personne;
   
 k. Liste des acteurs ayant plus de 50 ans (âge révolu et non révolu)
 
