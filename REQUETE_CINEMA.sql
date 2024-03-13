@@ -131,6 +131,15 @@ GROUP BY
   
 k. Liste des acteurs ayant plus de 50 ans (âge révolu et non révolu)
 
-  
+SELECT
+    nom_personne,
+    prenom_personne,
+    DATE_FORMAT(NOW(), '%Y') - YEAR(dateNaissance) - IF(DATE_FORMAT(NOW(), '%m%d') < DATE_FORMAT(dateNaissance, '%m%d'), 1, 0) AS age_revolu
+FROM
+    acteur
+INNER JOIN personne ON acteur.id_personne = personne.id_personne
+WHERE
+    DATE_FORMAT(NOW(), '%Y') - YEAR(dateNaissance) > 50;
+
 l. Acteurs ayant joué dans 3 films ou plus
 
