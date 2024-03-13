@@ -143,3 +143,17 @@ WHERE
 
 l. Acteurs ayant joué dans 3 films ou plus
 
+SELECT
+    personne.nom_personne,
+    personne.prenom_personne,
+    COUNT(jouer.id_film) AS nombre_films_joues
+FROM
+    acteur
+INNER JOIN jouer ON acteur.id_personne = jouer.id_acteur
+INNER JOIN personne ON acteur.id_personne = personne.id_personne
+GROUP BY
+    acteur.id_personne
+HAVING
+    COUNT(jouer.id_film) >= 3;
+
+
