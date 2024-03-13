@@ -77,24 +77,22 @@ FROM film
 INNER JOIN jouer ON film.id_film = jouer.id_film
 INNER JOIN acteur ON jouer.id_acteur = acteur.id_acteur
 INNER JOIN personne ON acteur.id_personne = personne.id_personne
-WHERE film.id_film = 12;
+WHERE film.id_film = 5;
 
   
 g. Films tournés par un acteur en particulier (id_acteur) avec leur rôle et l’année de sortie (du film le plus récent au plus ancien)
 
-SELECT 
+SELECT
     film.titre_film,
-    jouer.id_acteur,
-    personne.nom_personne,
-    personne.prenom_personne,
     jouer.id_role,
     film.anneeSortie_film
-FROM jouer
+FROM
+    jouer
 INNER JOIN film ON jouer.id_film = film.id_film
-INNER JOIN acteur ON jouer.id_acteur = acteur.id_acteur
-INNER JOIN personne ON jouer.id_role = personne.id_personne
-WHERE jouer.id_acteur = 45
-ORDER BY film.anneeSortie_film DESC;
+WHERE
+    jouer.id_acteur = 2
+ORDER BY
+    film.anneeSortie_film DESC;
 
 h. Liste des personnes qui sont à la fois acteurs et réalisateurs
 
