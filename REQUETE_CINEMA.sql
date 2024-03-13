@@ -1,24 +1,48 @@
 a. Informations d’un film (id_film) : titre, année, durée (au format HH:MM) et réalisateur
-
-SELECT film.titre_film, film.anneeSortie_film, film.duree_film, realisateur.id_realisateur
-FROM film
-INNER JOIN realisateur  ON film.id_film = realisateur.id_realisateur
+  
+SELECT 
+		film.titre_film,
+		film.anneeSortie_film,
+		TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee,
+		personne.nom_personne,
+		personne.prenom_personne
+		FROM film
+INNER JOIN realisateur ON film.id_realisateur = realisateur.id_realisateur
+INNER JOIN personne ON realisateur.id_personne = personne.id_personne
 
   
 b. Liste des films dont la durée excède 2h15 classés par durée (du + long au + court)
-
-SELECT titre_film, duree_film
+  
+SELECT titre_film, 
+       TIME_FORMAT(SEC_TO_TIME(duree_film * 60), '%Hh%i min') AS duree_formatee
 FROM film
-WHERE duree_film >135
-ORDER BY duree_film DESC
+WHERE duree_film > 135
+ORDER BY duree_film DESC;
 
   
 c. Liste des films d’un réalisateur (en précisant l’année de sortie) 
+
+SELECT 
+		film.titre_film,
+		film.anneeSortie_film,
+		TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee,
+		personne.nom_personne,
+		personne.prenom_personne
+		FROM film
+INNER JOIN realisateur ON film.id_realisateur = realisateur.id_realisateur
+INNER JOIN personne ON realisateur.id_personne = personne.id_personne
+WHERE id_film = 1
 
 
   
 d. Nombre de films par genre (classés dans l’ordre décroissant)
 
+SELECT 
+    film.titre_film,
+    categorie.id_genreCine
+FROM film
+INNER JOIN categorie ON film.id_film = categorie.id_film
+ORDER BY id_genreCine DESC
   
 e. Nombre de films par réalisateur (classés dans l’ordre décroissant)
 
