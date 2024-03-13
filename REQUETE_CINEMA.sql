@@ -37,22 +37,32 @@ WHERE id_film = 1
   
 d. Nombre de films par genre (classés dans l’ordre décroissant)
 
-SELECT 
-    film.titre_film,
-    categorie.id_genreCine
-FROM film
-INNER JOIN categorie ON film.id_film = categorie.id_film
-ORDER BY id_genreCine DESC
+SELECT
+    genrecine.nom_genreCine,
+    COUNT(film.id_film) AS nombre_films
+FROM
+    genrecine
+LEFT JOIN categorie ON genrecine.id_genreCine = categorie.id_genreCine
+LEFT JOIN film ON categorie.id_film = film.id_film
+GROUP BY
+    genrecine.nom_genreCine
+ORDER BY
+    nombre_films DESC;
+
   
 e. Nombre de films par réalisateur (classés dans l’ordre décroissant)
 	
-SELECT 
-    film.titre_film,
-    realisateur.id_personne,
-    realisateur.id_realisateur
-FROM film
-INNER JOIN realisateur ON film.id_film = realisateur.id_personne
-ORDER BY id_personne DESC
+SELECT
+    CONCAT(personne.prenom_personne, ' ', personne.nom_personne) AS realisateur,
+    COUNT(film.id_film) AS nombre_films
+FROM
+    realisateur
+INNER JOIN personne ON realisateur.id_personne = personne.id_personne
+LEFT JOIN film ON realisateur.id_realisateur = film.id_realisateur
+GROUP BY
+    realisateur
+ORDER BY
+    nombre_films DESC;
 
 f. Casting d’un film en particulier (id_film) : nom, prénom des acteurs + sexe
 	
