@@ -4,7 +4,7 @@ SELECT
 		film.titre_film,
 		film.anneeSortie_film,
 		TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee,
-		personne.nom_personne,
+		personne.nom_personne, 
 		personne.prenom_personne
 		FROM film
 INNER JOIN realisateur ON film.id_realisateur = realisateur.id_realisateur
