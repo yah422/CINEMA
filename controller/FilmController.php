@@ -6,13 +6,13 @@ namespace Controller;
 use Model\Connect;
 
 class FilmController {
-// --------------- LISTER LES FILMS ---------------
+// ^^--------------- LISTER LES FILMS ---------------
     public function listFilm(){
 
-        // On se connecte
+        // ^^On se connecte
         $pdo = Connect::seConnecter();
 
-        // On exécute la requête de notre choix
+        // ^^On exécute la requête de notre choix
         $requete = $pdo -> query("
             SELECT
             film.id_film,
@@ -30,11 +30,11 @@ class FilmController {
             INNER JOIN personne ON personne.id_personne = realisateur.id_personne
         ");
 
-        // On relie par un "require" la vue qui nous intéresse
+        // ^^On relie par un "require" la vue qui nous intéresse
         require "view/listFilms.php";
     }
 
-    // public function Ajout
+    // ^^public function Ajout
 
 
 };

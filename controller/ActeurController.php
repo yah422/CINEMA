@@ -1,18 +1,18 @@
 <?php 
 
-// On remarquera ici l'utilisation du "use" pour accéder à la classe Connect située dans le namespace "Model"
+// ^^On remarquera ici l'utilisation du "use" pour accéder à la classe Connect située dans le namespace "Model"
 
 namespace Controller;
 use Model\Connect;
 
 class ActeurController {
-// --------------- LISTER LES ACTEURS ---------------
+// ^^--------------- LISTER LES ACTEURS ---------------
     public function listActeur(){
 
-        // On se connecte
+        // ^^On se connecte
         $pdo= Connect::seConnecter();
 
-         // On exécute la requête de notre choix
+         // ^^On exécute la requête de notre choix
          $requete = $pdo -> query("
          SELECT
          nom_personne,
@@ -21,7 +21,7 @@ class ActeurController {
          INNER JOIN personne ON personne.id_personne = acteur.id_personne;
      ");
 
-     // On relie par un "require" la vue qui nous intéresse
+     // ^^On relie par un "require" la vue qui nous intéresse
      require "view/listActeurs.php";
 
 }
