@@ -100,10 +100,6 @@ VALUES
 
 
 ------------------   La Malédiction : L'Origine   ------------------------
-
-('Nighy', 'Billr', '1949-12-12', 'Masculin'),
-('Ineson', 'Balph', '1969-12-15', 'Masculin'),
-('Dance', 'Charles', '1946-10-10', 'Masculin'),
 ('Braga', 'Sonia', '1950-06-08', 'Feminin'),
 ('Arcangeli', 'Andrea', '1993-08-03', 'Masculin'),
 ('Caballero', 'Maria', '1998-06-13', 'Feminin');
@@ -123,16 +119,12 @@ VALUES
   ('DiCaprio', 'Leonardo', '1974-11-11', 'M'),
   ('Hardy', 'Tom', '1977-09-15', 'M'),
   ('Page', 'Ellen', '1987-02-21', 'F'),
-  ('Gordon-Levitt', 'Joseph', '1981-02-17', 'M'),
-  ('Cotillard', 'Marion', '1975-09-30', 'F');
 
 ------------------- ADD ROLES Inception ---------------------
 INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
   (51, 'Dom Cobb'),
   (52, 'Eames'),
   (53, 'Ariadne'),
-  (54, 'Arthur'),
-  (55, 'Mal Cobb')
  
 ----------------- Acteurs de La La Land ------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
@@ -140,7 +132,7 @@ VALUES
   ('Gosling', 'Ryan', '1980-11-12', 'M'),
   ('Stone', 'Emma', '1988-11-06', 'F'),
   ('Legend', 'John', '1978-12-28', 'M'),
-  ('Rosemarie', 'DeWitt', '1971-10-26', 'F'),
+
 
 ------------------- ADD ROLES  Lalaland  ---------------------
 
@@ -148,26 +140,6 @@ INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
 (7, 'Sebastian London'),
 (8, 'Mia Scottsdale'),
 (9, 'Keith Springfield'),
-(10, 'Laura Flushing');
-
------------------ Acteurs de The Shawshank Redemption ---------------
-
-INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
-VALUES
-  ('Freeman', 'Morgan', '1937-06-01', 'M'),
-  ('Robbins', 'Tim', '1958-10-16', 'M'),
-  ('Gunton', 'Bob', '1945-11-15', 'M'),
-  ('Brown', 'William', '1938-04-22', 'M'),
-  ('Clancy Brown', 'Clancy', '1959-01-05', 'M');
-
-------------------- ADD ROLES de The Shawshank Redemptio  --------------------
-
-INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES 
-(11, 'Ellis Boyd Red Redding Memphis'),
-(12, 'Andy Dufresne Shawnee County'),
-(13, 'Warden Samuel Norton Los Angeles'),
-(14, 'Tommy Williams Lubbock'),
-(15, 'Captain Byron');
  
 ----------------- Acteurs de Pulp Fiction ---------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
@@ -175,8 +147,7 @@ VALUES
   ('Travolta', 'John', '1954-02-18', 'M'),
   ('Jackson', 'Samuel L.', '1948-12-21', 'M'),
   ('Thurman', 'Uma', '1970-04-29', 'F'),
-  ('Willis', 'Bruce', '1955-03-19', 'M'),
-  ('Roth', 'Tim', '1961-05-14', 'M');
+
 
 ------------------- ADD ROLES de Pulp Fiction  --------------------
 
@@ -184,9 +155,6 @@ INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
 (16, 'Pulp Fiction Vincent Vega Knoxville'),
 (17, 'Jules Winnfield Washington'),
 (18, 'Mia Wallace Paris'),
-(19, 'Butch Coolidge Los Angeles'),
-(20, 'Pumpkin Sacramento');
-
 
 ----------------------- Acteurs de The Dark Knight ------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
@@ -194,8 +162,7 @@ VALUES
   ('Bale', 'Christian', '1974-01-30', 'M'),
   ('Ledger', 'Heath', '1979-04-04', 'M'),
   ('Caine', 'Michael', '1933-03-14', 'M'),
-  ('Eckhart', 'Aaron', '1968-03-12', 'M'),
-  ('Oldman', 'Gary', '1958-03-21', 'M');
+
 
 ------------------- ADD ROLES The Dark Knight  --------------------
 
@@ -203,18 +170,14 @@ INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
 (21, 'Bruce Wayne Batman'),
 (22, 'Joker Perth'),
 (23, 'Alfred Pennyworth London'),
-(24, 'Harvey Dent Two-Face Dublin'),
-(25, 'Jim Gordon Newark') ;
    
- 
 ------------------ Acteurs de Forrest Gump   ----------------------
 INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
 VALUES
   ('Hanks', 'Tom', '1956-07-09', 'M'),
   ('Wright', 'Robin', '1966-04-08', 'M'),
   ('Sinise', 'Gary', '1955-03-17', 'M'),
-  ('Field', 'Sally', '1946-11-06', 'F'),
-  ('Kennedy', 'Haley Joel', '1988-12-14', 'M');
+
 
 
 ------------------- ADD ROLES Forrest Gump  --------------------
@@ -223,8 +186,6 @@ INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
 (26, 'Forrest Gump Mobile'),
 (27, 'Jenny Curran Phoenix'),
 (28, 'Lieutenant Dan Taylor New York'),
-(29, 'Mrs. Gump Culver City'),
-(30, 'Bubba Blue Fort Worth'),
 
 ------------------ Acteurs de The Godfather -------------------
    
@@ -233,8 +194,6 @@ VALUES
   ('Brando', 'Marlon', '1924-04-03', 'M'),
   ('Pacino', 'Al', '1940-04-25', 'M'),
   ('Caan', 'James', '1940-03-26', 'M'),
-  ('Duvall', 'Robert', '1931-01-05', 'M'),
-  ('Keaton', 'Diane', '1946-01-05', 'F');
 
 ------------------- ADD ROLES The Godfather  --------------------
 
@@ -242,67 +201,7 @@ INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
 (31, 'Don Vito Corleone New York City'),
 (32, 'Michael Corleone Brooklyn'),
 (33, 'Sonny Corleone New York City'),
-(34, 'Tom Hagen Chicago'),
-(35, 'Kay Adams-Corleone New York City'),
-
------------------ Acteurs de Schindler's List ----------------
    
-INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
-VALUES
-  ('Neeson', 'Liam', '1952-06-07', 'M'),
-  ('Fiennes', 'Ralph', '1962-12-22', 'M'),
-  ('Kingsley', 'Ben', '1943-12-31', 'M'),
-  ('Sagall', 'Embeth', '1963-08-13', 'F'),
-  ('Kruger', 'Caroline', '1976-05-23', 'F');
-
-
-------------------- ADD ROLES Schindler's List  --------------------
-
-INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
-(36, 'Oskar Schindler Svitavy'),
-(37, 'Amon Goeth Vienna'),
-(38, 'Itzhak Stern Sosnowiec'),
-(39, 'Emilie Schindler Alt Moletein'),
-(40, 'Helen Hirsch Lwow'),
- 
------------------- Acteurs de Inglourious Basterds -----------------
-   
-INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
-VALUES
-  ('Pitt', 'Brad', '1963-12-18', 'M'),
-  ('Waltz', 'Christoph', '1956-10-04', 'M'),
-  ('Laurent', 'Mélanie', '1983-02-21', 'F'),
-  ('Fassbender', 'Michael', '1977-04-02', 'M'),
-  ('Kruger', 'Diane', '1976-07-15', 'F');
-
-------------------- ADD ROLES Inglourious Basterds  --------------------
-
-INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
-(41, 'Lt Aldo Raine Knoxville'),
-(42, 'Hans Landa Gdansk'),
-(43, 'Shosanna Dreyfus Berlin'),
-(44, 'Fredrick Zoller Bad Nauheim'),
-(45, 'Bridget von Hammersmark Copenhagen'),
-
- 
------------------ Acteurs de The Matrix --------------------
-INSERT INTO Personne (nom_personne, prenom_personne, dateNaissance, sexe_personne)
-VALUES
-  ('Reeves', 'Keanu', '1964-09-02', 'M'),
-  ('Fishburne', 'Laurence', '1961-07-30', 'M'),
-  ('Moss', 'Carrie-Anne', '1967-08-21', 'F'),
-  ('Weaving', 'Hugo', '1960-04-04', 'M'),
-  ('Pantoliano', 'Joe', '1951-09-12', 'M');
-
-
-------------------- ADD ROLES The Matrix --------------------
-
-INSERT INTO `cinema_asma`.`rolefilm` (`id_role`, `nom_role`) VALUES
-(46,  'Neo Beirut'),
-(47, 'Morpheus Augusta'),
-(48, 'Trinity Vancouver'),
-(49, 'Agent Smith Ibadan'),
-(50, 'Cypher Haverhill');
 
 
 
