@@ -23,6 +23,6 @@ class RealisateurController {
         ");
     
      // On relie par un "require" la vue qui nous intéresse
-     require "view/realisateur.php";
+     require "view/listRealisateurs.php";
    }
 }

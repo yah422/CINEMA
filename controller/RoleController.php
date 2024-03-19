@@ -21,6 +21,6 @@ class RoleController {
         ");
     
      // ^^On relie par un "require" la vue qui nous intéresse
-     require "view/role.php";
+     require "view/listRoles.php";
    }
 }

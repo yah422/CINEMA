@@ -22,7 +22,7 @@ class ActeurController {
      ");
 
      // On relie par un "require" la vue qui nous intéresse
-     require "view/acteur.php";
+     require "view/listActeurs.php";
 
 }
     // public function detActeur($id){

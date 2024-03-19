@@ -9,7 +9,7 @@
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <ul>
-                <li><a href="index.php?action=''"> HOME </a></li>
+                <li><a href=""> HOME </a></li>
                 <li><a href="index.php?action=listFilm"> FILMS </a></li>
                 <li><a href="index.php?action=listActeur"> ACTEURS </a></li>
                 <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>

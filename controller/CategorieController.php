@@ -21,6 +21,6 @@ class CategorieController {
         ");
     
      // On relie par un "require" la vue qui nous intéresse
-     require "view/categorie.php";
+     require "view/listCategories.php";
    }
 }
