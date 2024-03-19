@@ -13,6 +13,7 @@
                 <li><a href="index.php?action=listFilm"> FILMS </a></li>
                 <li><a href="index.php?action=listActeur"> ACTEURS </a></li>
                 <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>
+                <li><a href="index.php?action=listRole">ROLES</a>  </li>
             </ul>
         </nav>
     </header>
