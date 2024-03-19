@@ -31,7 +31,7 @@ class FilmController {
         ");
 
         // ^^On relie par un "require" la vue qui nous intéresse
-        require "view/listFilms.php";
+        require "view/film/listFilms.php";
     }
 
     public function detailFilm($id){
