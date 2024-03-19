@@ -25,14 +25,14 @@ class ActeurController {
      require "view/listActeurs.php";
 
 }
-    // public function detActeur($id){
+    public function detailActeur($id){
         
-    //     $pdo= Connect::seConnecter();
+        $pdo= Connect::seConnecter();
 
-    //     $requete = $pdo -> prepare("SELECT * FROM acteur WHERE id_acteur = :id");
-    //     $requete -> execute(["id"=> $id]);
-    //     require "view/acteur/detailActeur.php";
-    // }
+        $requete = $pdo -> prepare("SELECT * FROM acteur WHERE id_acteur = :id");
+        $requete -> execute(["id"=> $id]);
+        require "view/acteur/detailActeur.php";
+    }
 
 
 }
