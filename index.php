@@ -30,6 +30,9 @@ if(isset($_GET["action"])){
         //& --------- FILMS ------------
         case "listFilm" : $ctrlFilm -> listFilm(); break;
 
+        // &----------- DETAILS FILM -------------
+        case "detailFilm" : $ctrlFilm -> detailFilm(); break;
+
         //& ---------- ACTEURS -----------
         case "listActeur" : $ctrlActeur -> listActeur(); break;
 
