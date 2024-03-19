@@ -15,19 +15,21 @@
         </tr>
     </thead>
     <tbody>
-        <?php
+        <?php   
+        
             foreach($requete ->fetchAll() as $detailFilm) {?>
-                <tr>
-                    <td> <?= $detailFilm["titre_film"]?> </td>
+                <tr> 
+                    <td> <?= $detailFilm["titre_film"]?> </td> 
                     <td> <?= $detailFilm["duree_film"]?> </td>
                     <td> <?= $detailFilm["anneeSortie_film"]?> </td>
-                    <td> <?= $detailFilm["synopsis_film"]?> </td>
-                    <td> <?= $detailFilm["realisateur.nom_personne"]?> </td>
-                    <td> <?= $detailFilm["realisateur.prenom_personne"]?> </td>
+                    <td> <?= $detailFilm["synopsis_film"]?> </td> 
+                    <td> <?= $detailFilm["realisateur.nom_personne"]?> </td> 
+                    <td> <?= $detailFilm["realisateur.prenom_personne"]?> </td> 
                     <td> <?= $detailFilm["note_film"]?> </td>
                     <td> <?= $detailFilm["affiche_film"]?> </td>
-                </tr>
-        <?php } ?>
+                </tr> 
+        <?php } 
+         ?>
     </tbody>
 </table>
 

@@ -42,7 +42,7 @@ class FilmController {
         $requete -> execute(["id"=> $id]);
         
 
-        $requeteActeur = $pdo -> prepare ("  SELECT
+        $requeteFilm = $pdo -> prepare ("  SELECT
         film.id_film,
         film.titre_film,
         film.anneeSortie_film,
