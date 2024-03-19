@@ -3,7 +3,7 @@
 // -------------  il indique à une classe d hériter d un trait et il donne un alias à un espace de noms.use ------------
 use Controller\FilmController;
 use Controller\ActeurController;
-// use Controller\RealisateurController;
+use Controller\RealisateurController;
 use Controller\CategorieController; 
 // use Controller\RoleController;
 
@@ -15,7 +15,7 @@ spl_autoload_register(function($class_name){
 // On instancie le controller Cinema
 $ctrlFilm = new FilmController();
 $ctrlActeur = new ActeurController();
-// $ctrlRealisateur = new RealisateurController();
+$ctrlRealisateur = new RealisateurController();
 $ctrlCategorie = new CategorieController();
 // $ctrlRole = new RoleController();
 
@@ -35,6 +35,12 @@ if(isset($_GET["action"])){
 
         // ----------- CATEGORIES -------------
         case "listCategorie" : $ctrlCategorie -> listCategorie(); break;
+
+        // ----------- REALISATEURS --------------
+        case "listRealisateur" : $ctrlRealisateur -> listRealisateur(); break;
+
+        // ----------- ROLES ---------------
+        case "listRole" : $ctrlRole -> listRole(); break;
 
 
     }
