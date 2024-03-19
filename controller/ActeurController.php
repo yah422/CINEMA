@@ -5,7 +5,7 @@
 namespace Controller;
 use Model\Connect;
 
-class ActeursController {
+class ActeurController {
 // --------------- LISTER LES ACTEURS ---------------
     public function listActeur(){
 
@@ -24,11 +24,7 @@ class ActeursController {
      // On relie par un "require" la vue qui nous intéresse
      require "view/acteur.php";
 
-
-
 }
-
-
     // public function detActeur($id){
         
     //     $pdo= Connect::seConnecter();
@@ -37,5 +33,6 @@ class ActeursController {
     //     $requete -> execute(["id"=> $id]);
     //     require "view/acteur/detailActeur.php";
     // }
+
 
 }

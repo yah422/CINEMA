@@ -5,7 +5,7 @@
 namespace Controller;
 use Model\Connect;
 
-class FilmsController {
+class FilmController {
 // --------------- LISTER LES FILMS ---------------
     public function listFilms(){
 
