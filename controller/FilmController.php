@@ -7,7 +7,7 @@ use Model\Connect;
 
 class FilmController {
 // --------------- LISTER LES FILMS ---------------
-    public function listFilms(){
+    public function listFilm(){
 
         // On se connecte
         $pdo = Connect::seConnecter();
@@ -31,7 +31,7 @@ class FilmController {
         ");
 
         // On relie par un "require" la vue qui nous intéresse
-        require "view/listFilms.php";
+        require "view/listFilm.php";
     }
 
 

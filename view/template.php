@@ -9,10 +9,10 @@
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <ul>
-                <li><a href="#home"> HOME </a></li>
-                <li><a href="#films"> FILMS </a></li>
-                <li><a href="#acteurs"> ACTEURS </a></li>
-                <li><a href="#realisateurs"> REALISATEURS </a></li>
+                <li><a href="index.php?action=''"> HOME </a></li>
+                <li><a href="index.php?action=listFilm"> FILMS </a></li>
+                <li><a href="index.php?action=listActeur"> ACTEURS </a></li>
+                <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>
             </ul>
         </nav>
     </header>
