@@ -36,6 +36,9 @@ if(isset($_GET["action"])){
         //& ---------- ACTEURS -----------
         case "listActeur" : $ctrlActeur -> listActeur(); break;
 
+        // &----------- DETAILS ACTEURS -------------
+        case "detailActeur" : $ctrlActeur -> detailActeur($id); break;
+
         // &----------- CATEGORIES -------------
         case "listCategorie" : $ctrlCategorie -> listCategorie(); break;
 

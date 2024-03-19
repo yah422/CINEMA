@@ -25,14 +25,24 @@ class ActeurController {
      require "view/acteur/listActeurs.php";
 
 }
+// ^^ ----------- AFFICHER LES DETAILS ACTEURS ------------
     public function detailActeur($id){
         
         $pdo= Connect::seConnecter();
 
         $requete = $pdo -> prepare("SELECT * FROM acteur WHERE id_acteur = :id");
         $requete -> execute(["id"=> $id]);
+        
+
+        $requeteActeur = $pdo -> prepare (" SELECT
+        nom_personne,
+        prenom_personne,
+        dateNaissance,
+        sexe_personne
+        FROM acteur
+        INNER JOIN personne ON personne.id_personne = acteur.id_acteur;");
+
         require "view/acteur/detailActeur.php";
     }
-
 
 }
