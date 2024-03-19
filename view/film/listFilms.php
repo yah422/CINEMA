@@ -6,10 +6,6 @@
         <tr>
             <th> TITRE </th>
             <th> ANNEE SORTIE </th>
-            <th> SYNONPSIS </th>
-            <th> AFFICHE FILM </th>
-            <th> NOTE FILM </th>
-            <th> DUREE FILM </th>
         </tr>
     </thead>
     <tbody>
