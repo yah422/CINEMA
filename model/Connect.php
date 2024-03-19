@@ -15,7 +15,7 @@ abstract class Connect {
         try {
             // CLASSE NATIVE \ PDO 
             return new \PDO(
-                "mysql:host=". self::HOST.";cinema_asma=".self::DB.";charset=utf8", self::USER, self::PASS);
+                "mysql:host=". self::HOST.";dbname=".self::DB.";charset=utf8", self::USER, self::PASS);
         }catch (\PDOExeption $ex){
             return $ex ->getMessage();
         }

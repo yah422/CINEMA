@@ -14,10 +14,10 @@ spl_autoload_register(function($class_name){
 
 // On instancie le controller Cinema
 $ctrlFilms = new FilmsController();
-$ctrlActeurs = new ActeursController();
-$ctrlRealisateurs = new RealisateursController();
-$ctrlCategories = new CategoriesController();
-$ctrlRoles = new RolesController();
+$ctrlActeur = new ActeursController();
+// $ctrlRealisateurs = new RealisateursController();
+// $ctrlCategories = new CategoriesController();
+// $ctrlRoles = new RolesController();
 
 // En fonction de l'action détectée dans l'URL par "action" on connecte avec la bonne méthode du controller
 
@@ -31,7 +31,7 @@ if(isset($_GET["action"])){
         case "listFilms" : $ctrlFilms -> listFilms(); break;
 
         // ---------- ACTEURS -----------
-        case "listActeurs" : $ctrlActeurs -> listActeurs(); break;
+        case "listActeur" : $ctrlActeur -> listActeur(); break;
 
         // ----------- CATEGORIES -------------
         case "listCategories" : $ctrlCategories -> listCategories(); break;
