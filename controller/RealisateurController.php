@@ -6,8 +6,8 @@ namespace Controller;
 use Model\Connect;
 
 class RealisateurController {
-// --------------- LISTER LES ACTEURS ---------------
-    public function listCategorie(){
+// --------------- LISTER LES Realisateurs ---------------
+    public function listRealisateur(){
 
         // On se connecte
         $pdo= Connect::seConnecter();
