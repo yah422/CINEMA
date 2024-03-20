@@ -14,6 +14,7 @@
                 <li><a href="index.php?action=listActeur"> ACTEURS </a></li>
                 <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>
                 <li><a href="index.php?action=listRole">ROLES</a>  </li>
+                <li> <a href="index.php?action=listCategorie"> CATEGORIE </a></li>
             </ul>
         </nav>
     </header>

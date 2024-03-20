@@ -12,7 +12,7 @@
         <?php
             foreach($requete ->fetchAll() as $categorie) {?>
                 <tr>
-                    <td> <?= $categorie["nom_genreCine"]?> </td>
+                    <td> <a href="index.php?action=detailCategorie"><?= $categorie["nom_genreCine"]?></a> </td>
                 </tr>
         <?php } ?>
     </tbody>

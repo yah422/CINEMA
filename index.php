@@ -42,6 +42,9 @@ if(isset($_GET["action"])){
         // &----------- CATEGORIES -------------
         case "listCategorie" : $ctrlCategorie -> listCategorie(); break;
 
+        // & ---------------- DETAILS CATEGORIES ---------------
+        case "detailCategorie" : $ctrlCategorie -> detailCategorie($id); break;
+
         //& ----------- REALISATEURS --------------
         case "listRealisateur" : $ctrlRealisateur -> listRealisateur(); break;
 
