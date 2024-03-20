@@ -10,11 +10,11 @@
         <nav class="navbar navbar-dark bg-dark">
             <ul>
                 <li><a href=""> HOME </a></li>
-                <li><a href="index.php?action=listFilm&id"> FILMS </a></li>
-                <li><a href="index.php?action=listActeur&id"> ACTEURS </a></li>
-                <li><a href="index.php?action=listRealisateur&id"> REALISATEURS </a></li>
-                <li><a href="index.php?action=listRole&id">ROLES</a>  </li>
-                <li> <a href="index.php?action=listCategorie&id"> CATEGORIE </a></li>
+                <li><a href="index.php?action=listFilm"> FILMS </a></li>
+                <li><a href="index.php?action=listActeur"> ACTEURS </a></li>
+                <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>
+                <li><a href="index.php?action=listRole">ROLES</a>  </li>
+                <li> <a href="index.php?action=listCategorie"> CATEGORIE </a></li>
             </ul>
         </nav>
     </header>

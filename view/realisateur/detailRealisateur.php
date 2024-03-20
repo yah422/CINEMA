@@ -26,10 +26,6 @@
 </table>
 
 <?php
-var_dump($requeteRealisateur->fetchAll());
-?>
-
-<?php
 
 $titre = "Détails Réalisateur";
 $titre_secondaire = "Détails Réalisateur";
