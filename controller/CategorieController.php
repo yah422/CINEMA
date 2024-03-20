@@ -23,4 +23,22 @@ class CategorieController {
      // ^^On relie par un "require" la vue qui nous intéresse
      require "view/listCategories.php";
    }
+
+   //  ^^ ------------- DETAILS CATEGORIES --------------
+
+   public function detailCategorie($id){
+
+    $pdo= Connect::seConnecter();
+
+    $requete = $pdo -> prepare("SELECT * FROM genreCine WHERE id_genreCine = :id");
+    $requete -> execute(["id"=> $id]);
+    
+
+    $requeteRealisateur = $pdo -> prepare (" SELECT
+    nom_genreCine
+    FROM genreCine;");
+
+    require "view/categorie/detailCategorie.php";
+
+   }
 }
