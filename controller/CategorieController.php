@@ -12,11 +12,11 @@ class CategorieController {
     // ^^On se connecte
     $pdo= Connect::seConnecter();
 
-      // ^^On exécute la requête de notre choix
-      $requete = $pdo -> query("SELECT
-      nom_genreCine
-      FROM genrecine;
-      ");
+    // ^^On exécute la requête de notre choix
+    $requete = $pdo -> query("SELECT
+    nom_genreCine
+    FROM genrecine;
+    ");
 
     // ^^On relie par un "require" la vue qui nous intéresse
     require "view/categorie/listCategories.php";
@@ -34,12 +34,14 @@ class CategorieController {
     $requete -> execute(["id"=> $id]);
     
 
-    $requeteRealisateur = $pdo -> prepare (" SELECT
+    $requeteCategorie = $pdo -> prepare ("SELECT
     nom_genreCine
     FROM genreCine;");
+    $requeteCategorie -> execute(["id" => $id]);
 
     // ^^On relie par un "require" la vue qui nous intéresse
     require "view/categorie/detailCategorie.php";
 
   }
 }
+?>
