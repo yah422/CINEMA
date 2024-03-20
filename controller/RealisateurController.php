@@ -26,7 +26,7 @@ class RealisateurController {
      require "view/realisateur/listRealisateurs.php";
    }
 
-   public function detailRealisateur(){
+   public function detailRealisateur($id){
 
     $pdo= Connect::seConnecter();
 
