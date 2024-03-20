@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php ob_start(); 
+$role = $requete -> fetch();
+?>
 
 
 <table class="uk-table uk-table-striped">
