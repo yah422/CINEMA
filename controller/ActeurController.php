@@ -6,26 +6,25 @@ namespace Controller;
 use Model\Connect;
 
 class ActeurController {
-// ^^--------------- LISTER LES ACTEURS ---------------
+    // ^^--------------- LISTER LES ACTEURS ---------------
     public function listActeur(){
 
         // ^^On se connecte
         $pdo= Connect::seConnecter();
 
-         // ^^On exécute la requête de notre choix
-         $requete = $pdo -> query("SELECT
-            CONCAT(prenom_personne, ' ',nom_personne ) as acteurs,
-            acteur.id_acteur
-            FROM Acteur 
-            INNER JOIN personne ON personne.id_personne = acteur.id_personne;
+        // ^^On exécute la requête de notre choix
+        $requete = $pdo -> query("SELECT
+        CONCAT(prenom_personne, ' ',nom_personne ) as acteurs,
+        acteur.id_acteur
+        FROM Acteur 
+        INNER JOIN personne ON personne.id_personne = acteur.id_personne;
         ");
         // $requete -> execute(["id => $id"]);
 
-     // ^^On relie par un "require" la vue qui nous intéresse
-     require "view/acteur/listActeurs.php";
-
-}
-// ^^ ----------- AFFICHER LES DETAILS ACTEURS ------------
+        // ^^On relie par un "require" la vue qui nous intéresse
+        require "view/acteur/listActeurs.php";
+    }
+    // ^^ ----------- AFFICHER LES DETAILS ACTEURS ------------
     public function detailActeur($id){
         
         $pdo= Connect::seConnecter();
