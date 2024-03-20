@@ -6,7 +6,7 @@ namespace Controller;
 use Model\Connect;
 
 class RoleController {
-// ^--------------- LISTER LES Realisateurs ---------------
+// ^--------------- LISTER LES ROLES ---------------
     public function listRole(){
 
         // ^^On se connecte
@@ -21,6 +21,24 @@ class RoleController {
         ");
     
      // ^^On relie par un "require" la vue qui nous intéresse
-     require "view/listRoles.php";
+     require "view/role/listRoles.php";
+   }
+
+   //  ^^ ------------- DETAILS DES ROLES --------------
+
+   public function detailRole($id){
+
+    $pdo= Connect::seConnecter();
+
+    $requete = $pdo -> prepare("SELECT * FROM rolefilm WHERE id_role = :id");
+    $requete -> execute(["id"=> $id]);
+    
+
+    $requeteRole = $pdo -> prepare (" SELECT
+    nom_role
+    FROM rolefilm;");
+
+    require "view/role/detailRole.php";
+
    }
 }
