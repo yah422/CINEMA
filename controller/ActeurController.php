@@ -35,12 +35,15 @@ class ActeurController {
         
 
         $requeteActeur = $pdo -> prepare (" SELECT
-        nom_personne,
-        prenom_personne,
-        dateNaissance,
-        sexe_personne
-        FROM acteur
-        INNER JOIN personne ON personne.id_personne = acteur.id_acteur;");
+        personne.nom_personne,
+        personne.prenom_personne,
+        personne.dateNaissance,
+        personne.sexe_personne
+     FROM
+        acteur
+     INNER JOIN
+        personne ON acteur.id_personne = personne.id_personne
+     WHERE id_acteur=$id ;");
 
         require "view/acteur/detailActeur.php";
     }

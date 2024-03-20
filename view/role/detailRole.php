@@ -1,6 +1,7 @@
 <?php 
 ob_start(); 
 $role = $requete->fetch();
+$roleAffichage = $requete ->fetchAll();
 
 ?>
 

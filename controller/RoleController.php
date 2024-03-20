@@ -41,4 +41,5 @@ class RoleController {
     require "view/role/detailRole.php";
 
    }
+  
 }
