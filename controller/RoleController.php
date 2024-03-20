@@ -15,7 +15,7 @@ class RoleController {
          // ^^On exécute la requête de notre choix
          $requete = $pdo -> query("
          SELECT
-         nom_role
+         id_role, nom_role
          FROM rolefilm;
          
         ");
@@ -34,7 +34,7 @@ class RoleController {
     $requete -> execute(["id"=> $id]);
     
 
-    $requeteRole = $pdo -> prepare (" SELECT
+    $requeteRole = $pdo -> prepare ("SELECT
     nom_role
     FROM rolefilm;");
 

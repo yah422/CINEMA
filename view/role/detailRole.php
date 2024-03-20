@@ -1,7 +1,10 @@
-<?php ob_start(); ?>
+<?php 
+ob_start(); 
+$role = $requete->fetch();
 
-<p class="uk-label uk-label-warning"> Il y a <?= $requete ->rowCount() ?> </p>
+?>
 
+<h1><?= $role["nom_role"] ?></h1>
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
