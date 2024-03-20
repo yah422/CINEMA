@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <?php
-            foreach($requete ->fetchAll() as $detailReal) {?>
+            foreach($requeteRealisateur ->fetchAll() as $detailReal) {?>
                 <tr>
                     <td> <?= $detailReal["nom_personne"]?> </td>
                     <td> <?= $detailReal["prenom_personne"]?> </td>
@@ -25,7 +25,9 @@
     </tbody>
 </table>
 
-
+<?php
+var_dump($requeteRealisateur->fetchAll());
+?>
 
 <?php
 

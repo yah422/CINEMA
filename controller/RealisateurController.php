@@ -33,16 +33,21 @@ class RealisateurController {
     $pdo= Connect::seConnecter();
 
     $requete = $pdo -> prepare("SELECT * FROM realisateur WHERE id_realisateur = :id");
+
     $requete -> execute(["id"=> $id]);
     
 
-    $requeteRealisateur = $pdo -> prepare (" SELECT
-    nom_personne,
-    prenom_personne,
-    dateNaissance,
-    sexe_personne
-    FROM realisateur
-    INNER JOIN personne ON personne.id_personne = realisateur.id_realisateur;");
+    $requeteRealisateur = $pdo -> prepare ("SELECT
+        nom_personne,
+        prenom_personne,
+        dateNaissance,
+        sexe_personne
+        FROM realisateur
+        INNER JOIN personne ON personne.id_personne = realisateur.id_personne
+        WHERE realisateur.id_realisateur= :id"
+    );
+
+    $requeteRealisateur -> execute(["id"=> $id]);
 
     require "view/realisateur/detailRealisateur.php";
 
