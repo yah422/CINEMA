@@ -1,13 +1,13 @@
-<?php ob_start();
+<?php 
 
-$detActe = $requete->fetch();
-$detAct = $requete ->fetchAll(); ?>
+ob_start();
+
+ ?>
 
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-            <th> Nom </th>
-            <th> Prénom </th>
+            <th> Acteur </th>
             <th> Date de Naissance </th>
             <th> Sexe </th>
             <th> Titre Film </th>
@@ -18,8 +18,7 @@ $detAct = $requete ->fetchAll(); ?>
         <?php
             foreach($requeteActeur ->fetchAll() as $detailAct) {?>
                 <tr>
-                    <td> <?= $detailAct["nom_personne"]?> </td>
-                    <td> <?= $detailAct["prenom_personne"]?> </td>
+                    <td> <?= $detailAct["acteurs"]?>
                     <td> <?= $detailAct["dateNaissance"]?> </td>
                     <td> <?= $detailAct["sexe_personne"]?></td>
                     <td> <?= $detailAct["titre_film"]?> </td>
@@ -29,7 +28,6 @@ $detAct = $requete ->fetchAll(); ?>
         <?php } ?>
     </tbody>
 </table>
-
 
 
 <?php
