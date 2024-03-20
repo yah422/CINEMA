@@ -6,21 +6,11 @@ $roleAffichage = $requete ->fetchAll();
 ?>
 
 <h1><?= $role["nom_role"] ?></h1>
+
 <table class="uk-table uk-table-striped">
-    <thead>
-        <tr>
-            <th> Rôle </th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            foreach($requete ->fetchAll() as $detailRole) {?>
-                <tr>
-                    <td> <?= $detailRole["nom_role"]?> </td>
-                </tr>
-        <?php } ?>
-    </tbody>
-</table>
+    <h3> Rôle </h3>
+            
+            
 
 
 

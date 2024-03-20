@@ -38,6 +38,8 @@ class RoleController {
     nom_role
     FROM rolefilm;");
 
+    $requeteActRole = $pdo -> prepare ("");
+
     require "view/role/detailRole.php";
 
    }
