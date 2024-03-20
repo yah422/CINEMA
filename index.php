@@ -54,6 +54,9 @@ if(isset($_GET["action"])){
         // &----------- ROLES ---------------
         case "listRole" : $ctrlRole -> listRole(); break;
 
+        // & ---------------- DETAILS ROLES ---------------
+        case "detailRole" : $ctrlRole -> detailRole($id); break;
+
 
     }
 }
