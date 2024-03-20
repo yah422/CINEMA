@@ -23,6 +23,26 @@ class RealisateurController {
         ");
     
      // ^^On relie par un "require" la vue qui nous intéresse
-     require "view/listRealisateurs.php";
+     require "view/realisateur/listRealisateurs.php";
+   }
+
+   public function detailRealisateur(){
+
+    $pdo= Connect::seConnecter();
+
+    $requete = $pdo -> prepare("SELECT * FROM realisateur WHERE id_realisateur = :id");
+    $requete -> execute(["id"=> $id]);
+    
+
+    $requeteRealisateur = $pdo -> prepare (" SELECT
+    nom_personne,
+    prenom_personne,
+    dateNaissance,
+    sexe_personne
+    FROM realisateur
+    INNER JOIN personne ON personne.id_personne = realisateur.id_realisateur;");
+
+    require "view/realisateur/detailRealisateur.php";
+
    }
 }

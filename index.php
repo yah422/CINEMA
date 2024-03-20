@@ -45,6 +45,9 @@ if(isset($_GET["action"])){
         //& ----------- REALISATEURS --------------
         case "listRealisateur" : $ctrlRealisateur -> listRealisateur(); break;
 
+        // & ---------------- DETAILS REALISATEUR ---------------
+        case "detailRealisateur" : $ctrlRealisateur -> detailRealisateur($id); break;
+
         // &----------- ROLES ---------------
         case "listRole" : $ctrlRole -> listRole(); break;
 
