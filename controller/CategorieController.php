@@ -14,6 +14,7 @@ class CategorieController {
 
     // ^^On exécute la requête de notre choix
     $requete = $pdo -> query("SELECT
+    id_genreCine,
     nom_genreCine
     FROM genrecine;
     ");
@@ -35,9 +36,16 @@ class CategorieController {
     
 
     $requeteCategorie = $pdo -> prepare ("SELECT
-    nom_genreCine
-    FROM genreCine;");
-    $requeteCategorie -> execute(["id" => $id]);
+    genrecine.nom_genreCine,
+    COUNT(film.id_film) AS nombre_films
+    FROM
+    genrecine
+    LEFT JOIN categorie ON genrecine.id_genreCine = categorie.id_genreCine
+    LEFT JOIN film ON categorie.id_film = film.id_film
+    GROUP BY
+    genrecine.nom_genreCine
+    WHERE id_genreCine= :id;");
+    $requeteCategorie -> execute(["id"=> $id]);
 
     // ^^On relie par un "require" la vue qui nous intéresse
     require "view/categorie/detailCategorie.php";

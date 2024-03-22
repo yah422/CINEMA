@@ -1,6 +1,8 @@
-<?php ob_start(); ?>
+<?php 
 
-<p class="uk-label uk-label-warning"> Il y a <?= $requete ->rowCount() ?> </p>
+ob_start(); 
+
+?>
 
 <table class="uk-table uk-table-striped">
     <thead>
@@ -12,7 +14,7 @@
         <?php
             foreach($requete ->fetchAll() as $categorie) {?>
                 <tr>
-                    <td> <a href="index.php?action=detailCategorie"><?= $categorie["nom_genreCine"]?></a> </td>
+                    <td> <a href="index.php?action=detailCategorie&id=<?= $categorie["id_genreCine"]?>"> <?= $categorie["nom_genreCine"]?></a> </td>
                 </tr>
         <?php } ?>
     </tbody>

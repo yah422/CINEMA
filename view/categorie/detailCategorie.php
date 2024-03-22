@@ -1,6 +1,8 @@
-<?php ob_start(); ?>
+<?php 
+ob_start(); 
+$details = $requeteCategorie ->fetchAll();
+?>
 
-<p class="uk-label uk-label-warning"> Il y a <?= $requete ->rowCount() ?> </p>
 
 <table class="uk-table uk-table-striped">
     <thead>
@@ -10,15 +12,18 @@
     </thead>
     <tbody>
         <?php
-            foreach($requete ->fetchAll() as $detailCategorie) {?>
+            foreach($details as $detailCategorie) {?>
                 <tr>
-                    <td> <?= $detailCategorie["nom_genreCine"]?> </td>
+                    <td> <?= $detailCategorie["nom_genreCine"]?> &nbsp;&nbsp; <?= $detailCategorie["nombre_films"]?> </td>
                 </tr>
         <?php } ?>
     </tbody>
 </table>
 
+<?php
 
+// var_dump($requeteCategorie ->fetchAll());
+?>
 
 <?php
 

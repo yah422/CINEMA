@@ -13,21 +13,11 @@ class FilmController {
         $pdo = Connect::seConnecter();
 
         // ^^On exécute la requête de notre choix
-        $requete = $pdo -> query("
-            SELECT
-            film.id_film,
-            film.titre_film,
-            film.anneeSortie_film,
-            film.synopsis_film,
-            film.note_film,
-            DATE_FORMAT(film.duree_film, '%H:%i') AS duree_formatee, 
-            film.affiche_film, 
-            realisateur.id_realisateur,
-            personne.nom_personne,
-            personne.prenom_personne
-            FROM Film 
-            INNER JOIN realisateur ON realisateur.id_realisateur = film.id_realisateur
-            INNER JOIN personne ON personne.id_personne = realisateur.id_personne
+        $requete = $pdo -> query("SELECT
+        film.id_film,
+        film.titre_film,
+        film.anneeSortie_film
+        FROM Film;
         ");
 
         // ^^On relie par un "require" la vue qui nous intéresse
@@ -42,20 +32,21 @@ class FilmController {
         $requete -> execute(["id"=> $id]);
         
 
-        $requeteFilm = $pdo -> prepare ("  SELECT
+        $requeteFilm = $pdo -> prepare ("SELECT
         film.id_film,
         film.titre_film,
         film.anneeSortie_film,
         film.synopsis_film,
         film.note_film,
-        DATE_FORMAT(film.duree_film, '%H:%i') AS duree_formatee, 
-        film.affiche_film, 
-        realisateur.id_realisateur,
-        personne.nom_personne,
-        personne.prenom_personne
+        TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee,
+        film.affiche_film,
+        CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName
         FROM Film 
         INNER JOIN realisateur ON realisateur.id_realisateur = film.id_realisateur
-        INNER JOIN personne ON personne.id_personne = realisateur.id_personne");
+        INNER JOIN personne ON personne.id_personne = realisateur.id_personne
+        WHERE id_film = :id;
+        ");
+        $requeteFilm -> execute(["id"=> $id]);
 
         require "view/film/detailFilm.php";
     }

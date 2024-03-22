@@ -3,7 +3,7 @@
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-            <th> TITRE </th>
+            <th> TITRE FILM </th>
             <th> ANNEE SORTIE </th>
         </tr>
     </thead>
@@ -11,7 +11,7 @@
         <?php
             foreach($requete ->fetchAll() as $film) {?>
                 <tr>
-                    <td> <a href="index.php?action=detailFilm&id"><?= $film["titre_film"]?></a> </td>
+                    <td> <a href="index.php?action=detailFilm&id=<?= $film["id_film"]?>"><?= $film["titre_film"]?></a> </td>
                     <td> <?= $film["anneeSortie_film"]?> </td>
                 </tr>
         <?php } ?>
