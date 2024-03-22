@@ -16,7 +16,7 @@
             <ul style="display: flex;
             flex-direction: row;
             gap: 40px;">
-                <li><a style="text-decoration: none;" href=""> HOME </a></li>
+                <li><a style="text-decoration: none;" href="index.php?action=listFilm"> HOME </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listFilm"> FILMS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listActeur"> ACTEURS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listRealisateur"> REALISATEURS </a></li>
@@ -39,6 +39,13 @@
     <footer>
 
     </footer>
+
+    <?php
+    if(isset($_SESSION['message'])){
+        echo $_SESSION['message'];
+        unset($_SESSION['message']); 
+    }
+    ?>
 
 </body>
 </html>

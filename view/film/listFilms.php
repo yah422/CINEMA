@@ -1,16 +1,25 @@
 <?php ob_start(); ?>
 
-<table class="uk-table uk-table-striped">
+<table style="display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: center;
+align-items: center;
+gap: 50px;" class="uk-table uk-table-striped">
     <thead>
-        <tr>
+        <tr >
             <th> TITRE FILM </th>
             <th> ANNEE SORTIE </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;">
         <?php
             foreach($requete ->fetchAll() as $film) {?>
-                <tr>
+                <tr style="display: flex;
+        gap: 100px;">
                     <td> <a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $film["id_film"]?>"><?= $film["titre_film"]?></a> </td>
                     <td> <?= $film["anneeSortie_film"]?> </td>
                 </tr>

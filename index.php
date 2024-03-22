@@ -12,7 +12,7 @@ spl_autoload_register(function($class_name){
     include $class_name . '.php';
 });
 
-// &On instancie le controller Cinema
+// &On instancie les controller Cinema
 $ctrlFilm = new FilmController();
 $ctrlActeur = new ActeurController();
 $ctrlRealisateur = new RealisateurController();
@@ -58,7 +58,7 @@ if(isset($_GET["action"])){
         // TODO ---------------- AJOUT REALISATEUR ---------------
         case "ajoutRealisateur" : $ctrlRealisateur -> ajoutRealisateur($id); break;
 
-        
+
         // ~----------- ROLES ---------------
         case "listRole" : $ctrlRole -> listRole(); break;
         // ~~ ---------------- DETAILS ROLES ---------------
