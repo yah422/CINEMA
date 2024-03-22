@@ -13,7 +13,7 @@ $role = $requete -> fetch();
         <?php
             foreach($requete ->fetchAll() as $role) {?>
                 <tr>
-                    <td> <a href="index.php?action=detailRole&id=<?= $role["id_role"] ?>"> <?= $role["nom_role"]?> </a> </td>
+                    <td> <a style="text-decoration: none;" href="index.php?action=detailRole&id=<?= $role["id_role"] ?>"> <?= $role["nom_role"]?> </a> </td>
                 </tr>
         <?php } ?>
     </tbody>

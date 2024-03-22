@@ -15,7 +15,7 @@ $acteurs = $requete -> fetchAll();
         <?php
             foreach($acteurs as $acteur) {?>
                 <tr>
-                    <td> <a href="index.php?action=detailActeur&id=<?= $acteur["id_acteur"]?>"> <?= $acteur["acteurs"]?> </a> </td>
+                    <td> <a style="text-decoration: none;" href="index.php?action=detailActeur&id=<?= $acteur["id_acteur"]?>"> <?= $acteur["acteurs"]?> </a> </td>
                 </tr>
         <?php } ?>
     </tbody>

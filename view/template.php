@@ -8,14 +8,20 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark">
-            <ul>
-                <li><a href=""> HOME </a></li>
-                <li><a href="index.php?action=listFilm"> FILMS </a></li>
-                <li><a href="index.php?action=listActeur"> ACTEURS </a></li>
-                <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>
-                <li><a href="index.php?action=listRole">ROLES</a>  </li>
-                <li> <a href="index.php?action=listCategorie"> CATEGORIE </a></li>
+        <nav style="display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;" class="navbar navbar-dark bg-dark">
+            <ul style="display: flex;
+            flex-direction: row;
+            gap: 40px;">
+                <li><a style="text-decoration: none;" href=""> HOME </a></li>
+                <li><a style="text-decoration: none;" href="index.php?action=listFilm"> FILMS </a></li>
+                <li><a style="text-decoration: none;" href="index.php?action=listActeur"> ACTEURS </a></li>
+                <li><a style="text-decoration: none;" href="index.php?action=listRealisateur"> REALISATEURS </a></li>
+                <li><a style="text-decoration: none;" href="index.php?action=listRole">ROLES</a>  </li>
+                <li> <a style="text-decoration: none;" href="index.php?action=listCategorie"> CATEGORIE </a></li>
             </ul>
         </nav>
     </header>

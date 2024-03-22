@@ -16,7 +16,7 @@ $realisateurs= $requete -> fetchAll();
         <?php
             foreach ($realisateurs as $realisateur) {?>
                 <tr>
-                    <td> <a href="index.php?action=detailRealisateur&id=<?= $realisateur["id_realisateur"] ?>"> <?= $realisateur["reali"] ?> </a></td>
+                    <td> <a style="text-decoration: none;" href="index.php?action=detailRealisateur&id=<?= $realisateur["id_realisateur"] ?>"> <?= $realisateur["reali"] ?> </a></td>
                 
                 </tr>
         <?php } ?>
