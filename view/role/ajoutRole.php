@@ -3,7 +3,7 @@ ob_start();
 
 ?>
 
-
+<p class= ></p>
 <form action="index.php?action=ajoutRole" method="post" enctype="multipart/form-data">
     <p class="px-2">
         <label>
@@ -13,7 +13,7 @@ ob_start();
     </p>
 
     <p class="px-2" style="width: 200px">
-        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" href="controller/RoleController.php" value="Ajouter un rôle">    
+        <a href="controller/RoleController.php"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un rôle"></a>    
     </p>
     
 </form>

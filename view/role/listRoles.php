@@ -20,7 +20,7 @@
 </table>
 
 <p class="px-2" style="width: 200px">
-    <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" href="ajoutRole.php" value="Ajouter un rôle"> 
+    <a href="index.php?action=ajoutRole"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un rôle"> 
 </p>
 
 
