@@ -12,10 +12,12 @@
         flex-direction: row;
         align-content: center;
         justify-content: center;
-        align-items: center;" class="navbar navbar-dark bg-dark">
+        align-items: center;" class="navbar bg-primary" data-bs-theme="dark">
             <ul style="display: flex;
             flex-direction: row;
-            gap: 40px;">
+            gap: 40px;
+            list-style: none;
+            color: white;">
                 <li><a style="text-decoration: none;" href="index.php?action=listFilm"> HOME </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listFilm"> FILMS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listActeur"> ACTEURS </a></li>

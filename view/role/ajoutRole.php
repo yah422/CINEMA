@@ -8,7 +8,7 @@ ob_start();
     <p class="px-2">
         <label>
             Nom Rôle : <br>
-            <input id="" class="border-1" name="Rôle" type="text">
+            <input id="" class="border-1" name="nom_role" type="text">
         </label>
     </p>
 

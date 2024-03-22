@@ -1,5 +1,5 @@
 <?php ob_start(); 
-$role = $requete -> fetch();
+
 ?>
 
 
@@ -13,12 +13,15 @@ $role = $requete -> fetch();
         <?php
             foreach($requete ->fetchAll() as $role) {?>
                 <tr>
-                    <td> <a style="text-decoration: none;" href="index.php?action=detailRole&id=<?= $role["id_role"] ?>"> <?= $role["nom_role"]?> </a> </td>
+                    <td> <a style="text-decoration: none;" href="index.php?action=detailRole&id=<?=$role["id_role"];?>"> <?= $role["nom_role"]?> </a> </td>
                 </tr>
         <?php } ?>
     </tbody>
 </table>
 
+<p class="px-2" style="width: 200px">
+    <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" href="ajoutRole.php" value="Ajouter un rôle"> 
+</p>
 
 
 <?php

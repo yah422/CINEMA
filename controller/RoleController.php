@@ -35,6 +35,7 @@ class RoleController {
     
 
     $requeteRole = $pdo -> prepare ("SELECT
+    rolefilm.id_role,
     nom_role,
     titre_film
     FROM rolefilm
@@ -66,7 +67,7 @@ class RoleController {
 
   //  ^^ Ajouter un rôle
   public function ajoutRole() {
-    if(isset($_POST["submitRole"])) {
+    if(isset($_POST["submit"])) {
         $nom_role = filter_input(INPUT_POST, "nom_role", FILTER_SANITIZE_SPECIAL_CHARS);
 
         if($nom_role) {
@@ -76,6 +77,8 @@ class RoleController {
             $requeteAjouterRole->execute (["nom_role" => $nom_role]);
         }
         $_SESSION["message"] = " Le rôle a été ajouter ! <i class='fa-solid fa-check'></i> ";
+    
+        header("Location:index.php?action=listRole");
     }
     else {
         $_SESSION["message"] = "Une erreur a été détecter, veuillez vérifier les informations entrée";

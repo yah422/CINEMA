@@ -64,7 +64,7 @@ if(isset($_GET["action"])){
         // ~~ ---------------- DETAILS ROLES ---------------
         case "detailRole" : $ctrlRole -> detailRole($id); break;
         // ~~-------------- AJOUT ROLE -----------------
-        case "ajoutRole" : $ctrlRole -> ajoutRole($id); break;
+        case "ajoutRole" : $ctrlRole -> ajoutRole(); break;
 
 
     }
