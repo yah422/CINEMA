@@ -54,4 +54,14 @@ class RealisateurController {
     require "view/realisateur/detailRealisateur.php";
 
   }
+
+  // ^^ajouter un realisateur
+  public function AjoutRealisateur(){
+    $pdo = Connect::seConnecter(); 
+    $requeteAjoutRealisateur = $pdo->query(" SELECT personne.nom_personne, personne.prenom_personne
+    FROM realisateur
+    INNER JOIN personne ON personne.id_personne = realisateur.id_personne");
+    $requeteAjoutRealisateur->execute();
+    require "view/realisateur/ajoutRealisateur.php";
+}
 }

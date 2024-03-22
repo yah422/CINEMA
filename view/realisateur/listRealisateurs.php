@@ -23,9 +23,9 @@ $realisateurs= $requete -> fetchAll();
     </tbody>
 </table>
 
-<?php
-// var_dump($requeteRealisateur -> fetchAll());
-?>
+<p class="px-2" style="width: 200px">
+    <a href="index.php?action=ajoutRealisateur"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un réalisateur"> 
+</p>
 
 
 <?php
