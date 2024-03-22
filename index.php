@@ -33,28 +33,28 @@ if(isset($_GET["action"])){
         // &----------- DETAILS FILM -------------
         case "detailFilm" : $ctrlFilm -> detailFilm($id); break;
 
-        //& ---------- ACTEURS -----------
+        //^^ ---------- ACTEURS -----------
         case "listActeur" : $ctrlActeur -> listActeur(); break;
 
-        // &----------- DETAILS ACTEURS -------------
+        // ^^----------- DETAILS ACTEURS -------------
         case "detailActeur" : $ctrlActeur -> detailActeur($id); break;
 
-        // &----------- CATEGORIES -------------
+        // !----------- CATEGORIES -------------
         case "listCategorie" : $ctrlCategorie -> listCategorie(); break;
 
-        // & ---------------- DETAILS CATEGORIES ---------------
+        // ! ---------------- DETAILS CATEGORIES ---------------
         case "detailCategorie" : $ctrlCategorie -> detailCategorie($id); break;
 
-        //& ----------- REALISATEURS --------------
+        //TODO ----------- REALISATEURS --------------
         case "listRealisateur" : $ctrlRealisateur -> listRealisateur(); break;
 
-        // & ---------------- DETAILS REALISATEUR ---------------
+        // TODO ---------------- DETAILS REALISATEUR ---------------
         case "detailRealisateur" : $ctrlRealisateur -> detailRealisateur($id); break;
 
-        // &----------- ROLES ---------------
+        // ~----------- ROLES ---------------
         case "listRole" : $ctrlRole -> listRole(); break;
 
-        // & ---------------- DETAILS ROLES ---------------
+        // ~~ ---------------- DETAILS ROLES ---------------
         case "detailRole" : $ctrlRole -> detailRole($id); break;
 
 
