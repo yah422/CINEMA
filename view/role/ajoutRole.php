@@ -3,7 +3,7 @@ ob_start();
 
 ?>
 
-<p class= ></p>
+
 <form action="index.php?action=ajoutRole" method="post" enctype="multipart/form-data">
     <p class="px-2">
         <label>

@@ -26,7 +26,9 @@ gap: 50px;" class="uk-table uk-table-striped">
         <?php } ?>
     </tbody>
 </table>
-
+<p class="px-2" style="width: 200px">
+    <a href="index.php?action=ajoutFilm"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un film"> 
+</p>
 <?php
 
 $titre = "Liste des films";
