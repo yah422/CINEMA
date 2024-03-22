@@ -20,7 +20,9 @@ ob_start();
     </tbody>
 </table>
 
-
+<p class="px-2" style="width: 200px">
+    <a href="index.php?action=ajoutCategorie"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter une catégorie"> 
+</p>
 
 <?php
 

@@ -51,7 +51,7 @@ class CategorieController {
 
   // ^^ Ajouter un genre
   public function ajoutCategorie() {
-    if(isset($_POST["submitCategorie"])) {
+    if(isset($_POST["submit"])) {
       $nom_genreCine = filter_input(INPUT_POST, "nom_genreCine", FILTER_SANITIZE_SPECIAL_CHARS);
       if($nom_genreCine) {
         $pdo = Connect::seConnecter();
@@ -61,7 +61,7 @@ class CategorieController {
         $requeteAjouterGenre->execute(["nom_genreCine" => $nom_genreCine]);
 
         $_SESSION["message"] = " La Catégorie a bien été ajouter ! <i class='fa-solid fa-check'></i> ";
-        header("Location: index.php?action=listCategories");  
+        header("Location: index.php?action=listCategorie");  
         }
   }
     require "view/categorie/ajoutCategorie.php";

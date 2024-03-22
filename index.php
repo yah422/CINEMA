@@ -32,7 +32,7 @@ if(isset($_GET["action"])){
         // &----------- DETAILS FILM -------------
         case "detailFilm" : $ctrlFilm -> detailFilm($id); break;
         // & ---------- AJOUTER D'UN FILM -----------
-        case "ajoutFilm" : $ctrlFilm -> ajoutFilm($id); break;
+        case "ajoutFilm" : $ctrlFilm -> ajoutFilm(); break;
 
 
         //^^ ---------- ACTEURS -----------
@@ -40,7 +40,7 @@ if(isset($_GET["action"])){
         // ^^----------- DETAILS ACTEURS -------------
         case "detailActeur" : $ctrlActeur -> detailActeur($id); break;
         // ^^ ---------- AJOUT D'UN ACTEURS --------------
-        case "ajoutActeur" : $ctrlActeur -> ajoutActeur($id); break;
+        case "ajoutActeur" : $ctrlActeur -> ajoutActeur(); break;
 
 
         // !----------- CATEGORIES -------------
@@ -48,7 +48,7 @@ if(isset($_GET["action"])){
         // ! ---------------- DETAILS CATEGORIES ---------------
         case "detailCategorie" : $ctrlCategorie -> detailCategorie($id); break;
         // ! ---------------- AJOUT CATEGORIE ----------------
-        case "ajoutCategorie" : $ctrlCategorie -> ajoutCategorie($id); break;
+        case "ajoutCategorie" : $ctrlCategorie -> ajoutCategorie(); break;
 
 
         //TODO ----------- REALISATEURS --------------
@@ -56,7 +56,7 @@ if(isset($_GET["action"])){
         // TODO ---------------- DETAILS REALISATEUR ---------------
         case "detailRealisateur" : $ctrlRealisateur -> detailRealisateur($id); break;
         // TODO ---------------- AJOUT REALISATEUR ---------------
-        case "ajoutRealisateur" : $ctrlRealisateur -> ajoutRealisateur($id); break;
+        case "ajoutRealisateur" : $ctrlRealisateur -> ajoutRealisateur(); break;
 
 
         // ~----------- ROLES ---------------

@@ -7,14 +7,13 @@ ob_start();
     <p class="px-2">
         <label>
             Nom catégorie : <br>
-            <input id="" class="border-1" name="catégorie" type="text">
+            <input id="" class="border-1" name="nom_genreCine" type="text">
         </label>
     </p>
 
     <p class="px-2" style="width: 200px">
-        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" href="controller/CategorieController.php" value="Ajouter Catégorie">    
+        <a href="index.php?action=listCategorie"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter une catégorie"></a>    
     </p>
-
 </form>
 
 
