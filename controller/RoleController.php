@@ -71,7 +71,7 @@ class RoleController {
 
         if($nom_role) {
             $pdo = Connect::seConnecter();
-            $requeteAjouterRole = $pdo->prepare("INSERT INTO role(nom_role)
+            $requeteAjouterRole = $pdo->prepare("INSERT INTO rolefilm(nom_role)
             VALUES (:nom_role)");
             $requeteAjouterRole->execute (["nom_role" => $nom_role]);
         }
