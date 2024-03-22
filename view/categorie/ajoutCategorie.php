@@ -12,8 +12,9 @@ ob_start();
     </p>
 
     <p class="p-4">
-        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" href="index.php" value="Ajouter Catégorie">    
+        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" href="CategorieController.php" value="Ajouter Catégorie">    
     </p>
+    
 </form>
 
 
