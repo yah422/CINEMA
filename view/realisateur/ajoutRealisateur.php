@@ -3,6 +3,8 @@ ob_start();
 
 ?>
 
+<?php
+$id = isset($_GET['id']) ? $_GET['id'] : null
 
 
 
@@ -11,6 +13,23 @@ ob_start();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
 <?php
 
 $titre = "Ajout Réalisateur";
