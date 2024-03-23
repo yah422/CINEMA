@@ -1,29 +1,29 @@
 <?php 
 
-// Utilisation de "use" pour accéder à la classe Connect située dans le namespace "Model"
+//^^ Utilisation de "use" pour accéder à la classe Connect située dans le namespace "Model"
 namespace Controller;
 use Model\Connect;
 
 class RealisateurController {
   
-  // LISTER LES Realisateurs
+  // &LISTER LES Realisateurs
   public function listRealisateur(){
 
-    // Connexion à la base de données
+    // &Connexion à la base de données
     $pdo = Connect::seConnecter();
 
-    // Exécution de la requête
+    // &Exécution de la requête
     $requete = $pdo->query("SELECT id_realisateur,
       CONCAT(prenom_personne, ' ',nom_personne ) as reali
       FROM realisateur
       INNER JOIN personne ON personne.id_personne = realisateur.id_personne
     ");
 
-    // Inclusion de la vue
+    //& Inclusion de la vue
     require "view/realisateur/listRealisateurs.php";
   }
 
-  // DETAILS REALISATEURS
+  // ^^ DETAILS REALISATEURS
   public function detailRealisateur($id){
 
     $pdo = Connect::seConnecter();
@@ -54,7 +54,7 @@ class RealisateurController {
 
   }
 
-  // Ajouter un realisateur
+  // ^^ Ajouter un realisateur
   public function AjoutRealisateur(){
     $pdo = Connect::seConnecter();
     if(isset($_POST["submitRealisateur"])){

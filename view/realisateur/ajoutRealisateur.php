@@ -38,12 +38,6 @@ ob_start();
 </form>
 
 
-
-<?php
-
-
-
-?>
 <?php
 
 $titre = "Ajout Réalisateur";
