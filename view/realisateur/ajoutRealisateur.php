@@ -19,8 +19,9 @@
 
                         <div class="formInput">
                             <label for="sexe_personne">Sexe :</label>
-                                M:<input type="radio" name="sexe_personne" class="radio" value="masculin" id="sexe_personne" required >
-                                F:<input type="radio" name="sexe_personne" class="radio" value="féminin" required><br>
+                                Homme: <input type="radio" name="sexe_personne" class="radio" value="masculin" id="sexe_personne" required >
+                                Femme: <input type="radio" name="sexe_personne" class="radio" value="féminin" required>
+                                Autre: <input type="radio" name="sexe_personne" class="radio" value="autre" required><br>
                         </div>
 
                         <div class="formInput">
