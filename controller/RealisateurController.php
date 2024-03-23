@@ -77,7 +77,7 @@ class RealisateurController {
         $requeteAjouterRealisateur->execute(["id_personne" => $id_realisateur]);
     }
     $_SESSION["message"] = "Le réalisateur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
-    header("Location: index.php?action=listRealisateurs");
+    header("Location: index.php?action=ajoutRealisateur.php");
     } else {
     $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
     }
