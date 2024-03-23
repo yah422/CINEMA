@@ -64,22 +64,22 @@ class RealisateurController {
     $sexe_personne = filter_input(INPUT_POST, "personne.sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $dateNaissance = filter_input(INPUT_POST, "personne.dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
     
-    if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
-        $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance) 
-        VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance)");
-        $requeteAjouterPersonne->execute([
-            "prenom_personne" => $prenom_personne,
-            "nom_personne" => $nom_personne,
-            "sexe_personne" => $sexe_personne,
-            "dateNaissance" => $dateNaissance]);
-        $id_realisateur = $pdo->lastInsertId();
-        $requeteAjouterRealisateur = $pdo->prepare("INSERT INTO realisateur (id_personne) VALUES (:id_personne)");   
-        $requeteAjouterRealisateur->execute(["id_personne" => $id_realisateur]);
-    }
-    $_SESSION["message"] = "Le réalisateur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
-    header("Location: index.php?action=listRealisateur");
-    } else {
-    $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+      if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
+          $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance) 
+          VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance)");
+          $requeteAjouterPersonne->execute([
+              "prenom_personne" => $prenom_personne,
+              "nom_personne" => $nom_personne,
+              "sexe_personne" => $sexe_personne,
+              "dateNaissance" => $dateNaissance]);
+          $id_realisateur = $pdo->lastInsertId();
+          $requeteAjouterRealisateur = $pdo->prepare("INSERT INTO realisateur (id_personne) VALUES (:id_personne)");   
+          $requeteAjouterRealisateur->execute(["id_personne" => $id_realisateur]);
+      }
+      $_SESSION["message"] = "Le réalisateur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
+      header("Location: index.php?action=listRealisateur");
+      } else {
+      $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
     }
     require "view/realisateur/ajoutRealisateur.php";
   }
