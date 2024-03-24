@@ -1,7 +1,4 @@
-<?php ob_start(); 
-
-?>
-
+<?php ob_start(); ?>
 
 <table class="uk-table uk-table-striped">
     <thead>
@@ -13,23 +10,20 @@
         </tr>
     </thead>
     <tbody>
-        <?php
-            foreach($requeteRealisateur ->fetchAll() as $detailReal) {?>
-                <tr>
-                    <td> <?= $detailReal["nom_personne"]?> </td>
-                    <td> <?= $detailReal["prenom_personne"]?> </td>
-                    <td> <?= $detailReal["dateNaissance"]?> </td>
-                    <td> <?= $detailReal["sexe_personne"]?></td>
-                </tr>
-        <?php } ?>
+        <?php foreach($requeteRealisateur->fetchAll() as $detailReal): ?>
+            <tr>
+                <td> <?= $detailReal["nom_personne"] ?> </td>
+                <td> <?= $detailReal["prenom_personne"] ?> </td>
+                <td> <?= $detailReal["dateNaissance"] ?> </td>
+                <td> <?= $detailReal["sexe_personne"] ?> </td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 
 <?php
-
 $titre = "Détails Réalisateur";
 $titre_secondaire = "Détails Réalisateur";
 $contenu = ob_get_clean();
 require "view/template.php";
-
 ?>

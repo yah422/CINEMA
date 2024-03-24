@@ -59,11 +59,11 @@ class RealisateurController {
     $pdo = Connect::seConnecter();
     if(isset($_POST["submitRealisateur"])){
 
-    $prenom_personne = filter_input(INPUT_POST, "personne.prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
-    $nom_personne = filter_input(INPUT_POST, "personne.nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
-    $sexe_personne = filter_input(INPUT_POST, "personne.sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $dateNaissance = filter_input(INPUT_POST, "personne.dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
-    
+      $prenom_personne = filter_input(INPUT_POST, "prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
+      $nom_personne = filter_input(INPUT_POST, "nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
+      $sexe_personne = filter_input(INPUT_POST, "sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
+      
       if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
           $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance) 
           VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance)");
@@ -78,11 +78,12 @@ class RealisateurController {
       }
       $_SESSION["message"] = "Le réalisateur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
       header("Location: index.php?action=listRealisateur");
-      } else {
-      $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+    } else {
+        $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
     }
     require "view/realisateur/ajoutRealisateur.php";
-  }
+}
+
 }
 
 
