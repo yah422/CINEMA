@@ -61,13 +61,13 @@ class FilmController {
             INSERT INTO film(titre_film)
             VALUES (:titre_film)");
             $requeteAjouterFilm->execute(["titre_film" => $titre_film]);
-
-            $_SESSION["message"] = " Le film a bien été ajouter ! <i class='fa-solid fa-check'></i> ";
-            header("Location: index.php?action=listFilm");  
+            $_SESSION["message"] = "Le film a bien été ajouté ! <i class='fa-solid fa-check'></i>";
+            header("Location: index.php?action=listFilm");
+          } else {
+              $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+          }
+           require "view/film/ajoutFilm.php";   
         }
     }
-    require "view/film/ajoutFilm.php";
+    
   }
-
-
-};

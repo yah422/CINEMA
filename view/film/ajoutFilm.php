@@ -55,25 +55,20 @@ ob_start();
         </label>
     </p>
 
-    
-
-
-
-
-
-
-
-
-
-
-
     <p class="px-2" style="width: 200px">
         <a href="controller/FilmController.php"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter le film"></a>    
     </p>
     
 </form>
 
-
+<div class="messages">
+    <?php
+        if (isset($_SESSION["message"])) {
+            echo "<p>" . $_SESSION["message"] . "</p>";
+            unset($_SESSION["message"]); // Supprimer le message de la session
+        }
+    ?>
+</div>
 
 
 

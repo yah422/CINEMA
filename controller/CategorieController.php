@@ -59,13 +59,16 @@ class CategorieController {
         INSERT INTO genrecine(nom_genreCine)
         VALUES (:nom_genreCine)");
         $requeteAjouterGenre->execute(["nom_genreCine" => $nom_genreCine]);
-
-        $_SESSION["message"] = " La Catégorie a bien été ajouter ! <i class='fa-solid fa-check'></i> ";
-        header("Location: index.php?action=listCategorie");  
-        }
+        
+        $_SESSION["message"] = "La catégorie a bien été ajouté ! <i class='fa-solid fa-check'></i>";
+        header("Location: index.php?action=listCategorie");
+      } else {
+          $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+      }
+    }
+      require "view/categorie/ajoutCategorie.php";
   }
-    require "view/categorie/ajoutCategorie.php";
+    
   }
-}
 
 ?>

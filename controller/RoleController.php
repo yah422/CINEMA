@@ -68,20 +68,20 @@ class RoleController {
   //  ^^ Ajouter un rôle
   public function ajoutRole() {
     if(isset($_POST["submit"])) {
-        $nom_role = filter_input(INPUT_POST, "nom_role", FILTER_SANITIZE_SPECIAL_CHARS);
+      $nom_role = filter_input(INPUT_POST, "nom_role", FILTER_SANITIZE_SPECIAL_CHARS);
 
-        if($nom_role) {
-            $pdo = Connect::seConnecter();
-            $requeteAjouterRole = $pdo->prepare("INSERT INTO rolefilm(nom_role)
-            VALUES (:nom_role)");
-            $requeteAjouterRole->execute (["nom_role" => $nom_role]);
-        }
-        $_SESSION["message"] = " Le rôle a été ajouter ! <i class='fa-solid fa-check'></i> ";
-    
-        header("Location:index.php?action=listRole");
+      if($nom_role) {
+          $pdo = Connect::seConnecter();
+          $requeteAjouterRole = $pdo->prepare("INSERT INTO rolefilm(nom_role)
+          VALUES (:nom_role)");
+          $requeteAjouterRole->execute (["nom_role" => $nom_role]);
+      }
+      $_SESSION["message"] = " Le rôle a été ajouter ! <i class='fa-solid fa-check'></i> ";
+  
+      header("Location:index.php?action=listRole");
     }
     else {
-        $_SESSION["message"] = "Une erreur a été détecter, veuillez vérifier les informations entrée";
+      $_SESSION["message"] = "Une erreur a été détecter, veuillez vérifier les informations entrée";
     }
     require "view/role/ajoutRole.php";
   }
