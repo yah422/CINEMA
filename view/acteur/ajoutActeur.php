@@ -35,17 +35,6 @@ ob_start();
                 <input type="date" name="dateNaissance" id="dateNaissance" required>
             </div>
 
-            <div class="formInput">
-                <label> Titre du film :</label><br>
-                <input type="text" placeholder="Titre film" name="titre_film" id="titre_film" required>
-            </div>
-
-            <div class="formInput">
-                <label> Nom rôle :</label><br>
-                <input type="text" name="nom_role" placeholder="Nom rôle" id="nom_role" required>
-
-            </div>
-
             <div class="btn-submit"><br>
             <input type="submit" class="submit" name="submitActeur" id="submitActeur">
             </div>

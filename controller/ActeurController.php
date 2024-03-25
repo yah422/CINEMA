@@ -34,27 +34,31 @@ class ActeurController {
         $requete = $pdo -> prepare("SELECT * FROM acteur WHERE id_acteur = :id");
         $requete -> execute(["id"=> $id]);
         
-        // requete
+        // requete acteur/personne
         $requeteActeur = $pdo -> prepare ("SELECT
             CONCAT(prenom_personne, ' ',nom_personne ) as acteurs,
             personne.dateNaissance,
-            personne.sexe_personne,
+            personne.sexe_personne
+        FROM acteur
+        INNER JOIN personne ON acteur.id_personne = personne.id_personne
+        WHERE acteur.id_acteur = :id " );
+        
+        $requeteActeur -> execute(["id"=> $id]);
+        
+        // requete acteur/film/jouer
+        $requeteFilmActeur = $pdo -> prepare ("SELECT
             film.titre_film,
             rolefilm.nom_role
         FROM
             acteur
-        INNER JOIN
-            personne ON acteur.id_personne = personne.id_personne
-        INNER JOIN 
-            jouer ON acteur.id_acteur = jouer.id_acteur
+        INNER  JOIN jouer ON acteur.id_acteur = jouer.id_acteur
         INNER JOIN 
             rolefilm ON jouer.id_role = rolefilm.id_role
         INNER JOIN 
             film ON jouer.id_film = film.id_film
         WHERE 
             acteur.id_acteur = :id");
-
-        $requeteActeur -> execute(["id"=> $id]);
+        $requeteFilmActeur -> execute(["id" => $id]);
 
         // Inclusion de la vue pour le detail d'un acteur
         require "view/acteur/detailActeur.php";
@@ -64,17 +68,16 @@ class ActeurController {
         // Connexion à la base de données
         $pdo = Connect::seConnecter();
      
-        // Vérification si le formulaire a été bien soumis
+        // Vérification si le formulaire a été soumis
         if(isset($_POST["submitActeur"])){
      
-            // filtrage des données
+            // Récupération et filtrage des données du formulaire
             $prenom_personne = filter_input(INPUT_POST, "prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
             $nom_personne = filter_input(INPUT_POST, "nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
             $sexe_personne = filter_input(INPUT_POST, "sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
-            $nom_role = filter_input(INPUT_POST, "nom_role", FILTER_SANITIZE_SPECIAL_CHARS);
-            $titre_film = filter_input(INPUT_POST, "titre_film", FILTER_SANITIZE_SPECIAL_CHARS);
      
+            // Vérification si les données obligatoires sont présentes
             if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
      
                 // Préparation de la requête pour ajouter une personne
@@ -88,36 +91,21 @@ class ActeurController {
      
                 // Récupération de l'ID de la personne ajoutée
                 $id_personne = $pdo->lastInsertId();
-     
-                // Préparation de la requête pour ajouter un film
-                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film (titre_film) VALUES (:titre_film)");
-                $requeteAjouterFilm->execute(["titre_film" => $titre_film]);
-     
-                // Récupération de l'ID du film ajouté
-                $id_film = $pdo->lastInsertId();
-     
-                // Préparation de la requête pour ajouter un rôle
-                $requeteAjouterRole = $pdo->prepare("INSERT INTO rolefilm (nom_role) VALUES (:nom_role)");
-                $requeteAjouterRole->execute(["nom_role" => $nom_role]);
-     
-                // Récupération de l'ID du rôle ajouté
-                $id_role = $pdo->lastInsertId();
-     
-                // Préparation de la requête pour lier la personne à l'acteur avec le film et le rôle correspondants
-                $requeteAjouterActeur = $pdo->prepare("INSERT INTO acteur (id_personne, id_film, id_role) VALUES (:id_personne, :id_film, :id_role)");
+    
+                // Préparation de la requête pour lier la personne à l'acteur avec le rôle correspondant
+                $requeteAjouterActeur = $pdo->prepare("INSERT INTO acteur (id_personne) VALUES (:id_personne)");
                 $requeteAjouterActeur->execute([
                     "id_personne" => $id_personne,
-                    "id_film" => $id_film,
-                    "id_role" => $id_role
                 ]);
      
-                // Message
+                // Message de succès
                 $_SESSION["message"] = "L'acteur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
      
                 // Redirection vers la liste des acteurs
                 header("Location: index.php?action=listActeur");
      
             } else {
+                // Message d'erreur si des données obligatoires sont manquantes
                 $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
             }
         }
