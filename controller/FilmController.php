@@ -53,36 +53,56 @@ class FilmController {
 
     // ^^ ajout d'un film
     public function ajoutFilm() {
+        // Vérification si le formulaire a été soumis
         if(isset($_POST["submitFilm"])) {
-
-            // filtrage des données
+     
+            // Filtrage des données du formulaire
             $titre_film = filter_input(INPUT_POST, "titre_film", FILTER_SANITIZE_SPECIAL_CHARS);
-            $anneeSortie_film = filter_input(INPUT_POST, "anneeSortie_film", FILTER_SANITIZE_SPECIAL_CHARS);
+            $anneeSortie_film = filter_input(INPUT_POST, 'anneeSortie_film', FILTER_VALIDATE_INT);
             $synopsis_film = filter_input(INPUT_POST, "synopsis_film", FILTER_SANITIZE_SPECIAL_CHARS);
-            $note_film = filter_input(INPUT_POST, "note_film", FILTER_SANITIZE_SPECIAL_CHARS);
-            $duree_formatee = filter_input(INPUT_POST, "duree_formatee", FILTER_SANITIZE_SPECIAL_CHARS);
+            $note_film = filter_input(INPUT_POST, 'note_film', FILTER_VALIDATE_INT);
+            $duree_film = filter_input(INPUT_POST, 'duree_film', FILTER_VALIDATE_INT);
             $affiche_film = filter_input(INPUT_POST, "affiche_film", FILTER_SANITIZE_SPECIAL_CHARS);
-
-            if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_formatee && $affiche_film) {
+     
+            // Vérification si les données obligatoires sont présentes
+            if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_film && $affiche_film) {
+                // Connexion à la base de données
                 $pdo = Connect::seConnecter();
-                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(titre_film, anneeSortie_film, synopsis_film, note_film, duree_formatee, affiche_film) VALUES (:titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_formatee, :affiche_film)");
+     
+                // Préparation de la requête pour ajouter un film
+                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(titre_film, anneeSortie_film, synopsis_film, note_film, duree_film, affiche_film) VALUES (:titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_film, :affiche_film)");
                 $requeteAjouterFilm->execute([
                     "titre_film" => $titre_film,
                     "anneeSortie_film" => $anneeSortie_film,
                     "synopsis_film" => $synopsis_film,
                     "note_film" => $note_film,
-                    "duree_formatee" => $duree_formatee,
+                    "duree_film" => $duree_film,
                     "affiche_film" => $affiche_film
                 ]);
-                
+     
+                // Récupération de l'ID du film ajouté
+                $id_film = $pdo->lastInsertId();
+     
+                // Préparation de la requête pour lier le film ajouté
+                $requeteAjouterLienFilm = $pdo->prepare("INSERT INTO film (id_film) VALUES (:id_film)");
+                $requeteAjouterLienFilm->execute([
+                    "id_film" => $id_film
+                ]);
+     
+                // Message de succès
                 $_SESSION["message"] = "Le film a bien été ajouté ! <i class='fa-solid fa-check'></i>";
+     
+                // Redirection vers la liste des films
                 header("Location: index.php?action=listFilm");
+     
             } else {
+                // Message d'erreur si des données obligatoires sont manquantes
                 $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
             }
-              
         }
-        require "view/film/ajoutFilm.php"; 
+     
+        // Inclusion de la vue pour l'ajout de film
+        require "view/film/ajoutFilm.php";
     }
     
   }

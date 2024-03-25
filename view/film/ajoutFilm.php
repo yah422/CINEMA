@@ -12,13 +12,13 @@ ob_start();
 
         <p class="px-2">
             <label>Durée du film : </label><br>
-            <input id="duree_formatee" class="border-1" name="duree_formatee" type="text" required>
+            <input id="duree_formatee" class="border-1" name="duree_film" type="number" required>
                 
         </p>
 
         <p class="px-2">
             <label>Année de parution : </label><br>
-            <input id="anneeSortie_film" class="border-1" name="anneeSortie_film" type="text" required>
+            <input id="anneeSortie_film" class="border-1" name="anneeSortie_film" type="number" required>
             
             
         </p>
@@ -35,10 +35,10 @@ ob_start();
 
         <p class="px-2">
             <label>Note: </label><br>
-            <input id="note_film" class="border-1" name="note_film" type="text" required>
+            <input id="note_film" class="border-1" name="note_film" type="number" required>
 
         </p>
-        
+
         <p class="px-2">
             <label>Affiche du film: </label><br>
             <input id="affiche_film" class="border-1" name="affiche_film" type="text" required>
