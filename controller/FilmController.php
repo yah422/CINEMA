@@ -57,13 +57,24 @@ class FilmController {
 
             // filtrage des données
             $titre_film = filter_input(INPUT_POST, "titre_film", FILTER_SANITIZE_SPECIAL_CHARS);
+            $anneeSortie_film = filter_input(INPUT_POST, "anneeSortie_film", FILTER_SANITIZE_SPECIAL_CHARS);
+            $synopsis_film = filter_input(INPUT_POST, "synopsis_film", FILTER_SANITIZE_SPECIAL_CHARS);
+            $note_film = filter_input(INPUT_POST, "note_film", FILTER_SANITIZE_SPECIAL_CHARS);
+            $duree_formatee = filter_input(INPUT_POST, "duree_formatee", FILTER_SANITIZE_SPECIAL_CHARS);
+            $affiche_film = filter_input(INPUT_POST, "affiche_film", FILTER_SANITIZE_SPECIAL_CHARS);
 
-            if($titre_film) {
+            if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_formatee && $affiche_film) {
                 $pdo = Connect::seConnecter();
-                $requeteAjouterFilm = $pdo->prepare("
-                INSERT INTO film(titre_film)
-                VALUES (:titre_film)");
-                $requeteAjouterFilm->execute(["titre_film" => $titre_film]);
+                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(titre_film, anneeSortie_film, synopsis_film, note_film, duree_formatee, affiche_film) VALUES (:titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_formatee, :affiche_film)");
+                $requeteAjouterFilm->execute([
+                    "titre_film" => $titre_film,
+                    "anneeSortie_film" => $anneeSortie_film,
+                    "synopsis_film" => $synopsis_film,
+                    "note_film" => $note_film,
+                    "duree_formatee" => $duree_formatee,
+                    "affiche_film" => $affiche_film
+                ]);
+                
                 $_SESSION["message"] = "Le film a bien été ajouté ! <i class='fa-solid fa-check'></i>";
                 header("Location: index.php?action=listFilm");
             } else {

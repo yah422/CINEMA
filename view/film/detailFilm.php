@@ -5,7 +5,6 @@ ob_start();
 
 ?>
 
-
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
@@ -35,7 +34,6 @@ ob_start();
          ?>
     </tbody>
 </table>
-
 
 
 <?php
