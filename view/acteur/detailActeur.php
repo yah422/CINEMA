@@ -50,5 +50,4 @@ $titre = "Détails Acteurs";
 $titre_secondaire = "Détails Acteurs";
 $contenu = ob_get_clean();
 require "view/template.php";
- echo <t</td>
 ?>

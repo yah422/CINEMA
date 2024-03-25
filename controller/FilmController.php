@@ -53,21 +53,25 @@ class FilmController {
 
     // ^^ ajout d'un film
     public function ajoutFilm() {
-        if(isset($_POST["submit"])) {
-        $titre_film = filter_input(INPUT_POST, "titre_film", FILTER_SANITIZE_SPECIAL_CHARS);
-        if($titre_film) {
-            $pdo = Connect::seConnecter();
-            $requeteAjouterFilm = $pdo->prepare("
-            INSERT INTO film(titre_film)
-            VALUES (:titre_film)");
-            $requeteAjouterFilm->execute(["titre_film" => $titre_film]);
-            $_SESSION["message"] = "Le film a bien été ajouté ! <i class='fa-solid fa-check'></i>";
-            header("Location: index.php?action=listFilm");
-          } else {
-              $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
-          }
-           require "view/film/ajoutFilm.php";   
+        if(isset($_POST["submitFilm"])) {
+
+            // filtrage des données
+            $titre_film = filter_input(INPUT_POST, "titre_film", FILTER_SANITIZE_SPECIAL_CHARS);
+
+            if($titre_film) {
+                $pdo = Connect::seConnecter();
+                $requeteAjouterFilm = $pdo->prepare("
+                INSERT INTO film(titre_film)
+                VALUES (:titre_film)");
+                $requeteAjouterFilm->execute(["titre_film" => $titre_film]);
+                $_SESSION["message"] = "Le film a bien été ajouté ! <i class='fa-solid fa-check'></i>";
+                header("Location: index.php?action=listFilm");
+            } else {
+                $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+            }
+              
         }
+        require "view/film/ajoutFilm.php"; 
     }
     
   }
