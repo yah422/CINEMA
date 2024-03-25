@@ -30,7 +30,7 @@ ob_start();
 
         <p class="px-2">
             <label>Réalisateur: </label><br>
-            <select id="realisateurName" class="border-1" name="realisateurName" >
+            <select id="realisateurName" class="border-1" name="id_realisateur" >
                 <option value="">
                 <?php
                 foreach($requeteRealFilm ->fetchAll() as $realFilm) {?>

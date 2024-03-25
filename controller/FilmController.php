@@ -102,6 +102,7 @@ class FilmController {
                     "affiche_film" => $affiche_film,
                     "id_realisateur" => $id_realisateur
                 ]);
+               
      
                 // Récupération de l'ID du film ajouté
                 $id_film = $pdo->lastInsertId();
