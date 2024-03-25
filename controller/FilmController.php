@@ -66,7 +66,8 @@ class FilmController {
 
         // requete pour recupere toutes les categories de films
         $requeteCateFilm = $pdo -> prepare ("SELECT
-            nom_genreCine
+            nom_genreCine,
+            id_genreCine
         FROM genreCine");
         $requeteCateFilm -> execute();
 
@@ -82,6 +83,8 @@ class FilmController {
             $duree_film = filter_input(INPUT_POST, 'duree_film', FILTER_VALIDATE_INT);
             $affiche_film = filter_input(INPUT_POST, "affiche_film", FILTER_SANITIZE_SPECIAL_CHARS);
             $id_realisateur = filter_input(INPUT_POST, 'id_realisateur', FILTER_VALIDATE_INT);
+
+            
      
             // Vérification si les données obligatoires sont présentes
             if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_film && $affiche_film) {

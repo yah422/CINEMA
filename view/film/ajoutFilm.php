@@ -35,7 +35,7 @@ ob_start();
                 <?php
                 foreach($requeteRealFilm ->fetchAll() as $realFilm) {?>
                 
-                    <option value="id_realisateur"><?= $realFilm["realisateurName"]?></option>
+                    <option value="<?=$realFilm["id_realisateur"]?>"><?= $realFilm["realisateurName"]?></option>
                 
                 <?php }  ?>
                 </option>
@@ -47,7 +47,7 @@ ob_start();
             <?php
                 foreach($requeteCateFilm ->fetchAll() as $cateFilm) {?>
 
-                    <input type="checkbox" id="id_genreCine" value="id_genreCine" name="nom_genreCine" >
+                    <input type="checkbox" id="id_genreCine" value=<?=$cateFilm["id_genreCine"]?> name="nom_genreCine" >
                     <label><?= $cateFilm["nom_genreCine"]?></label>
                 
                 <?php }  ?>
@@ -81,8 +81,6 @@ ob_start();
     </form>
 
 </div>
-
-
 
 <?php
 
