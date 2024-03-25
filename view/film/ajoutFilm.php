@@ -42,9 +42,21 @@ ob_start();
             </select>
         </p>
 
+        <p>
+            <label> Genre :</label>
+            <?php
+                foreach($requeteCateFilm ->fetchAll() as $cateFilm) {?>
+
+                    <input type="checkbox" id="id_genreCine" value="id_genreCine" name="nom_genreCine" >
+                    <label for=""><?= $cateFilm["nom_genreCine"]?></label>
+                
+                <?php }  ?>
+
+        </p>
+
         <p class="px-2">
             <label>Note: </label><br>
-            <input id="note_film" class="border-1" name="note_film" type="number" required>
+            <input id="note_film" class="border-1" min="0" max="5" name="note_film" type="number" required>
 
         </p>
 
