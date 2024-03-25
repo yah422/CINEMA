@@ -30,7 +30,7 @@ ob_start();
 
         <p class="px-2">
             <label>Réalisateur: </label><br>
-            <input id="realisateurName" class="border-1" name="realisateurName" type="text" required>
+            <select name="realisateurName" id="realisateurName"> Réalisateur </select>
         </p>
 
         <p class="px-2">
@@ -59,7 +59,6 @@ ob_start();
         </div>
     </form>
 
-    
 </div>
 
 
