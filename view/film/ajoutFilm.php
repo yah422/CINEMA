@@ -48,7 +48,7 @@ ob_start();
                 foreach($requeteCateFilm ->fetchAll() as $cateFilm) {?>
 
                     <input type="checkbox" id="id_genreCine" value="id_genreCine" name="nom_genreCine" >
-                    <label for=""><?= $cateFilm["nom_genreCine"]?></label>
+                    <label><?= $cateFilm["nom_genreCine"]?></label>
                 
                 <?php }  ?>
 

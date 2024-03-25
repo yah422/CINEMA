@@ -58,7 +58,8 @@ class FilmController {
 
         // requete pour selection tout les realisateurs
         $requeteRealFilm = $pdo -> prepare ("SELECT
-            CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName
+            CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName,
+            id_realisateur
         FROM realisateur
         INNER JOIN personne ON realisateur.id_personne = personne.id_personne");
         $requeteRealFilm -> execute();
@@ -80,6 +81,7 @@ class FilmController {
             $note_film = filter_input(INPUT_POST, 'note_film', FILTER_VALIDATE_INT);
             $duree_film = filter_input(INPUT_POST, 'duree_film', FILTER_VALIDATE_INT);
             $affiche_film = filter_input(INPUT_POST, "affiche_film", FILTER_SANITIZE_SPECIAL_CHARS);
+            $id_realisateur = filter_input(INPUT_POST, 'id_realisateur', FILTER_VALIDATE_INT);
      
             // Vérification si les données obligatoires sont présentes
             if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_film && $affiche_film) {
@@ -87,14 +89,15 @@ class FilmController {
                 $pdo = Connect::seConnecter();
      
                 // Préparation de la requête pour ajouter un film
-                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(titre_film, anneeSortie_film, synopsis_film, note_film, duree_film, affiche_film) VALUES (:titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_film, :affiche_film)");
+                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(id_realisateur, titre_film, anneeSortie_film, synopsis_film, note_film, duree_film, affiche_film) VALUES (:id_realisateur, :titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_film, :affiche_film)");
                 $requeteAjouterFilm->execute([
                     "titre_film" => $titre_film,
                     "anneeSortie_film" => $anneeSortie_film,
                     "synopsis_film" => $synopsis_film,
                     "note_film" => $note_film,
                     "duree_film" => $duree_film,
-                    "affiche_film" => $affiche_film
+                    "affiche_film" => $affiche_film,
+                    "id_realisateur" => $id_realisateur
                 ]);
      
                 // Récupération de l'ID du film ajouté
