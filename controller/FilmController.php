@@ -53,6 +53,20 @@ class FilmController {
 
     // ^^ ajout d'un film
     public function ajoutFilm() {
+
+        // requete pour selection tout les realisateurs
+        $requeteRealFilm = $pdo -> prepare ("SELECT
+            CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName
+        FROM realisateur
+        INNER JOIN personne ON realisateur.id_personne = personne.id_personne");
+        $requeteRealFilm -> execute(["id"=> $id]);
+
+        // requete pour recupere toutes les categories de films
+        $requeteCateFilm = $pdo -> prepare ("SELECT
+            nom_genreCine
+        FROM genreCine");
+
+
         // Vérification si le formulaire a été soumis
         if(isset($_POST["submitFilm"])) {
      
