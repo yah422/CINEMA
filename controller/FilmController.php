@@ -105,9 +105,6 @@ class FilmController {
      
                 // Préparation de la requête pour lier le film ajouté
                 $requeteAjouterLienFilm = $pdo->prepare("INSERT INTO film (id_film) VALUES (:id_film)");
-                $requeteAjouterLienFilm->execute([
-                    "id_film" => $id_film
-                ]);
      
                 // Message de succès
                 $_SESSION["message"] = "Le film a bien été ajouté ! <i class='fa-solid fa-check'></i>";
