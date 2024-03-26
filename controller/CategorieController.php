@@ -68,7 +68,27 @@ class CategorieController {
     }
       require "view/categorie/ajoutCategorie.php";
   }
-    
+
+  // ^^ Supprimer un genre
+  public function supprimeCategorie(){
+    if(isset($_POST["submit"])){
+      $id_genreCine = filter_input(INPUT_POST, "nom_genreCine", FILTER_SANITIZE_SPECIAL_CHARS);
+      if($id_genreCine) {
+        $pdo = Connect::seConnecter();
+        $requeteSupprimerGenre = $pdo->prepare("DELETE FROM genrecine
+        WHERE id_genreCine=:id");
+        $requeteSupprimerGenre->execute(["id_genreCine" => $id_genreCine]);
+        
+        $_SESSION["message"] = "La catégorie a bien été supprimé ! <i class='fa-solid fa-check'></i>";
+        header("Location: index.php?action=listCategorie");
+      } else {
+          $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+      }
+    }
+      require "view/categorie/listCategories.php";
   }
+}
+  
+  
 
 ?>
