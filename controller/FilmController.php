@@ -51,6 +51,7 @@ class FilmController {
         require "view/film/detailFilm.php";
     }
 
+
     // ^^ ajout d'un film
     public function ajoutFilm() {
 
@@ -84,27 +85,29 @@ class FilmController {
             $affiche_film = filter_input(INPUT_POST, "affiche_film", FILTER_SANITIZE_SPECIAL_CHARS);
             $id_realisateur = filter_input(INPUT_POST, 'id_realisateur', FILTER_VALIDATE_INT);
 
+            
             // Vérification si les données obligatoires sont présentes
-            if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_film && $affiche_film) {
+            if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_film ) {
+                // $affiche_film = ($affiche_film!= null && $affiche_film != false) ? $affiche_film : ""; 
                 // Connexion à la base de données
                 $pdo = Connect::seConnecter();
      
                 // Préparation de la requête pour ajouter un film
-                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(id_realisateur, titre_film, anneeSortie_film, synopsis_film, note_film, duree_film, affiche_film) VALUES (:id_realisateur, :titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_film, :affiche_film)");
+                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film(id_realisateur, titre_film, anneeSortie_film, synopsis_film, note_film, duree_film ) VALUES (:id_realisateur, :titre_film, :anneeSortie_film, :synopsis_film, :note_film, :duree_film)");
                 $requeteAjouterFilm->execute([
                     "titre_film" => $titre_film,
                     "anneeSortie_film" => $anneeSortie_film,
                     "synopsis_film" => $synopsis_film,
                     "note_film" => $note_film,
                     "duree_film" => $duree_film,
-                    "affiche_film" => $affiche_film,
+                    // "affiche_film" => $affiche_film,
                     "id_realisateur" => $id_realisateur
                 ]);
-               
                 
+     
                 // Récupération de l'ID du film ajouté
                 $id_film = $pdo->lastInsertId();
-     
+
                 // Préparation de la requête pour lier le film ajouté
                 $requeteAjouterLienFilm = $pdo->prepare("INSERT INTO film (id_film) VALUES (:id_film)");
      
@@ -119,33 +122,13 @@ class FilmController {
                 $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
             }
         }
-
-        if(isset($_FILES['affiche_film'])){
-            $tmpName = $_FILES['affiche_film']['tmp_name'];
-            $name = $_FILES['affiche_film']['name'];
-            $size = $_FILES['affiche_film']['size'];
-            $error = $_FILES['affiche_film']['error'];
-            $type = $_FILES['affiche_film']['type'];
-            
-            $tabExtension = explode('.',$name);
-            $extension = strtolower(end($tabExtension));
-            $tailleMax = 200000;
-            $extesionAutorisees = ['jpg','jpeg','gif','png'];
-            
-            if(in_array($extension, $extesionAutorisees) && $size <= $tailleMax && $error == 0){
-                $uniqueName = uniqid('',true);
-                $fileName = $uniqueName. '.' .$extension;
-                move_uploaded_file($tmpName, './public/images/'.$fileName);
-                $film_chemin = './public/images/' .$fileName;
-            }
-
-        }
-            // Inclusion de la vue pour l'ajout de film
-            require "view/film/ajoutFilm.php";
+     
+        // Inclusion de la vue pour l'ajout de film
+        require "view/film/ajoutFilm.php";
     }
-    
-     // ^^ Supprimer un film
-     public function supprimeFilm($id){
+
+    // ^^ Supprimer un film
+    public function supprimeFilm($id){
         if(isset($id)) {
         $pdo = Connect::seConnecter();
         // ^^ on supprime d'abord la table categorie
@@ -159,13 +142,13 @@ class FilmController {
         // ^^ on supprime ensuite la table film
         $requeteSupprimerFilmF = $pdo->prepare("DELETE FROM film WHERE id_film=:id");
         $requeteSupprimerFilmF-> execute(["id" => $id]);
-    
+
         $_SESSION["message"] = "Le Film a bien été supprimé ! <i class='fa-solid fa-check'></i>";
         header("Location: index.php?action=listFilm");
         } else {
             $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
         
-    }
+        }
   
     }
   }
