@@ -84,8 +84,6 @@ class FilmController {
             $affiche_film = filter_input(INPUT_POST, "affiche_film", FILTER_SANITIZE_SPECIAL_CHARS);
             $id_realisateur = filter_input(INPUT_POST, 'id_realisateur', FILTER_VALIDATE_INT);
 
-            
-     
             // Vérification si les données obligatoires sont présentes
             if($titre_film && $anneeSortie_film && $synopsis_film && $note_film && $duree_film && $affiche_film) {
                 // Connexion à la base de données
@@ -103,7 +101,7 @@ class FilmController {
                     "id_realisateur" => $id_realisateur
                 ]);
                
-     
+                
                 // Récupération de l'ID du film ajouté
                 $id_film = $pdo->lastInsertId();
      
@@ -121,9 +119,29 @@ class FilmController {
                 $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
             }
         }
-     
-        // Inclusion de la vue pour l'ajout de film
-        require "view/film/ajoutFilm.php";
+
+        if(isset($_FILES['affiche_film'])){
+            $tmpName = $_FILES['affiche_film']['tmp_name'];
+            $name = $_FILES['affiche_film']['name'];
+            $size = $_FILES['affiche_film']['size'];
+            $error = $_FILES['affiche_film']['error'];
+            $type = $_FILES['affiche_film']['type'];
+            
+            $tabExtension = explode('.',$name);
+            $extension = strtolower(end($tabExtension));
+            $tailleMax = 200000;
+            $extesionAutorisees = ['jpg','jpeg','gif','png'];
+            
+            if(in_array($extension, $extesionAutorisees) && $size <= $tailleMax && $error == 0){
+                $uniqueName = uniqid('',true);
+                $fileName = $uniqueName. '.' .$extension;
+                move_uploaded_file($tmpName, './public/images/'.$fileName);
+                $film_chemin = './public/images/' .$fileName;
+            }
+
+        }
+            // Inclusion de la vue pour l'ajout de film
+            require "view/film/ajoutFilm.php";
     }
     
      // ^^ Supprimer un film

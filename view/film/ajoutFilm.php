@@ -61,9 +61,8 @@ ob_start();
         </p>
 
         <p class="px-2">
-            <label>Affiche du film: </label><br>
-            <input id="affiche_film" class="border-1" name="affiche_film" type="text" required>
-            
+            <label> Affiche du film: </label><br>
+            <input id="affiche_film" type="file" name="affiche_film" class="border-1" required>
         </p>
 
         <div class="btn-submit"><br>
