@@ -38,7 +38,6 @@ ob_start();
                 <tr>
                     <td> <?= $detailActeur["titre_film"]?></td>
                     <td> <?= $detailActeur["nom_role"]?> </td>
-                  
                 </tr>
         <?php } ?>
     </tbody>
