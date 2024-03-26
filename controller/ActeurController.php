@@ -64,6 +64,8 @@ class ActeurController {
         require "view/acteur/detailActeur.php";
     }
 
+    // ^^ ajout acteur 
+    
     public function ajoutActeur(){
         // Connexion à la base de données
         $pdo = Connect::seConnecter();
