@@ -114,4 +114,32 @@ class ActeurController {
         require "view/acteur/ajoutActeur.php";
     }
 
+    // ^^ Supprimer un Acteur
+    public function supprimeActeur($id){
+        if(isset($id)) {
+        $pdo = Connect::seConnecter();
+
+        // ^^ on supprime ensuite la table jouer
+        $requeteSupprimerActeurJ = $pdo->prepare("DELETE FROM jouer WHERE id_acteur=:id");
+        $requeteSupprimerActeurJ-> execute(["id" => $id]);
+
+        // ^^ on supprime ensuite la table personne
+        $requeteSupprimerActeurP = $pdo->prepare("DELETE FROM personne WHERE id_personne=:id");
+        $requeteSupprimerActeurP-> execute(["id" => $id]);
+
+        // ^^ on supprime d'abord la table acteur
+        $requeteSupprimeActeur = $pdo->prepare("DELETE FROM acteur WHERE id_acteur=:id");
+        $requeteSupprimeActeur -> execute(["id" => $id]);
+
+        $_SESSION["message"] = "L'acteur a bien été supprimé ! <i class='fa-solid fa-check'></i>";
+        header("Location: index.php?action=listActeur");
+        } else {
+            $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+        
+    }
+  
+    }
+
+
+
 }

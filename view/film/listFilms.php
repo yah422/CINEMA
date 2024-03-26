@@ -5,6 +5,7 @@
         <tr >
             <th> TITRE FILM </th>
             <th> ANNEE SORTIE </th>
+            <th> </th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,11 @@
                 <tr>
                     <td> <a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $film["id_film"]?>"><?= $film["titre_film"]?></a> </td>
                     <td> <?= $film["anneeSortie_film"]?> </td>
+                    <td>
+                        <a href="index.php?action=supprimeFilm&id=<?= $film["id_film"]?>">
+                            <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer">
+                        </a>
+                    </td>
                 </tr>
         <?php } ?>
     </tbody>

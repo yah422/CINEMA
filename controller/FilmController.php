@@ -126,4 +126,28 @@ class FilmController {
         require "view/film/ajoutFilm.php";
     }
     
+     // ^^ Supprimer un film
+     public function supprimeFilm($id){
+        if(isset($id)) {
+        $pdo = Connect::seConnecter();
+        // ^^ on supprime d'abord la table categorie
+        $requeteSupprimeFilmC = $pdo->prepare("DELETE FROM categorie WHERE id_film=:id");
+        $requeteSupprimeFilmC -> execute(["id" => $id]);
+
+        // ^^ on supprime ensuite la table jouer
+        $requeteSupprimerFilmJ = $pdo->prepare("DELETE FROM jouer WHERE id_film=:id");
+        $requeteSupprimerFilmJ-> execute(["id" => $id]);
+        
+        // ^^ on supprime ensuite la table film
+        $requeteSupprimerFilmF = $pdo->prepare("DELETE FROM film WHERE id_film=:id");
+        $requeteSupprimerFilmF-> execute(["id" => $id]);
+    
+        $_SESSION["message"] = "Le Film a bien été supprimé ! <i class='fa-solid fa-check'></i>";
+        header("Location: index.php?action=listFilm");
+        } else {
+            $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+        
+    }
+  
+    }
   }
