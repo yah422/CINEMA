@@ -70,15 +70,18 @@ class CategorieController {
   }
 
   // ^^ Supprimer un genre
-  public function supprimeCategorie(){
+  public function supprimeCategorie($id){
     if(isset($_POST["submit"])){
       $id_genreCine = filter_input(INPUT_POST, "nom_genreCine", FILTER_SANITIZE_SPECIAL_CHARS);
       if($id_genreCine) {
         $pdo = Connect::seConnecter();
-        $requeteSupprimerGenre = $pdo->prepare("DELETE FROM genrecine
-        WHERE id_genreCine=:id");
-        $requeteSupprimerGenre->execute(["id_genreCine" => $id_genreCine]);
-        
+        // ^^ on supprime d'abord la catégorie
+        $requeteSupprimeCategorie = $pdo->prepare("DELETE FROM categorie WHERE id_genreCine=:id");
+        $requeteSupprimeCategorie -> execute(["id" => $id]);
+        // ^^ on supprime ensuitre le genre
+        $requeteSupprimerGenre = $pdo->prepare("DELETE FROM genrecine WHERE id_genreCine=:id");
+        $requeteSupprimerGenre-> execute(["id" => $id]);
+    
         $_SESSION["message"] = "La catégorie a bien été supprimé ! <i class='fa-solid fa-check'></i>";
         header("Location: index.php?action=listCategorie");
       } else {

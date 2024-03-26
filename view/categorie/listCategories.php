@@ -14,9 +14,12 @@ ob_start();
         <?php
             foreach($requete ->fetchAll() as $categorie) {?>
                 <tr>
-                    <td> <a style="text-decoration: none;" href="index.php?action=detailCategorie&id=<?= $categorie["id_genreCine"]?>"> <?= $categorie["nom_genreCine"]?> </a> </td>
+                    <td> <a style="text-decoration: none;" href="index.php?action=detailCategorie&id=<?= $categorie["id_genreCine"]?>"> <?= $categorie["nom_genreCine"]?></td>
+                    <td> <a href="index.php?action=supprimeCategorie"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer"> </a> </td>
+
                 </tr>
         <?php } ?>
+
     </tbody>
 </table>
 
