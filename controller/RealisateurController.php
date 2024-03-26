@@ -84,6 +84,26 @@ class RealisateurController {
     require "view/realisateur/ajoutRealisateur.php";
 }
 
+// ^^ Supprimer un réalisateur
+public function supprimeRealisateur($id){
+  if(isset($id)) {
+    $pdo = Connect::seConnecter();
+    // ^^ on supprime d'abord la table film
+    $requeteSupprimeFilmR = $pdo->prepare("DELETE FROM film WHERE id_realisateur=:id");
+    $requeteSupprimeFilmR -> execute(["id" => $id]);
+    // ^^ on supprime ensuite la table realisateur
+    $requeteSupprimerReal = $pdo->prepare("DELETE FROM realisateur WHERE id_realisateur=:id");
+    $requeteSupprimerReal-> execute(["id" => $id]);
+
+    $_SESSION["message"] = "La catégorie a bien été supprimé ! <i class='fa-solid fa-check'></i>";
+    header("Location: index.php?action=listRealisateur");
+  } else {
+      $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+  
+}
+
+}
+
 }
 
 

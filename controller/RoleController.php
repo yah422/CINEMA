@@ -85,5 +85,25 @@ class RoleController {
     }
     require "view/role/ajoutRole.php";
   }
+
+  // ^^ Supprimer un rôle
+  public function supprimeRole($id){
+    if(isset($id)) {
+      $pdo = Connect::seConnecter();
+      // ^^ on supprime d'abord la table jouer
+      $requeteSupprimeJouer = $pdo->prepare("DELETE FROM jouer WHERE id_role=:id");
+      $requeteSupprimeJouer -> execute(["id" => $id]);
+      // ^^ on supprime ensuite la table rolefilm
+      $requeteSupprimerRole = $pdo->prepare("DELETE FROM rolefilm WHERE id_role=:id");
+      $requeteSupprimerRole-> execute(["id" => $id]);
+  
+      $_SESSION["message"] = "Le rôle a bien été supprimé ! <i class='fa-solid fa-check'></i>";
+      header("Location: index.php?action=listRole");
+    } else {
+        $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+    
+  }
+
+  }
   
 }

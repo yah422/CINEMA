@@ -7,13 +7,21 @@
     <thead>
         <tr>
             <th> Rôle </th>
+            <th> </th>
         </tr>
     </thead>
     <tbody>
         <?php
             foreach($requete ->fetchAll() as $role) {?>
                 <tr>
-                    <td> <a style="text-decoration: none;" href="index.php?action=detailRole&id=<?=$role["id_role"];?>"> <?= $role["nom_role"]?> </a> </td>
+                    <td> 
+                        <a style="text-decoration: none;" href="index.php?action=detailRole&id=<?=$role["id_role"];?>"> <?= $role["nom_role"]?> </a> 
+                    </td>
+                    <td>
+                        <a href="index.php?action=supprimeRole&id=<?=$role["id_role"];?>">
+                            <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer">
+                        </a>
+                    </td>
                 </tr>
         <?php } ?>
     </tbody>

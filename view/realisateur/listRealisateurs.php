@@ -15,7 +15,14 @@ $realisateurs = $requete->fetchAll();
     <tbody>
         <?php foreach ($realisateurs as $realisateur): ?>
             <tr>
-                <td> <a style="text-decoration: none;" href="index.php?action=detailRealisateur&id=<?= $realisateur["id_realisateur"] ?>"> <?= $realisateur["reali"] ?> </a></td>
+                <td> 
+                    <a style="text-decoration: none;" href="index.php?action=detailRealisateur&id=<?= $realisateur["id_realisateur"] ?>"> <?= $realisateur["reali"] ?> </a>
+                </td>
+                <td>
+                    <a href="index.php?action=supprimeRealisateur&id=<?= $realisateur["id_realisateur"] ?>">
+                        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer">
+                    </a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
