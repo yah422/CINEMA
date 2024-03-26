@@ -33,6 +33,8 @@ if(isset($_GET["action"])){
         case "detailFilm" : $ctrlFilm -> detailFilm($id); break;
         // & ---------- AJOUTER D'UN FILM -----------
         case "ajoutFilm" : $ctrlFilm -> ajoutFilm(); break;
+        // & ------------ SUPPRIMER UN FILM -------------
+        case "supprimeFilm" : $ctrlFilm -> supprimeFilm(); break;
 
 
         //^^ ---------- ACTEURS -----------
@@ -41,6 +43,9 @@ if(isset($_GET["action"])){
         case "detailActeur" : $ctrlActeur -> detailActeur($id); break;
         // ^^ ---------- AJOUT D'UN ACTEURS --------------
         case "ajoutActeur" : $ctrlActeur -> ajoutActeur(); break;
+        // ^^------------ SUPPRIMER UN ACTEUR --------------
+        case "supprimeActeur" : $ctrlActeur -> supprimeActeur(); break;
+
 
 
         // !----------- CATEGORIES -------------
@@ -49,6 +54,8 @@ if(isset($_GET["action"])){
         case "detailCategorie" : $ctrlCategorie -> detailCategorie($id); break;
         // ! ---------------- AJOUT CATEGORIE ----------------
         case "ajoutCategorie" : $ctrlCategorie -> ajoutCategorie(); break;
+        // !----------------- SUPPRIMER UNE CATEGORIE --------------
+        case "supprimeCategorie" : $ctrlCategorie -> supprimeCategorie(); break;
 
 
         //TODO ----------- REALISATEURS --------------
@@ -57,6 +64,8 @@ if(isset($_GET["action"])){
         case "detailRealisateur" : $ctrlRealisateur -> detailRealisateur($id); break;
         // TODO ---------------- AJOUT REALISATEUR ---------------
         case "ajoutRealisateur" : $ctrlRealisateur -> ajoutRealisateur(); break;
+        // TODO -------------- SUPPRIMER UN REALISATEUR ----------------
+        case "supprimeRealisateur" : $ctrlRealisateur -> supprimeRealisateur(); break; 
 
 
         // ~----------- ROLES ---------------
@@ -65,6 +74,8 @@ if(isset($_GET["action"])){
         case "detailRole" : $ctrlRole -> detailRole($id); break;
         // ~~-------------- AJOUT ROLE -----------------
         case "ajoutRole" : $ctrlRole -> ajoutRole(); break;
+        // ~~------------ SUPPRIMER UN ROLE --------------
+        case "supprimeRole" : $ctrlRole -> supprimeRole(); break;
 
 
     }
