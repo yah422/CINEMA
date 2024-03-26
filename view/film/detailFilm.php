@@ -14,7 +14,7 @@ ob_start();
             <th> Synopsis </th>
             <th> Réalisateur </th>
             <th> Notes </th>
-            <th> Affiche du film </th>
+            <!-- <th> Affiche du film </th> -->
         </tr>
     </thead>
     <tbody>
@@ -28,10 +28,30 @@ ob_start();
                     <td> <?= $detailFilm["synopsis_film"]?> </td> 
                     <td> <?= $detailFilm["realisateurName"]?> </td> 
                     <td> <?= $detailFilm["note_film"]?> </td>
-                    <td> <?= $detailFilm["affiche_film"]?> </td>
+                    <!-- <td>  $detailFilm["affiche_film"] </td> -->
                 </tr> 
         <?php } 
          ?>
+    </tbody>
+</table>
+
+
+<table class="uk-table uk-table-striped">
+    <thead>
+        <tr>
+            <th> Acteurs</th>
+            <th> Sexe </th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php   
+        
+            foreach($requeteCast ->fetchAll() as $detailCast) {?>
+                <tr> 
+                    <td> <?= $detailCast["acteurName"]?> </td> 
+                    <td> <?= $detailCast["sexe_personne"]?> </td>
+                </tr> 
+        <?php } ?>
     </tbody>
 </table>
 

@@ -48,6 +48,20 @@ class FilmController {
         ");
         $requeteFilm -> execute(["id"=> $id]);
 
+        // requete casting
+        $requeteCast = $pdo -> prepare ("SELECT 
+            film.id_film,
+            acteur.id_acteur,
+            CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS acteurName,
+            personne.sexe_personne
+        FROM film
+        INNER JOIN jouer ON film.id_film = jouer.id_film
+        INNER JOIN acteur ON jouer.id_acteur = acteur.id_acteur
+        INNER JOIN personne ON acteur.id_personne = personne.id_personne
+        WHERE film.id_film = :id;
+        ");
+        $requeteCast -> execute(["id"=> $id]);
+
         require "view/film/detailFilm.php";
     }
 
