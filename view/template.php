@@ -30,7 +30,7 @@
 
     <main>
         <div id="contenu"> 
-            <h1 class="display-1"> PDO Cinéma </h1>
+            <h1 class="display-1"> Cinéma </h1>
             <h2 class="h2" > <?= $titre_secondaire ?></h2>
             <?= $contenu ?>
 

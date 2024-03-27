@@ -1,3 +1,8 @@
+<?php 
+ob_start(); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +13,9 @@
 </head>
 <body>
     <header>
-        <nav style="display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        align-items: center;" class="navbar bg-primary" data-bs-theme="dark">
-            <ul style="display: flex;
-            flex-direction: row;
-            gap: 40px;
-            list-style: none;
-            color: white;">
-                <li><a style="text-decoration: none;" href="homePage.html"> HOME </a></li>
+        <nav class="navbar bg-primary" data-bs-theme="dark">
+            <ul>
+                <li><a style="text-decoration: none;" href="index.php?action=listFilm"> HOME </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listFilm"> FILMS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listActeur"> ACTEURS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listRealisateur"> REALISATEURS </a></li>
@@ -35,6 +32,15 @@
     <footer>
 
     </footer>
-    
+
 </body>
 </html>
+
+<?php
+
+$titre = "Ajout Film";
+$titre_secondaire = "Ajout Film";
+$contenu = ob_get_clean();
+require "view/template.php";
+
+?>
