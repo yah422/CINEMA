@@ -105,3 +105,15 @@ main ul li a p {
     flex-direction: column;
     font-size: large;
 }
+
+#real h2 {
+    margin-left: 10px;
+}
+
+.movies {
+    color: black;
+}
+
+.directors{
+    color: #1F78C9;
+}

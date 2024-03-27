@@ -14,37 +14,37 @@ ob_start();
             <li>
                 <a href="index.php?action=detailFilm&id=5">
                     <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
-                    <p>The Dark Knight </p>
+                    <p class="movies">The Dark Knight </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=1">
-                    <p> Chritopher Nolan </p>
+                    <p class="directors"> Chritopher Nolan </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=6">
                     <img src="public/images/forest.jpg" alt="affiche_forestGump">
-                    <p> Forrest Gump </p>
+                    <p class="movies"> Forrest Gump </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=5">
-                    <p> Quentin Tarantino </p>
+                    <p class="directors"> Quentin Tarantino </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=7">
                     <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
-                    <p> The GodFather </p>
+                    <p class="movies"> The GodFather </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=6">
-                    <p> Damien Gazelle </p>
+                    <p class="directors"> Damien Gazelle </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=1">
                     <img src="public/images/afficheInception.jpg" alt="affiche_inception">
-                    <p> Inception </p>
+                    <p class="movies"> Inception </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=1">
-                    <p> Christopher Nolan </p>
+                    <p class="directors"> Christopher Nolan </p>
                 </a>
             </li>
         </ul>
@@ -61,29 +61,29 @@ ob_start();
                 <li>
                     <a href="index.php?action=detailFilm&id=2">
                         <img src="public/images/lalalandAffiche.jpg" alt="lalalandAffiche">
-                        <p> Lalaland </p>
+                        <p class="movies"> Lalaland </p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=2">
-                        <p> Steven Spielberg </p>
+                        <p class="directors"> Steven Spielberg </p>
                     </a>
                     
                 </li>
                 <li>
                     <a href="index.php?action=detailFilm&id=4">
                         <img src="public/images/pulpFiction.jpg" alt="affiche_pulpfiction">
-                        <p> Pulp Fiction </p>
+                        <p class="movies"> Pulp Fiction </p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=4">
-                        <p> The Wachowskis </p>
+                        <p class="directors"> The Wachowskis </p>
                     </a>
                 </li>
                 <li>
                     <a href="index.php?action=detailFilm&id=12">
                         <img src="public/images/malediction.jpg" alt="affiche_malediction">
-                        <p> Malédiction : l'Origine</p>
+                        <p class="movies"> Malédiction : l'Origine</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=9">
-                        <p> Stevenson Arkasha</p>
+                        <p class="directors"> Stevenson Arkasha</p>
                     </a>
                 </li>
             </ul>
@@ -98,28 +98,28 @@ ob_start();
             <li>
                 <a href="index.php?action=detailFilm&id=5">
                     <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
-                    <p>The Dark Knight </p>
+                    <p class="movies">The Dark Knight </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=1">
-                    <p> Chritopher Nolan </p>
+                    <p class="directors"> Chritopher Nolan </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=6">
                     <img src="public/images/forest.jpg" alt="affiche_forestGump">
-                    <p> Forrest Gump </p>
+                    <p class="movies"> Forrest Gump </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=5">
-                    <p> Quentin Tarantino </p>
+                    <p class="directors"> Quentin Tarantino </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=7">
                     <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
-                    <p> The GodFather </p>
+                    <p class="movies"> The GodFather </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=6">
-                    <p> Damien Gazelle </p>
+                    <p class="directors"> Damien Gazelle </p>
                 </a>
             </li>
         </ul>
@@ -127,28 +127,28 @@ ob_start();
             <li>
                 <a href="index.php?action=detailFilm&id=1">
                     <img src="public/images/afficheInception.jpg" alt="affiche_inception">
-                    <p> Inception </p>
+                    <p class="movies"> Inception </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=1">
-                    <p> Christopher Nolan </p>
+                    <p class="directors"> Christopher Nolan </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=2">
                     <img src="public/images/lalalandAffiche.jpg" alt="lalalandAffiche">
-                    <p> Lalaland </p>
+                    <p class="movies"> Lalaland </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=2">
-                    <p> Steven Spielberg </p>
+                    <p class="directors"> Steven Spielberg </p>
                 </a>
             </li>
             <li>
                 <a href="index.php?action=detailFilm&id=4">
                     <img src="public/images/pulpFiction.jpg" alt="affiche_pulpfiction">
-                    <p> Pulp Fiction </p>
+                    <p class="movies"> Pulp Fiction </p>
                 </a>
                 <a href="index.php?action=detailRealisateur&id=4">
-                    <p> The Wachowskis </p>
+                    <p class="directors"> The Wachowskis </p>
                 </a>
             </li>
         </ul>
@@ -156,10 +156,10 @@ ob_start();
         <li>
             <a href="index.php?action=detailFilm&id=12">
                 <img src="public/images/malediction.jpg" alt="affiche_malediction">
-                <p> Malédiction : l'Origine</p>
+                <p class="movies"> Malédiction : l'Origine</p>
             </a>
             <a href="index.php?action=detailRealisateur&id=9">
-                <p> Stevenson Arkasha</p>
+                <p class="directors"> Stevenson Arkasha</p>
             </a>
         </li>
         </ul>
@@ -266,6 +266,13 @@ ob_start();
             <p> “ Le cinéma, c&rsquo;est l&rsquo;écriture moderne dont l&rsquo;encre est la lumière. “</p>
             <p> Jean Cocteau </p>
         </section>
+
+    <!-- ------------------- SECTION REALISATEUR --------------- -->
+    <section id="real">
+        <div class="ligneAcceuil"> </div>
+        <h2> REALISATEURS </h2>
+
+    </section>
 
 
 
