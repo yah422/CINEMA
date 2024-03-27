@@ -42,8 +42,9 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 #contenu {
     align-self: flex-start;
     margin-bottom: 40px;
-    margin-left: 425px;
+    margin-left: 140px;
 }

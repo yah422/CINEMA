@@ -27,15 +27,23 @@
                 <li><a href="index.php?action=listRole">ROLES</a>  </li>
                 <li><a href="index.php?action=listCategorie"> CATEGORIE </a></li>
             </ul>
-        </nav>
+        </nav> 
+
+        
+
+        
+
     </header>
 
     <main>
+        
         <div id="contenu"> 
             <h1 class="display-1"> Cinéma </h1>
             <h2 class="h2" > <?= $titre_secondaire ?></h2>
         </div>
+
         <br>
+
         <div>
             <?= $contenu ?>
         </div>
