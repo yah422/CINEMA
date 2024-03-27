@@ -12,9 +12,6 @@
 </head>
 <body>
     <header>
-
-        
-
         <nav>
             <a href="index.php?action=homePage">
                 <div class="logo">
