@@ -75,3 +75,33 @@ main ul li a p {
 #films h2 {
     margin-left: 10px;
 }
+
+#acteur h2 {
+    margin-left: 10px;
+}
+
+.actorsphoto img {
+    width: 150px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+#citation2 {
+    background-color:#130989;
+    color: white;
+    width: 1902px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#citation2 p{
+    color: white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: large;
+}

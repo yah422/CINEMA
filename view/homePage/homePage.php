@@ -9,6 +9,7 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/home-style.css">
 </head>
+<!-- ------------------------------ AFFICHE NOUVEAUTE ------------------------------ -->
         <ul>
             <li>
                 <a href="index.php?action=detailFilm&id=5">
@@ -47,12 +48,12 @@ ob_start();
                 </a>
             </li>
         </ul>
-
+<!-- ---------------------------- SECTION CITATION ------------------------------ -->
         <section id="citation">
             <p> “ La vraie séduction de l&rsquo;acteur, c&rsquo;est de faire admettre au public qu&rsquo;il est vraiment le personnage. “</p>
             <p> Bernard GIRAUDEAU </p>
         </section>
-
+<!-- ------------------------------ AJOUT SECTION A LA UNE ----------------------- -->
         <section id="alaUne">
             <div class="ligneAcceuil"> </div>
             <h2> A LA UNE </h2>
@@ -88,10 +89,10 @@ ob_start();
             </ul>
 
         </section>
-
+<!-- --------------------------------- AJOUT FILMS ----------------------------- -->
         <section id="films">
         <div class="ligneAcceuil"> </div>
-        <h2> Films </h2>
+        <h2> FILM </h2>
 
         <ul>
             <li>
@@ -163,6 +164,110 @@ ob_start();
         </li>
         </ul>
         </section>
+<!-- ---------------------------------- AJOUT ACTEURS --------------------------- -->
+        <section id="acteur">
+            <div class="ligneAcceuil"> </div>
+            <h2> ACTEURS </h2>
+
+            <ul  class="actorsphoto">
+                <li>
+                    <a href="index.php?action=detailActeur&id=4">
+                        <img src="public/images/braga.jpg" alt="Sonia Braga">
+                        <p> Sonia Braga </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=5">
+                        <img src="public/images/andrea.jpg" alt="Andrea Arcangeli">
+                        <p> Andrea Arcangeli </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=6">
+                        <img src="public/images/maria.jpg" alt="Maria Cabarello">
+                        <p> Maria Caballero </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=7">
+                        <img src="public/images/gosling.jpg" alt="Ryan Gosling">
+                        <p> Ryan Gosling </p>
+                    </a>
+                </li>
+               
+            </ul>
+            
+            <ul class="actorsphoto">
+                <li>
+                    <a href="index.php?action=detailActeur&id=17">
+                        <img src="public/images/samuelJ.jpg" alt="samuel">
+                        <p>  Samuel Jackson </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=22">
+                        <img src="public/images/ledger.jpg" alt="ledger">
+                        <p> Heath Ledger </p>
+                    </a>
+                </li> 
+                <li>
+                    <a href="index.php?action=detailActeur&id=23">
+                        <img src="public/images/caine.jpg" alt="Caine">
+                        <p> Michael Caine </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=26">
+                        <img src="public/images/hanks.jpg" alt="Hanks">
+                        <p> Tom Hanks </p>
+                    </a>
+                </li>
+            </ul>
+            
+            <ul class="actorsphoto">
+                <li>
+                    <a href="index.php?action=detailActeur&id=32">
+                        <img src="public/images/pacino.jpg" alt="Pacino">
+                        <p> Al Pacino </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=33">
+                        <img src="public/images/caan.jpg" alt="Caan">
+                        <p> James Caan </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=16">
+                        <img src="public/images/travolta.jpg" alt="Travolta">
+                        <p> John Travolta</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=8">
+                        <img src="public/images/emmaStone.jpg" alt="Emma Stone">
+                        <p> Emma Stone </p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="actorsphoto">
+                <li>
+                    <a href="index.php?action=detailActeur&id=18">
+                        <img src="public/images/thurman.jpg" alt="Thurman">
+                        <p> Uma Thurman </p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    <!-- ------------------- SECTION CITATION part 2 -->
+        <section id="citation2">
+            <p> “ Le cinéma, c&rsquo;est l&rsquo;écriture moderne dont l&rsquo;encre est la lumière. “</p>
+            <p> Jean Cocteau </p>
+        </section>
+
+
 
 </html>
 
