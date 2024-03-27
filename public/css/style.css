@@ -21,8 +21,22 @@ header nav ul li a {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
 }
-
-img {
+header img {
     width: 150px;
     height: 150px;
+}
+
+main img {
+    width: 300px;
+    height: 300px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#contenu {
+    align-self: flex-start;
 }

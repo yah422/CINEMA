@@ -33,8 +33,10 @@
         <div id="contenu"> 
             <h1 class="display-1"> Cinéma </h1>
             <h2 class="h2" > <?= $titre_secondaire ?></h2>
+        </div>
+        <br>
+        <div>
             <?= $contenu ?>
-
         </div>
 
     </main>
