@@ -112,8 +112,10 @@ main ul li a p {
 
 .movies {
     color: black;
+    font-family: "Inter", sans-serif;
 }
 
 .directors{
     color: #1F78C9;
+    font-family: "Inter", sans-serif;
 }
