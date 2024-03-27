@@ -12,10 +12,10 @@ ob_start();
 <body>
     <main>
         <ul>
-            <li><a href="index.php?action=detailFilm&id=5"><img src="public/images/thedark.jpg" alt="affiche_dark"></a></li>
-            <li><a href="index.php?action=detailFilm&id=6"><img src="public/images/forest.jpg" alt="affiche_forestGump"></a></li>
-            <li><a href="index.php?action=detailFilm&id=7"><img src="public/images/thegodfather.jpg" alt="affiche_godfather"></a></li>
-            <li><a href="index.php?action=detailFilm&id=1"><img src="public/images/afficheInception.jpg" alt="affiche_inception"></a></li>
+            <li><a href="index.php?action=detailFilm&id=5"><img src="public/images/darkaffiche.jpg" alt="affiche_dark"><br> <p> The Dark Knight </p></a></li>
+            <li><a href="index.php?action=detailFilm&id=6"><img src="public/images/forest.jpg" alt="affiche_forestGump"><br> <p> Forrest Gump </p></a></li>
+            <li><a href="index.php?action=detailFilm&id=7"><img src="public/images/thegodfather.jpg" alt="affiche_godfather"><br><p> The GodFather </p></a></li>
+            <li><a href="index.php?action=detailFilm&id=1"><img src="public/images/afficheInception.jpg" alt="affiche_inception"><br><p> Inception </p></a></li>
         </ul>
 
     </main>
