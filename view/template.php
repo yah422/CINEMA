@@ -18,7 +18,7 @@
             gap: 40px;
             list-style: none;
             color: white;">
-                <li><a style="text-decoration: none;" href="index.php?action=listFilm"> HOME </a></li>
+                <li><a style="text-decoration: none;" href="index.php?action=homePage"> HOME </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listFilm"> FILMS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listActeur"> ACTEURS </a></li>
                 <li><a style="text-decoration: none;" href="index.php?action=listRealisateur"> REALISATEURS </a></li>

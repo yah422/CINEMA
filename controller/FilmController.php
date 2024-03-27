@@ -5,7 +5,11 @@
 namespace Controller;
 use Model\Connect;
 
-class FilmController {
+class FilmController { 
+    
+    public function homePage(){
+            require "view/homePage/homePage.php";
+        }
 // ^^--------------- LISTER LES FILMS ---------------
     public function listFilm(){
 
