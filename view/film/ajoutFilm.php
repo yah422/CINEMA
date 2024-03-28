@@ -2,9 +2,16 @@
 ob_start(); 
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/ajoutFilm.css">
+</head>
 
 <div>
-    <form action="index.php?action=ajoutFilm" method="post" enctype="multipart/form-data">
+    <form id="form1" action="index.php?action=ajoutFilm" method="post" enctype="multipart/form-data">
         <p  class="px-2">
             <label>Titre du film : </label><br>
             <input id="titre_film" class="border-1" name="titre_film" type="text" required>

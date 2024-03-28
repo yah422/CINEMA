@@ -1,0 +1,13 @@
+#form1 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 30px;
+
+}
+
+#form1 label {
+    font-family: auto;
+}
