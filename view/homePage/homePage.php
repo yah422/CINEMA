@@ -30,30 +30,16 @@ ob_start();
                     <p class="directors"> Christopher Nolan </p>
                 </a>
             </li>
+            <li>
+                <a href="index.php?action=detailFilm&id=6">
+                    <img src="public/images/forest.jpg" alt="affiche_forestGump">
+                    <p class="movies"> Forrest Gump </p>
+                </a>
+                <a href="index.php?action=detailRealisateur&id=5">
+                    <p class="directors"> Quentin Tarantino </p>
+                </a>
+            </li>
         </ul>
-            <ul>
-                <li>
-                    <a href="index.php?action=detailFilm&id=6">
-                        <img src="public/images/forest.jpg" alt="affiche_forestGump">
-                        <p class="movies"> Forrest Gump </p>
-                    </a>
-                    <a href="index.php?action=detailRealisateur&id=5">
-                        <p class="directors"> Quentin Tarantino </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?action=detailFilm&id=7">
-                        <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
-                        <p class="movies"> The GodFather </p>
-                    </a>
-                    <a href="index.php?action=detailRealisateur&id=6">
-                        <p class="directors"> Damien Gazelle </p>
-                    </a>
-                </li>
-
-            </ul>
-            
-           
         
 <!-- ---------------------------- SECTION CITATION ------------------------------ -->
         <section id="citation">
@@ -195,22 +181,31 @@ ob_start();
                         <p> Maria Caballero </p>
                     </a>
                 </li>
+            </ul>
+            <ul class="actorsphoto">
                 <li>
                     <a href="index.php?action=detailActeur&id=7">
                         <img src="public/images/gosling.jpg" alt="Ryan Gosling">
                         <p> Ryan Gosling </p>
                     </a>
                 </li>
-               
-            </ul>
-            
-            <ul class="actorsphoto">
                 <li>
                     <a href="index.php?action=detailActeur&id=17">
                         <img src="public/images/samuelJ.jpg" alt="samuel">
                         <p>  Samuel Jackson </p>
                     </a>
                 </li>
+                <li>
+                    <a href="index.php?action=detailActeur&id=32">
+                        <img src="public/images/pacino.jpg" alt="Pacino">
+                        <p> Al Pacino </p>
+                    </a>
+                </li>
+
+            </ul>
+               
+            <ul class="actorsphoto">
+                
                 <li>
                     <a href="index.php?action=detailActeur&id=22">
                         <img src="public/images/ledger.jpg" alt="ledger">
@@ -232,12 +227,7 @@ ob_start();
             </ul>
             
             <ul class="actorsphoto">
-                <li>
-                    <a href="index.php?action=detailActeur&id=32">
-                        <img src="public/images/pacino.jpg" alt="Pacino">
-                        <p> Al Pacino </p>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="index.php?action=detailActeur&id=33">
                         <img src="public/images/caan.jpg" alt="Caan">

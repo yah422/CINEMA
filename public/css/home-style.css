@@ -8,26 +8,31 @@ header {
 main ul {
     display: flex;
     gap: 100px;
-}
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+} 
 
 main ul li {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     
 }
 
 main img{
     width: 200px;
-    height: 250px;
-    margin-left: 150px;
-    
+    height: 250px;    
 }
 
 main ul li a {
     text-decoration: none;
-    margin-top: 15px;
-    margin-bottom: 30px;
 }
 
 main ul li a p {
@@ -81,15 +86,15 @@ main ul li a p {
 }
 
 .actorsphoto img {
-    width: 200px;
-    height: 250px;
-    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
 }
 
 #citation2 {
     background-color:#130989;
     color: white;
-    width: 1902px;
+    width: 100%;
     height: 200px;
     display: flex;
     flex-direction: column;
