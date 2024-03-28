@@ -85,7 +85,7 @@ ob_start();
 <!-- --------------------------------- AJOUT FILMS ----------------------------- -->
         <section id="films">
         <div class="ligneAcceuil"> </div>
-        <h2> FILM </h2>
+        <h2> <a href="index.php?action=listFilm">FILM</a> </h2>
 
         <ul>
             <li>
@@ -146,21 +146,21 @@ ob_start();
             </li>
         </ul>
         <ul>
-        <li>
-            <a href="index.php?action=detailFilm&id=12">
-                <img src="public/images/malediction.jpg" alt="affiche_malediction">
-                <p class="movies"> Malédiction : l'Origine</p>
-            </a>
-            <a href="index.php?action=detailRealisateur&id=9">
-                <p class="directors"> Stevenson Arkasha</p>
-            </a>
-        </li>
+            <li>
+                <a href="index.php?action=detailFilm&id=12">
+                    <img src="public/images/malediction.jpg" alt="affiche_malediction">
+                    <p class="movies"> Malédiction : l'Origine</p>
+                </a>
+                <a href="index.php?action=detailRealisateur&id=9">
+                    <p class="directors"> Stevenson Arkasha</p>
+                </a>
+            </li>
         </ul>
         </section>
 <!-- ---------------------------------- AJOUT ACTEURS --------------------------- -->
         <section id="acteur">
             <div class="ligneAcceuil"> </div>
-            <h2> ACTEURS </h2>
+            <h2> <a href="index.php?action=listActeur">ACTEURS</a> </h2>
 
             <ul  class="actorsphoto">
                 <li>
@@ -267,7 +267,7 @@ ob_start();
     <!-- ------------------- SECTION REALISATEUR --------------- -->
     <section id="real">
         <div class="ligneAcceuil"> </div>
-        <h2> REALISATEURS </h2>
+        <h2> <a href="index.php?action=listRealisateur">REALISATEURS </a></h2>
 
     </section>
 </main>

@@ -81,9 +81,22 @@ main ul li a p {
     margin-left: 10px;
 }
 
+#films h2 a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
 #acteur h2 {
     margin-left: 10px;
 }
+
+#acteur h2 a {
+    text-decoration: none;
+    color: black;
+}
+
 
 .actorsphoto img {
     width: 150px;
@@ -114,6 +127,10 @@ main ul li a p {
 #real h2 {
     margin-left: 10px;
 }
+ #real h2 a {
+    text-decoration: none;
+    color: black;
+ }
 
 .movies {
     color: black;
