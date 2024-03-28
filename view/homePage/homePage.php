@@ -9,6 +9,7 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/home-style.css">
 </head>
+<main>
 <!-- ------------------------------ AFFICHE NOUVEAUTE ------------------------------ -->
         <ul>
             <li>
@@ -21,24 +22,6 @@ ob_start();
                 </a>
             </li>
             <li>
-                <a href="index.php?action=detailFilm&id=6">
-                    <img src="public/images/forest.jpg" alt="affiche_forestGump">
-                    <p class="movies"> Forrest Gump </p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=5">
-                    <p class="directors"> Quentin Tarantino </p>
-                </a>
-            </li>
-            <li>
-                <a href="index.php?action=detailFilm&id=7">
-                    <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
-                    <p class="movies"> The GodFather </p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=6">
-                    <p class="directors"> Damien Gazelle </p>
-                </a>
-            </li>
-            <li>
                 <a href="index.php?action=detailFilm&id=1">
                     <img src="public/images/afficheInception.jpg" alt="affiche_inception">
                     <p class="movies"> Inception </p>
@@ -48,6 +31,30 @@ ob_start();
                 </a>
             </li>
         </ul>
+            <ul>
+                <li>
+                    <a href="index.php?action=detailFilm&id=6">
+                        <img src="public/images/forest.jpg" alt="affiche_forestGump">
+                        <p class="movies"> Forrest Gump </p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=5">
+                        <p class="directors"> Quentin Tarantino </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailFilm&id=7">
+                        <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
+                        <p class="movies"> The GodFather </p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=6">
+                        <p class="directors"> Damien Gazelle </p>
+                    </a>
+                </li>
+
+            </ul>
+            
+           
+        
 <!-- ---------------------------- SECTION CITATION ------------------------------ -->
         <section id="citation">
             <p> “ La vraie séduction de l&rsquo;acteur, c&rsquo;est de faire admettre au public qu&rsquo;il est vraiment le personnage. “</p>
@@ -273,7 +280,7 @@ ob_start();
         <h2> REALISATEURS </h2>
 
     </section>
-
+</main>
 
 
 </html>

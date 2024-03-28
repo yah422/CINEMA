@@ -35,8 +35,6 @@
 
     </header>
 
-    <main>
-        
         <div id="contenu"> 
             <h1 class="display-1"> Cinéma </h1>
             <h2 class="h2" > <?= $titre_secondaire ?></h2>
@@ -48,7 +46,6 @@
             <?= $contenu ?>
         </div>
 
-    </main>
 
     <footer>
 
