@@ -60,6 +60,10 @@ ob_start();
                 <?php }  ?>
 
         </p>
+        <p>
+            <label for="file"> Affiche Film </label>
+            <input type="file" name="file">
+        </p>
 
         <p class="px-2">
             <label>Note: </label><br>

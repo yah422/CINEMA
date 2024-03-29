@@ -14,21 +14,22 @@ ob_start();
             <th> Synopsis </th>
             <th> Réalisateur </th>
             <th> Notes </th>
-            <!-- <th> Affiche du film </th> -->
+            <th> Affiche du film </th>
         </tr>
     </thead>
     <tbody>
         <?php   
-        
-            foreach($requeteFilm ->fetchAll() as $detailFilm) {?>
-                <tr> 
+            foreach($requeteFilm ->fetchAll() as $detailFilm) {           
+                // $img = $detailFilm["affiche_film"];?>
+                <tr>
+                    <!-- <td><img src='public/images/$img' id='imgg' alt=''></td>  -->
                     <td> <?= $detailFilm["titre_film"]?> </td> 
                     <td> <?= $detailFilm["duree_formatee"]?> </td>
                     <td> <?= $detailFilm["anneeSortie_film"]?> </td>
                     <td> <?= $detailFilm["synopsis_film"]?> </td> 
                     <td> <?= $detailFilm["realisateurName"]?> </td> 
                     <td> <?= $detailFilm["note_film"]?> </td>
-                    <!-- <td>  $detailFilm["affiche_film"] </td> -->
+                    <td> <?= $detailFilm["affiche_film"]?> </td>
                 </tr> 
         <?php } 
          ?>
