@@ -269,6 +269,68 @@ ob_start();
         <div class="ligneAcceuil"> </div>
         <h2> <a href="index.php?action=listRealisateur">REALISATEURS </a></h2>
 
+        <ul class="realphoto">
+            <li>
+                <a href="index.php?action=detailRealisateur&id=1">
+                    <img src="public/images/christopherNolan.jpg" alt="nolan">
+                    <p> Christopher Nolan </p>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=6">
+                    <img src="public/images/chazelleDamien.jpg" alt="chazelle">
+                    <p> Damien Chazelle </p>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=8">
+                    <img src="public/images/daramontFrank.jpg" alt="daramont">
+                    <p> Frank Daramont </p>
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=5">
+                    <img src="public/images/tarantino.jpg" alt="Tarantino">
+                    <p> Quentin Tarantino </p>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=7">
+                    <img src="public/images/zemeckis.jpg" alt="Robert Zemeckis">
+                    <p> Robert Zemeckis </p>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=9">
+                    <img src="public/images/coppola.jpg" alt="coppola">
+                    <p> Fracis Ford Coppola </p>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=2">
+                    <img src="public/images/spielberg.jpg" alt="spielberg">
+                    <p> Steven Spielberg </p>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=4">
+                    <img src="public/images/wachowski.jpg" alt="Wachowskis">
+                    <p> The Wachowskis </p>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=detailRealisateur&id=3">
+                    <img src="public/images/stevenson.jpg" alt="stevenson">
+                    <p> Arkasha Stevenson </p>
+                </a>
+            </li>
+        </ul>
+
     </section>
 </main>
 
