@@ -6,7 +6,7 @@ $role = $requete->fetch();
 
 <h1><?= $role["nom_role"] ?></h1>
 
-<table class="uk-table uk-table-striped">
+<table class="table table-bordered border-primary">
     <thead>
             <tr>
                 <th> Titre Film </th>

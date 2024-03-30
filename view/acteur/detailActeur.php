@@ -4,7 +4,7 @@ ob_start();
 
  ?>
 
-<table class="uk-table uk-table-striped">
+<table class="table table-bordered border-primary">
     <thead>
         <tr>
             <th> Acteur </th>
@@ -25,7 +25,7 @@ ob_start();
     </tbody>
 </table>
 
-<table class="uk-table uk-table-striped">
+<table class="table table-bordered border-primary">
     <thead>
         <tr>
             <th> Titre film </th>

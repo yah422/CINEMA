@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<table class="uk-table uk-table-striped">
+<table class="table table-bordered border-primary">
     <thead>
         <tr>
             <th> Nom </th>
