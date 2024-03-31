@@ -30,6 +30,7 @@ ob_start();
         <tr>
             <th> Titre film </th>
             <th> Rôle </th>
+            <th> Photo acteur</th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +39,8 @@ ob_start();
                 <tr>
                     <td> <?= $detailActeur["titre_film"]?></td>
                     <td> <?= $detailActeur["nom_role"]?> </td>
+                    <td> <img src='public/images/<?= $detailActeur["affiche_acteur"]?>' alt='Photo acteur'> </td>
+
                 </tr>
         <?php } ?>
     </tbody>

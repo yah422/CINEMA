@@ -72,23 +72,47 @@ class ActeurController {
      
         // Vérification si le formulaire a été soumis
         if(isset($_POST["submitActeur"])){
+
+              //upload image
+              if(isset($_FILES['file'])){
+                $tmpName = $_FILES['file']['tmp_name'];
+                $name = $_FILES['file']['name'];
+                $size = $_FILES['file']['size'];
+                $error = $_FILES['file']['error'];
+                $type = $_FILES['file']['type'];
+                
+                $tabExtension = explode('.',$name);
+                $extension = strtolower(end($tabExtension));
+                $tailleMax = 200000;
+                $extesionAutorisees = ['jpg','jpeg','gif','png'];
+                
+                if(in_array($extension, $extesionAutorisees) && $size <= $tailleMax && $error == 0){
+                    $uniqueName = uniqid('',true);
+                    $fileName = $uniqueName. '.' .$extension;
+                    move_uploaded_file($tmpName, 'public/images/'.$fileName);
+                }
+            }
      
             // Récupération et filtrage des données du formulaire
             $prenom_personne = filter_input(INPUT_POST, "prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
             $nom_personne = filter_input(INPUT_POST, "nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
             $sexe_personne = filter_input(INPUT_POST, "sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
+            $affiche_acteur = filter_input(INPUT_POST, "affiche_acteur", FILTER_SANITIZE_SPECIAL_CHARS);
+
      
             // Vérification si les données obligatoires sont présentes
             if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
-     
+                $affiche_film = ($affiche_acteur!= null && $affiche_acteur != false) ? $affiche_acteur : ""; 
+
                 // Préparation de la requête pour ajouter une personne
-                $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance) VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance)");
+                $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance, affiche_acteur) VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance, :affiche_acteur)");
                 $requeteAjouterPersonne->execute([
                     "prenom_personne" => $prenom_personne,
                     "nom_personne" => $nom_personne,
                     "sexe_personne" => $sexe_personne,
-                    "dateNaissance" => $dateNaissance
+                    "dateNaissance" => $dateNaissance,
+                    "affiche_acteur" => $fileName
                 ]);
      
                 // Récupération de l'ID de la personne ajoutée

@@ -8,6 +8,8 @@ ob_start();
 
     <form enctype="multipart/form-data" action="index.php?action=ajoutActeur" method="post">
         <div class="">
+            
+
             <div class="formInput">
                 <label for="prenom_personne">Prénom :</label> <br>
                 <input type="text" placeholder="Prénom" name="prenom_personne" id="prenom_personne" required>
@@ -33,6 +35,15 @@ ob_start();
             <div class="formInput">
                 <label for="dateNaissance">Date de naissance :</label><br>
                 <input type="date" name="dateNaissance" id="dateNaissance" required>
+            </div>
+            
+            <div>
+                <p>
+                    <label for="file"> Photo Acteur </label>
+                    <br>
+                    <input type="file" name="file">
+                </p>
+
             </div>
 
             <div class="btn-submit"><br>
