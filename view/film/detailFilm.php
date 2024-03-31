@@ -29,7 +29,7 @@ ob_start();
                     <td> <?= $detailFilm["synopsis_film"]?> </td> 
                     <td> <?= $detailFilm["realisateurName"]?> </td> 
                     <td> <?= $detailFilm["note_film"]?> </td>
-                    <td> <?= $detailFilm["affiche_film"]?> </td>
+                    <td> <img src='public/images/<?= $detailFilm["affiche_film"]?>' alt='Affiche du film'> </td>
                 </tr> 
         <?php } 
          ?>
