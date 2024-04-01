@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="public/css/home-style.css">
     <title> <?= $titre ?> </title>
 </head>
-<body>
+<body style="background: #f1f1f1;">
     <header>
         <nav>
             <a href="index.php?action=homePage">
