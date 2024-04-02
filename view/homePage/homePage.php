@@ -8,10 +8,30 @@ ob_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/home-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="view/homePage/index.js" defer></script>
 </head>
-<main>
+<main> 
+    <!-- -------------- carousel ----------------- -->
+    <section aria-label="Newest Photos">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+            <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="public/images/inception1_carousel.jpg" alt="inception Image #1">
+                </li>
+                <li class="slide">
+                    <img src="public/images/carousel.jpg" alt="lalaland Image #2">
+                </li>
+                <li class="slide">
+                    <img src="public/images/male_carousel.jpg" alt="malediction Image #3">
+                </li>
+            </ul>
+        </div>
+    </section>
 <!-- ------------------------------ AFFICHE NOUVEAUTE ------------------------------ -->
-        <ul>
+        <!-- <ul>
             <li>
                 <a href="index.php?action=detailFilm&id=5">
                     <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
@@ -39,7 +59,7 @@ ob_start();
                     <p class="directors"> Quentin Tarantino </p>
                 </a>
             </li>
-        </ul>
+        </ul> -->
         
 <!-- ---------------------------- SECTION CITATION ------------------------------ -->
         <section id="citation">
@@ -334,7 +354,7 @@ ob_start();
     </section>
 </main>
 
-
+<script src="homePage/index.js"></script>
 </html>
 
 <?php
