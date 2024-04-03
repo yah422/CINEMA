@@ -32,7 +32,7 @@ ob_start();
 
         <p class="px-2">
             <label>Synopsis : </label><br>
-            <input id="synopsis_film" class="border-1" name="synopsis_film" type="text" required>
+            <textarea id="synopsis_film" name="synopsis_film" > Résumé l'histoire . . . </textarea>
         </p>
 
         <p class="px-2">
