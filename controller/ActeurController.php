@@ -36,20 +36,22 @@ class ActeurController {
         
         // requete acteur/personne
         $requeteActeur = $pdo -> prepare ("SELECT
-            CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
-            personne.dateNaissance,
+        CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
+            DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
             personne.sexe_personne,
-            personne.affiche_acteur
+            personne.affiche_acteur,
+            personne.bibliographie_acteur
         FROM acteur
         INNER JOIN personne ON acteur.id_personne = personne.id_personne
-        WHERE acteur.id_acteur = :id " );
+        WHERE acteur.id_acteur = :id ");
         
         $requeteActeur -> execute(["id"=> $id]);
         
         // requete acteur/film/jouer
         $requeteFilmActeur = $pdo -> prepare ("SELECT
             film.titre_film,
-            rolefilm.nom_role
+            rolefilm.nom_role,
+            film.affiche_film
         FROM
             acteur
         INNER  JOIN jouer ON acteur.id_acteur = jouer.id_acteur

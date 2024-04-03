@@ -4,37 +4,44 @@ ob_start();
 $acteur = $requeteActeur -> fetch();
 
  ?>
-    <section>
+    <section style="display: flex; flex-direction: row;">
           
-        <div><td> <img src='public/images/<?= $acteur["affiche_acteur"]?>' alt='Affiche du film'> </td></div>
+        <div style="margin-left: 30px;" ><td> <img src='public/images/<?= $acteur["affiche_acteur"]?>' alt='Affiche du film'> </td></div>
 
-        <div>
-            <p> <?= $acteur["acteur"]?> </p>
+        <div style="margin-left: 30px;">
+            <p><strong><?= $acteur["acteur"]?></strong>  </p>
             <p> Date de Naissance : <?= $acteur["dateNaissance"]?></p> 
             <p> Sexe : <?= $acteur["sexe_personne"]?></p>    
         </div>
-        <div>
-            <table class="table table-bordered border-primary">
-                <thead>
-                    <tr>
-                        <th> Titre film </th>
-                        <th> Rôle </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        foreach($requeteFilmActeur ->fetchAll() as $detailActeur ) {?>
-                            <tr>
-                                <td> <?= $detailActeur["titre_film"]?></td>
-                                <td> <?= $detailActeur["nom_role"]?> </td>
-                            </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-        </div>
-        
 
-    </section>
+    </section>    
+        <div class="title" style="margin-left: 30px;">
+            <div class="ligneAcceuil"> </div>
+            <h2> Bibliographie :<br>  </h2>
+            <p>  <?= $acteur["bibliographie_acteur"]?></p>
+        </div>
+
+    <div style="margin-left: 30px;">
+        <table  class="table-responsive" style="width: 600px;">
+            <thead>
+                <tr>
+                    <th> Affiche Film</th>
+                    <th> Titre film </th>
+                    <th> Rôle </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach($requeteFilmActeur ->fetchAll() as $detailActeur ) {?>
+                        <tr>
+                            <td><img src='public/images/<?= $detailActeur["affiche_film"]?>' alt='Affiche du film'></td>
+                            <td> <?= $detailActeur["titre_film"]?></td>
+                            <td> <?= $detailActeur["nom_role"]?> </td>
+                        </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 
 <?php
 
