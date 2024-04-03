@@ -21,7 +21,7 @@ $detailFilm = $requeteFilm ->fetch();
     <div class="title" style="margin-left: 30px;">
         <div class="ligneAcceuil"> </div>
         <h2> Synopsis :<br>  </h2>
-        <p>  <?= $detailFilm["synopsis_film"]?></p>
+        <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
     </div>
 
     <table class="table-responsive" style="width: 600px; margin-left: 30px;">

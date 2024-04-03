@@ -15,12 +15,16 @@ $acteur = $requeteActeur -> fetch();
         </div>
 
     </section>    
+    <br>
+    <br>
         <div class="title" style="margin-left: 30px;">
             <div class="ligneAcceuil"> </div>
             <h2> Bibliographie :<br>  </h2>
-            <p>  <?= $acteur["bibliographie_acteur"]?></p>
+            <br>
+            <p style="text-align:justify;">  <?= $acteur["bibliographie_acteur"]?></p>
         </div>
-
+<br>
+<br>
     <div style="margin-left: 30px;">
         <table  class="table-responsive" style="width: 600px;">
             <thead>
