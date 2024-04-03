@@ -194,8 +194,12 @@ ob_start();
             <ul  class="actorsphoto">
                 <li>
                     <a href="index.php?action=detailActeur&id=4">
-                        <img src="public/images/braga.jpg" alt="Sonia Braga">
-                        <p> Sonia Braga </p>
+                        <div class="img">
+                            <img src="public/images/braga.jpg" alt="Sonia Braga">
+                        </div>
+                        <div>
+                            <p> Sonia Braga </p>
+                        </div>
                     </a>
                 </li>
                 <li>
@@ -319,7 +323,7 @@ ob_start();
             </li>
         </ul>
 
-        <ul>
+        <ul class="realphoto">
             <li>
                 <a href="index.php?action=detailRealisateur&id=5">
                     <img src="public/images/tarantino.jpg" alt="Tarantino">
@@ -339,7 +343,7 @@ ob_start();
                 </a>
             </li>
         </ul>
-        <ul>
+        <ul class="realphoto">
             <li>
                 <a href="index.php?action=detailRealisateur&id=2">
                     <img src="public/images/spielberg.jpg" alt="spielberg">

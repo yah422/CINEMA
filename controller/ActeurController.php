@@ -36,9 +36,10 @@ class ActeurController {
         
         // requete acteur/personne
         $requeteActeur = $pdo -> prepare ("SELECT
-            CONCAT(prenom_personne, ' ',nom_personne ) as acteurs,
+            CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
             personne.dateNaissance,
-            personne.sexe_personne
+            personne.sexe_personne,
+            personne.affiche_acteur
         FROM acteur
         INNER JOIN personne ON acteur.id_personne = personne.id_personne
         WHERE acteur.id_acteur = :id " );
@@ -58,7 +59,7 @@ class ActeurController {
             film ON jouer.id_film = film.id_film
         WHERE 
             acteur.id_acteur = :id");
-        $requeteFilmActeur -> execute(["id" => $id]);
+        $requeteFilmActeur -> execute(["id" => $id]); 
 
         // Inclusion de la vue pour le detail d'un acteur
         require "view/acteur/detailActeur.php";
@@ -103,7 +104,7 @@ class ActeurController {
      
             // Vérification si les données obligatoires sont présentes
             if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
-                $affiche_film = ($affiche_acteur!= null && $affiche_acteur != false) ? $affiche_acteur : ""; 
+                $affiche_acteur = ($affiche_acteur!= null && $affiche_acteur != false) ? $affiche_acteur : ""; 
 
                 // Préparation de la requête pour ajouter une personne
                 $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance, affiche_acteur) VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance, :affiche_acteur)");
@@ -114,7 +115,7 @@ class ActeurController {
                     "dateNaissance" => $dateNaissance,
                     "affiche_acteur" => $fileName
                 ]);
-     
+                
                 // Récupération de l'ID de la personne ajoutée
                 $id_personne = $pdo->lastInsertId();
     

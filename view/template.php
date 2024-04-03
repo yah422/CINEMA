@@ -35,7 +35,7 @@
 
     </header>
 
-        <div id="contenu" style="display: flex; flex-direction: column; justify-content: center; align-items: center;"> 
+        <div id="contenu" style="display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;"> 
             <h1 class="display-1"> Cinéma </h1>
             <h2 class="h2" > <?= $titre_secondaire ?></h2>
         </div>

@@ -34,8 +34,12 @@
     display: block;
     width: 100%;
     height: 100%;
+    /* object-fit: cover;
+    object-position: center; */
+  }
+
+  .img {
     object-fit: cover;
-    object-position: center;
   }
   
   .slide[data-active] {
@@ -206,8 +210,14 @@ main ul li a p {
 
 
 .actorsphoto img {
-  width: auto;
-  height: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.realphoto img{
+  width: 200px;
+  height: 200px;
   border-radius: 5px;
 }
 
