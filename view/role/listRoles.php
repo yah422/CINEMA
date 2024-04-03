@@ -3,7 +3,7 @@
 ?>
 
 
-<table class="uk-table uk-table-striped">
+<table style="background: #f1f1f1; width:700px; margin-left: 30px;">
     <thead>
         <tr>
             <th> Rôle </th>

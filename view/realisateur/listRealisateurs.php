@@ -5,7 +5,7 @@ $realisateurs = $requete->fetchAll();
 ?>
 
 <!-- Mise en place d'une table pour représenter la base de données -->
-<table class="uk-table uk-table-striped">
+<table style="background: #f1f1f1; width:700px; margin-left: 30px;">
     <thead>
         <tr>
             <th> Réalisateur </th>
