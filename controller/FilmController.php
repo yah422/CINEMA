@@ -56,6 +56,7 @@ class FilmController {
         $requeteCast = $pdo -> prepare ("SELECT 
             film.id_film,
             acteur.id_acteur,
+            affiche_acteur,
             CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS acteurName,
             personne.sexe_personne
         FROM film
