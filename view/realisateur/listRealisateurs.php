@@ -29,7 +29,7 @@ $realisateurs = $requete->fetchAll();
 </table>
 
 <p class="px-2" style="width: 200px">
-    <a href="index.php?action=ajoutRealisateur"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submitRealisateur" value="Ajouter un réalisateur"> </a>
+    <a href="index.php?action=ajoutRealisateur"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submitRealisateur" value="Ajouter un réalisateur"> </a>
 </p>
 
 <?php

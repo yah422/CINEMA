@@ -29,7 +29,7 @@ $acteurs = $requete -> fetchAll();
 </table>
 
 <p class="px-2" style="width: 200px">
-    <a href="index.php?action=ajoutActeur"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submitActeur" value="Ajouter un acteur"> </a>
+    <a href="index.php?action=ajoutActeur"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submitActeur" value="Ajouter un acteur"> </a>
 </p>
 
 <?php

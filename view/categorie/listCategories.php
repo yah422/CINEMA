@@ -31,7 +31,7 @@
 
 <p class="px-2" style="width: 200px">
     <a href="index.php?action=ajoutCategorie">
-        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter une catégorie">
+        <input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter une catégorie">
     </a>
 </p>
 <?php 
