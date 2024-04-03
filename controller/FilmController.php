@@ -27,7 +27,7 @@ class FilmController {
         // ^^On relie par un "require" la vue qui nous intéresse
         require "view/film/listFilms.php";
     }
-
+// ^^ detail film 
     public function detailFilm($id){
         
         $pdo= Connect::seConnecter();

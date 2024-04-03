@@ -1,25 +1,19 @@
-<?php ob_start(); ?>
-
-<table class="table table-bordered border-primary">
-    <thead>
-        <tr>
-            <th> Nom </th>
-            <th> Prénom </th>
-            <th> Date de Naissance </th>
-            <th> Sexe </th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($requeteRealisateur->fetchAll() as $detailReal): ?>
-            <tr>
-                <td> <?= $detailReal["nom_personne"] ?> </td>
-                <td> <?= $detailReal["prenom_personne"] ?> </td>
-                <td> <?= $detailReal["dateNaissance"] ?> </td>
-                <td> <?= $detailReal["sexe_personne"] ?> </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+<?php 
+ob_start(); 
+$detailReal = $requeteRealisateur->fetch();
+?>
+<section>
+    <!-- inserer photo du réalisateur  -->
+    <div style=" margin-left: 30px;">
+        <img src='public/images/<?= $detailReal["affiche_acteur"]?>' alt='Affiche real' style="width:250px;">
+    </div>
+    <!--  afficher les infos des reals -->
+    <div style=" margin-left: 30px;">
+        <p>Réalisateur : <?= $detailReal["reali"] ?></p>
+        <p>Date de Naissance : <?= $detailReal["dateNaissance"] ?> </p> 
+        <p>Sexe : <?= $detailReal["sexe_personne"] ?></p>
+    </div>
+</section>
 
 <?php
 $titre = "Détails Réalisateur";

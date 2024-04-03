@@ -39,10 +39,10 @@ class RealisateurController {
     
 
     $requeteRealisateur = $pdo->prepare ("SELECT
-      nom_personne,
-      prenom_personne,
-      dateNaissance,
-      sexe_personne
+      CONCAT(prenom_personne, ' ',nom_personne ) as reali,
+      DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
+      sexe_personne,
+      personne.affiche_acteur
       FROM realisateur
       INNER JOIN personne ON personne.id_personne = realisateur.id_personne
       WHERE realisateur.id_realisateur= :id;"
