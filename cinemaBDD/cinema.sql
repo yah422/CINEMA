@@ -2,7 +2,7 @@
 -- Hôte:                         127.0.0.1
 -- Version du serveur:           8.0.30 - MySQL Community Server - GPL
 -- SE du serveur:                Win64
--- HeidiSQL Version:             12.1.0.6537
+-- HeidiSQL Version:             12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -14,11 +14,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
 -- Listage de la structure de la base pour cinema_asma
 CREATE DATABASE IF NOT EXISTS `cinema_asma` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `cinema_asma`;
 
--- Listage de la structure de table cinema_asma. acteur
+-- Listage de la structure de la table cinema_asma. acteur
 CREATE TABLE IF NOT EXISTS `acteur` (
   `id_acteur` int NOT NULL AUTO_INCREMENT,
   `id_personne` int NOT NULL,
@@ -27,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   CONSTRAINT `acteur_ibfk_1` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.acteur : ~55 rows (environ)
+-- Listage des données de la table cinema_asma.acteur : ~31 rows (environ)
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 11),
 	(2, 12),
@@ -61,7 +62,7 @@ INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(48, 64),
 	(49, 65);
 
--- Listage de la structure de table cinema_asma. categorie
+-- Listage de la structure de la table cinema_asma. categorie
 CREATE TABLE IF NOT EXISTS `categorie` (
   `id_film` int NOT NULL,
   `id_genreCine` int NOT NULL,
@@ -71,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   CONSTRAINT `categorie_ibfk_2` FOREIGN KEY (`id_genreCine`) REFERENCES `genrecine` (`id_genreCine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.categorie : ~22 rows (environ)
+-- Listage des données de la table cinema_asma.categorie : ~13 rows (environ)
 INSERT INTO `categorie` (`id_film`, `id_genreCine`) VALUES
 	(1, 1),
 	(2, 2),
@@ -87,7 +88,7 @@ INSERT INTO `categorie` (`id_film`, `id_genreCine`) VALUES
 	(2, 11),
 	(6, 11);
 
--- Listage de la structure de table cinema_asma. film
+-- Listage de la structure de la table cinema_asma. film
 CREATE TABLE IF NOT EXISTS `film` (
   `id_film` int NOT NULL AUTO_INCREMENT,
   `titre_film` varchar(50) DEFAULT NULL,
@@ -102,17 +103,17 @@ CREATE TABLE IF NOT EXISTS `film` (
   CONSTRAINT `film_ibfk_1` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.film : ~11 rows (environ)
+-- Listage des données de la table cinema_asma.film : ~7 rows (environ)
 INSERT INTO `film` (`id_film`, `titre_film`, `anneeSortie_film`, `synopsis_film`, `note_film`, `duree_film`, `affiche_film`, `id_realisateur`) VALUES
-	(1, 'Inception', 2010, 'Un voleur d élite est capable dinfiltrer les rêves des autres pour voler leurs secrets les plus précieux.', 5, 148, NULL, 1),
-	(2, 'La La Land', 2016, 'Une romance musicale entre une actrice en herbe et un musicien de jazz passionné à Los Angeles.', 5, 128, NULL, 2),
-	(4, 'Pulp Fiction', 1994, 'Plusieurs histoires entrelacées sur la vie criminelle à Los Angeles avec humour noir et violence.', 5, 154, NULL, 4),
-	(5, 'The Dark Knight', 2008, 'Batman sallie avec le procureur et le lieutenant de Gotham City pour lutter contre le crime organisé.', 4, 152, NULL, 1),
-	(6, 'Forrest Gump', 1994, 'Un homme simple desprit partage son extraordinaire vie en participant à des moments clés de lhistoire américaine.', 5, 142, NULL, 5),
-	(7, 'The Godfather', 1972, 'La saga de la famille Corleone, chef dune puissante famille mafieuse italo-américaine.', 5, 175, NULL, 6),
-	(12, 'La Malédiction : L Origine', 2024, 'Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l Église, mais elle est confrontée à des ténèbres qui l amènent à remettre sa foi en question et à découvrir une terrifiante conspiration.', 4, 120, NULL, 9);
+	(1, 'Inception', 2010, 'Un voleur d élite est capable dinfiltrer les rêves des autres pour voler leurs secrets les plus précieux.', 5, 148, 'afficheInception.jpg', 1),
+	(2, 'La La Land', 2016, 'Une romance musicale entre une actrice en herbe et un musicien de jazz passionné à Los Angeles.', 5, 128, 'lalalandAffiche.jpg', 2),
+	(4, 'Pulp Fiction', 1994, 'Plusieurs histoires entrelacées sur la vie criminelle à Los Angeles avec humour noir et violence.', 5, 154, 'pulpFiction.jpg', 4),
+	(5, 'The Dark Knight', 2008, 'Batman sallie avec le procureur et le lieutenant de Gotham City pour lutter contre le crime organisé.', 4, 152, 'darkaffiche.jpg', 1),
+	(6, 'Forrest Gump', 1994, 'Un homme simple desprit partage son extraordinaire vie en participant à des moments clés de lhistoire américaine.', 5, 142, 'forest.jpg', 5),
+	(7, 'The Godfather', 1972, 'La saga de la famille Corleone, chef dune puissante famille mafieuse italo-américaine.', 5, 175, 'thegodfather.jpg', 6),
+	(12, 'La Malédiction : L Origine', 2024, 'Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l Église, mais elle est confrontée à des ténèbres qui l amènent à remettre sa foi en question et à découvrir une terrifiante conspiration.', 4, 120, 'malediction.jpg', 9);
 
--- Listage de la structure de table cinema_asma. genrecine
+-- Listage de la structure de la table cinema_asma. genrecine
 CREATE TABLE IF NOT EXISTS `genrecine` (
   `id_genreCine` int NOT NULL AUTO_INCREMENT,
   `nom_genreCine` varchar(50) DEFAULT NULL,
@@ -131,7 +132,7 @@ INSERT INTO `genrecine` (`id_genreCine`, `nom_genreCine`) VALUES
 	(10, 'Horreur'),
 	(11, 'Romance');
 
--- Listage de la structure de table cinema_asma. jouer
+-- Listage de la structure de la table cinema_asma. jouer
 CREATE TABLE IF NOT EXISTS `jouer` (
   `id_film` int NOT NULL,
   `id_acteur` int NOT NULL,
@@ -144,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `jouer` (
   CONSTRAINT `jouer_ibfk_3` FOREIGN KEY (`id_role`) REFERENCES `rolefilm` (`id_role`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.jouer : ~54 rows (environ)
+-- Listage des données de la table cinema_asma.jouer : ~34 rows (environ)
 INSERT INTO `jouer` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(12, 1, 1),
 	(12, 2, 3),
@@ -181,7 +182,7 @@ INSERT INTO `jouer` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(1, 54, 54),
 	(1, 55, 55);
 
--- Listage de la structure de table cinema_asma. personne
+-- Listage de la structure de la table cinema_asma. personne
 CREATE TABLE IF NOT EXISTS `personne` (
   `id_personne` int NOT NULL AUTO_INCREMENT,
   `nom_personne` varchar(50) NOT NULL,
@@ -191,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   PRIMARY KEY (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.personne : ~65 rows (environ)
+-- Listage des données de la table cinema_asma.personne : ~31 rows (environ)
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `dateNaissance`, `sexe_personne`) VALUES
 	(1, 'Nolan', 'Christopher', '1970-07-30', 'M'),
 	(2, 'Chazelle', 'Damien', '1985-01-19', 'M'),
@@ -225,7 +226,7 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `dateN
 	(48, 'Pacino', 'Al', '1940-04-25', 'M'),
 	(49, 'Caan', 'James', '1940-03-26', 'M');
 
--- Listage de la structure de table cinema_asma. realisateur
+-- Listage de la structure de la table cinema_asma. realisateur
 CREATE TABLE IF NOT EXISTS `realisateur` (
   `id_realisateur` int NOT NULL AUTO_INCREMENT,
   `id_personne` int NOT NULL,
@@ -246,14 +247,14 @@ INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(4, 8),
 	(3, 10);
 
--- Listage de la structure de table cinema_asma. rolefilm
+-- Listage de la structure de la table cinema_asma. rolefilm
 CREATE TABLE IF NOT EXISTS `rolefilm` (
   `id_role` int NOT NULL AUTO_INCREMENT,
   `nom_role` varchar(50) NOT NULL,
   PRIMARY KEY (`id_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.rolefilm : ~55 rows (environ)
+-- Listage des données de la table cinema_asma.rolefilm : ~21 rows (environ)
 INSERT INTO `rolefilm` (`id_role`, `nom_role`) VALUES
 	(4, 'Silvia'),
 	(5, 'Paolo'),
@@ -282,4 +283,3 @@ INSERT INTO `rolefilm` (`id_role`, `nom_role`) VALUES
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
-
