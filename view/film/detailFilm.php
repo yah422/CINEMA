@@ -15,21 +15,36 @@ $detailFilm = $requeteFilm ->fetch();
             <p> Titre Film : <?= $detailFilm["titre_film"]?></p>
             <p> Durée : <?= $detailFilm["duree_formatee"]?></p>
             <p> Année de parution : <?= $detailFilm["anneeSortie_film"]?></p>
-            <p> Note : <?= $detailFilm["note_film"]?></p>
+
+            <div style="width:150px; height: 70px; border-radius: 10px; background-color: #130989; text-align: center; color:white; display:flex; justify-content: center; align-items:center;" > Note : <?= $detailFilm["note_film"]?></div>
         </div>
     </div>
+
+    <br>
+    <br>
+
     <div class="title" style="margin-left: 30px;">
         <div class="ligneAcceuil"> </div>
-        <h2> Synopsis :<br>  </h2>
+        <h2> SYNOPSIS <br>  </h2>
         <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
     </div>
+
+    <br>
+
+    <div class="title" style="margin-left: 30px;">
+        <div class="ligneAcceuil"> </div>
+        <h2> CASTING <br>  </h2>
+        <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
+    </div>
+
+    <br>
 
     <table class="table-responsive" style="width: 600px; margin-left: 30px;">
         <thead>
             <tr>
-                <th> Affiche acteur</th>
-                <th> Acteurs</th>
-                <th> Sexe </th>
+                <th> </th>
+                <th> Acteur </th>
+                <th> Rôle </th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +54,7 @@ $detailFilm = $requeteFilm ->fetch();
                     <tr> 
                         <td> <img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'> </td>
                         <td> <?= $detailCast["acteurName"]?> </td> 
-                        <td> <?= $detailCast["sexe_personne"]?> </td>
+                        <td> <?= $detailCast["nom_role"]?> </td>
                     </tr> 
 
             <?php } ?>
