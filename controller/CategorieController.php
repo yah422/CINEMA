@@ -35,7 +35,15 @@ class CategorieController {
     $requete -> execute(["id"=> $id]);
     
     // ^^Afficher les films par categories
-    $requeteCategorie = $pdo -> prepare ("SELECT genrecine.nom_genreCine, film.titre_film, film.id_film, genrecine.id_genreCine, CONCAT (personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName, realisateur.id_realisateur, film.affiche_film, film.note_film
+    $requeteCategorie = $pdo -> prepare ("SELECT 
+    genrecine.nom_genreCine, 
+    film.titre_film, 
+    film.id_film, 
+    genrecine.id_genreCine, 
+    CONCAT (personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName, 
+    realisateur.id_realisateur, 
+    film.affiche_film, 
+    film.note_film
     FROM genrecine
     INNER JOIN categorie ON categorie.id_genreCine = genrecine.id_genreCine
     INNER JOIN film ON categorie.id_film = film.id_film
