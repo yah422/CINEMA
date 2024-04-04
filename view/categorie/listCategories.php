@@ -3,7 +3,7 @@
 <table style="background: #f1f1f1; width:700px; margin-left: 30px;">
     <thead>
         <tr>
-            <th>Catégorie</th>
+            <th></th>
             <th> </th>
         </tr>
     </thead>
@@ -28,10 +28,10 @@
     </tbody>
             
 </table>
-
+<br>
 <p class="px-2" style="width: 200px">
     <a href="index.php?action=ajoutCategorie">
-        <input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter une catégorie">
+        <input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter catégorie">
     </a>
 </p>
 <?php 

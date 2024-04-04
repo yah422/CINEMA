@@ -3,7 +3,7 @@
 <table  style="background: #f1f1f1; width:700px; margin-left: 30px;" >
     <thead>
         <tr >
-            <th> TITRE FILM </th>
+            <th>  </th>
             <th> </th>
 
         </tr>
@@ -15,15 +15,16 @@
                     <td> <a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $film["id_film"]?>"><?= $film["titre_film"]?></a> </td>
                     <td>
                         <a href="index.php?action=supprimeFilm&id=<?= $film["id_film"]?>">
-                            <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer">
+                            <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer" >
                         </a>
                     </td>
                 </tr>
         <?php } ?>
     </tbody>
 </table>
+<br>
 <p class="px-2" style="width: 200px">
-    <a href="index.php?action=ajoutFilm"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un film"> 
+    <a href="index.php?action=ajoutFilm"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter film"> 
 </p>
 <?php
 

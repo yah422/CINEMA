@@ -37,7 +37,7 @@
 
     </header>
 
-        <div id="contenu" style="display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;"> 
+        <div id="contenu" style="  display:flex; flex-direction: column;"> 
             <h1 class="display-1"> Cinéma </h1>
             <h2 class="h2" > <?= $titre_secondaire ?></h2>
         </div>
@@ -49,7 +49,29 @@
         </div>
 
 
-    <footer>
+    <footer id="footer" style=" font-size: xxx-small; width:100%; height: 180px; background-color: #130989;  display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;">
+
+        <div>
+
+            <div class="icons">
+                <img src="facebook.svg" alt="">
+                <img src="icons8-instagram-24.png" alt="">
+                <img src="twitter.svg" alt=""> 
+            </div>
+
+            <div class="infos">
+                <p> Terms & Condition &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Contact Us </p>
+            </div>
+
+            <div class="rights"> 
+                <p> 2024 &copy; Movie Maker - The best Cine reference  </p>
+            </div>
+
+        </div>
 
     </footer>
 

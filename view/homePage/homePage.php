@@ -171,17 +171,8 @@ ob_start();
                     </a>
                 </li>
             </ul>
-            <ul>
-                <li>
-                    <a href="index.php?action=detailFilm&id=12">
-                        <img src="public/images/malediction.jpg" alt="affiche_malediction">
-                        <p class="movies"> Malédiction : l'Origine</p>
-                    </a>
-                    <a href="index.php?action=detailRealisateur&id=9">
-                        <p class="directors"> Stevenson Arkasha</p>
-                    </a>
-                </li>
-            </ul>
+            <br>
+          
         </section>
 <!-- ---------------------------------- AJOUT ACTEURS --------------------------- -->
         <section id="acteur">
@@ -189,7 +180,8 @@ ob_start();
                 <div class="ligneAcceuil"> </div>
                 <h2> <a href="index.php?action=listActeur">ACTEURS</a> </h2>
             </div>
-            
+            <br>
+            <br>
 
             <ul  class="actorsphoto">
                 <li>
@@ -277,15 +269,7 @@ ob_start();
                     </a>
                 </li>
             </ul>
-
-            <ul class="actorsphoto">
-                <li>
-                    <a href="index.php?action=detailActeur&id=18">
-                        <img src="public/images/thurman.jpg" alt="Thurman">
-                        <p> Uma Thurman </p>
-                    </a>
-                </li>
-            </ul>
+            <br>
         </section>
 
     <!-- ------------------- SECTION CITATION part 2 -->
@@ -295,12 +279,14 @@ ob_start();
         </section>
 
     <!-- ------------------- SECTION REALISATEUR --------------- -->
+    <br>
+    <br>
     <section id="real">
-        <div>
+        <div class="title">
             <div class="ligneAcceuil"> </div>
             <h2> <a href="index.php?action=listRealisateur">REALISATEURS </a></h2>
         </div>
-        
+        <br><br>
 
         <ul class="realphoto">
             <li>

@@ -8,7 +8,7 @@ $realisateurs = $requete->fetchAll();
 <table style="background: #f1f1f1; width:700px; margin-left: 30px;">
     <thead>
         <tr>
-            <th> Réalisateur </th>
+            <th> </th>
             <th> </th>
         </tr>
     </thead>
@@ -27,15 +27,15 @@ $realisateurs = $requete->fetchAll();
         <?php endforeach; ?>
     </tbody>
 </table>
-
+<br>
 <p class="px-2" style="width: 200px">
-    <a href="index.php?action=ajoutRealisateur"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submitRealisateur" value="Ajouter un réalisateur"> </a>
+    <a href="index.php?action=ajoutRealisateur"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submitRealisateur" value="Ajouter réalisateur"> </a>
 </p>
 
 <?php
 // Fin de la temporisation
 $titre = "Réalisateurs";
-$titre_secondaire = "Réalisateurs";
+$titre_secondaire = " Liste des Réalisateurs";
 $contenu = ob_get_clean();
 require "view/template.php";
 ?>

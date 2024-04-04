@@ -6,7 +6,7 @@
 <table style="background: #f1f1f1; width:700px; margin-left: 30px;">
     <thead>
         <tr>
-            <th> Rôle </th>
+            <th>  </th>
             <th> </th>
         </tr>
     </thead>
@@ -26,7 +26,7 @@
         <?php } ?>
     </tbody>
 </table>
-
+<br>
 <p class="px-2" style="width: 200px">
     <a href="index.php?action=ajoutRole"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un rôle"> 
 </p>
@@ -35,7 +35,7 @@
 <?php
 
 $titre = "Rôles";
-$titre_secondaire = "Rôles";
+$titre_secondaire = "Liste des Rôles";
 $contenu = ob_get_clean();
 require "view/template.php";
 
