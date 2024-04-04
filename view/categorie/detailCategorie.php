@@ -3,31 +3,17 @@ ob_start();
 $details = $requeteCategorie ->fetchAll();
 
 ?>
-
-
-<table class="uk-table uk-table-striped">
-    <thead>
-        <tr>
-            <th> Genre Cinématographique </th>
-            <th> Titre film</th>
-            <th> Réalisateur</th>
-            <th> Affiche </th>
-            <th> Note Film</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            foreach($details as $detailCategorie) {?>
-                <tr>
-                    <td> <?= $detailCategorie["nom_genreCine"]?> </td>
-                    <td> <?= $detailCategorie["titre_film"]?> </td>
-                    <td> <?= $detailCategorie["realisateurName"]?> </td>
-                    <td> <?= $detailCategorie["affiche_film"]?> </td>
-                    <td> <?= $detailCategorie["note_film"]?> </td>
-                </tr>
-        <?php } ?>
-    </tbody>
-</table>
+<section>
+    
+    <div>
+        <p> Genre Cinématographique : <?= $details["nom_genreCine"]?></p>
+        <p> Titre film : <?= $details["titre_film"]?></p>
+        <p> Réalisateur : <?= $details["realisateurName"]?></p>
+        <p> Affiche du film : <?= $details["affiche_film"]?></p>
+        <p> Note Film : <?= $details["note_film"]?></p>
+    </div>
+    
+</section>
 
 <?php
 
