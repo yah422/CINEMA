@@ -47,15 +47,15 @@ class RoleController {
 
     $requeteActRole = $pdo -> prepare ("SELECT
     film.titre_film,
-    rolefilm.nom_role
+    rolefilm.nom_role,
+    CONCAT(prenom_personne, ' ',nom_personne ) as acteure,
+    personne.affiche_acteur
     FROM
       acteur
-    INNER JOIN 
-      jouer ON acteur.id_acteur = jouer.id_acteur
-    INNER JOIN 
-      rolefilm ON jouer.id_role = rolefilm.id_role
-    INNER JOIN 
-      film ON jouer.id_film = film.id_film
+    INNER JOIN personne ON acteur.id_personne = personne.id_personne
+    INNER JOIN jouer ON acteur.id_acteur = jouer.id_acteur
+    INNER JOIN rolefilm ON jouer.id_role = rolefilm.id_role
+    INNER JOIN film ON jouer.id_film = film.id_film
     WHERE acteur.id_acteur= :id;
   ");
 

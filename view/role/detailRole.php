@@ -1,30 +1,23 @@
 <?php 
 ob_start(); 
-$role = $requete->fetch();
+$role = $requeteActRole->fetch();
 
 ?>
+<section>
+    <h1><?= $role["nom_role"] ?></h1>
 
-<h1><?= $role["nom_role"] ?></h1>
+    <div style="margin-left: 30px;" ><td> <img src='public/images/<?= $role["affiche_acteur"]?>' alt='Affiche acteur'> </td></div>
 
-<table class="table table-bordered border-primary">
-    <thead>
-            <tr>
-                <th> Titre Film </th>
-                <th> Nom rôle </th>
-         </tr>
-     </thead>
-        <tbody>
-         <?php
-                foreach($requeteRole ->fetchAll() as $detailRole) {?>
-                    <tr>
-                        <td> <?= $detailRole["titre_film"]?> </td>
-                        <td> <?= $detailRole["nom_role"]?> </td>
-    
-                    </tr>
-            <?php } ?>
-     </tbody>
-</table>
+    <div>
+        <p> Titre Film : <?= $role["titre_film"]?></p>
+        <p> Nom acteur : <?= $role["acteure"]?></p>
+        <p> Nom rôle : <?= $role["nom_role"]?></p>
+    </div>
 
+         
+        
+
+</section>
 <?php
 
 $titre = "Détails Rôle";
