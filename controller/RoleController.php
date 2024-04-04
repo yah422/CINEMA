@@ -47,6 +47,7 @@ class RoleController {
 
     $requeteActRole = $pdo -> prepare ("SELECT
     film.titre_film,
+    film.id_film,
     rolefilm.nom_role,
     acteur.id_acteur,
     rolefilm.id_role,

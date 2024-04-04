@@ -13,9 +13,9 @@ $role = $requeteActRole->fetch();
     </div>
 
     <div>
-        <p> Titre Film : <?= $role["titre_film"]?></p>
-        <p> Nom acteur : <?= $role["acteure"]?></p>
-        <p> Nom rôle : <?= $role["nom_role"]?></p>
+        <p> Titre Film : <a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $role["id_film"]?>"><?= $role["titre_film"]?></a></p>
+        <p> Nom acteur : <a style="text-decoration: none;" href="index.php?action=detailActeur&id=<?= $role["id_role"]?>"><?= $role["acteure"]?></a> </p>
+        <p> Nom rôle : <a style="text-decoration: none;" href="index.php?action=detailRole&id=<?= $role["id_role"]?>"><?= $role["nom_role"]?></a></p>
     </div>
 
          
