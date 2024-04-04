@@ -34,7 +34,6 @@ $detailFilm = $requeteFilm ->fetch();
     <div class="title" style="margin-left: 30px;">
         <div class="ligneAcceuil"> </div>
         <h2> CASTING <br>  </h2>
-        <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
     </div>
 
     <br>
