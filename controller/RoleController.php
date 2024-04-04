@@ -48,10 +48,11 @@ class RoleController {
     $requeteActRole = $pdo -> prepare ("SELECT
     film.titre_film,
     rolefilm.nom_role,
+    acteur.id_acteur,
+    rolefilm.id_role,
     CONCAT(prenom_personne, ' ',nom_personne ) as acteure,
     personne.affiche_acteur
-    FROM
-      acteur
+    FROM acteur
     INNER JOIN personne ON acteur.id_personne = personne.id_personne
     INNER JOIN jouer ON acteur.id_acteur = jouer.id_acteur
     INNER JOIN rolefilm ON jouer.id_role = rolefilm.id_role
@@ -60,6 +61,9 @@ class RoleController {
   ");
 
     $requeteActRole -> execute(["id" => $id]);
+
+    $requeteRole = $pdo -> prepare ("SELECT * FROM acteur WHERE id_acteur = :id");
+    $requeteRole -> execute(["id" => $id]);
 
     require "view/role/detailRole.php";
 

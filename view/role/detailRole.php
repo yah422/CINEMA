@@ -6,7 +6,11 @@ $role = $requeteActRole->fetch();
 <section>
     <h1><?= $role["nom_role"] ?></h1>
 
-    <div style="margin-left: 30px;" ><td> <img src='public/images/<?= $role["affiche_acteur"]?>' alt='Affiche acteur'> </td></div>
+    <div style="margin-left: 30px;" >
+
+        <a href="index.php?action=detailActeur&id=<?= $role["id_role"]?>"><img src='public/images/<?= $role["affiche_acteur"]?>' alt='Affiche acteur'></a> 
+
+    </div>
 
     <div>
         <p> Titre Film : <?= $role["titre_film"]?></p>
