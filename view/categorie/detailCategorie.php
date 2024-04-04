@@ -6,9 +6,9 @@ $details = $requeteCategorie ->fetch();
 <section>
     
     <div  style="margin-left: 30px;">
-        <p> Genre Cinématographique : <?= $details["nom_genreCine"]?></p>
-        <p> Titre film : <?= $details["titre_film"]?></p>
-        <p> Réalisateur : <?= $details["realisateurName"]?></p>
+        <p> Genre Cinématographique : <a style="text-decoration: none;" href="index.php?action=detailCategorie&id=<?= $details["id_genreCine"]?>"><?= $details["nom_genreCine"]?></a></p>
+        <p> Titre film : <a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $details["id_film"]?>"><?= $details["titre_film"]?></a></p>
+        <p> Réalisateur : <a style="text-decoration: none;" href="index.php?action=detailRealisateur&id=<?= $details["id_realisateur"] ?>">  <?= $details["realisateurName"]?></a></p>
         <p> Note Film : <?= $details["note_film"]?></p>
     </div>
 
