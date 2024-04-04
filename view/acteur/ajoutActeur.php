@@ -36,6 +36,11 @@ ob_start();
                 <label for="dateNaissance">Date de naissance :</label><br>
                 <input type="date" name="dateNaissance" id="dateNaissance" required>
             </div>
+
+            <p class="px-2">
+                <label> Bibliographie : </label><br>
+                <textarea id="synopsis_film" name="bibliographie_acteur" > Résumé son histoire . . . </textarea>
+            </p>
             
             <div>
                 <p>
