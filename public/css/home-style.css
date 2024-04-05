@@ -124,10 +124,11 @@ main ul li a {
 main ul li a p {
     margin-top: 15px;
     text-align: center;
+    color: black;
 }
 
 #citation {
-    background-color:#130989;
+    background-color:black;
     color: white;
     height: 200px;
     width: 100%;
@@ -139,7 +140,7 @@ main ul li a p {
 }
 
 #citation p{
-    color: white;
+    color: #bd7d07;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -147,7 +148,7 @@ main ul li a p {
 }
 
 .ligneAcceuil{
-    border: solid#130989;
+    border: solid orange;
     width: 150px;
     height: 3px;
     margin-top: 25px;
@@ -232,7 +233,7 @@ main ul li a p {
 }
 
 #citation2 {
-    background-color:#130989;
+    background-color:black;
     color: white;
     width: 100%;
     height: 200px;
@@ -244,7 +245,7 @@ main ul li a p {
 }
 
 #citation2 p{
-    color: white;
+    color: #bd7d07;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -265,7 +266,7 @@ main ul li a p {
 }
 
 .directors{
-    color: #1F78C9;
+    color: #bd7d07;
     font-family: "Inter", sans-serif;
 }
 
@@ -275,4 +276,16 @@ main ul li a p {
     text-align: center;
     flex-direction: column;
     font-size: large;
+}
+
+#footer {
+  font-size: xxx-small; 
+  width:100%; 
+  height: 180px; 
+  background-color: black;  
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }

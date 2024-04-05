@@ -20,7 +20,7 @@ $realisateurs = $requete->fetchAll();
                 </td>
                 <td>
                     <a href="index.php?action=supprimeRealisateur&id=<?= $realisateur["id_realisateur"] ?>">
-                        <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer">
+                        <input id="ii" class="form-control text-white text-center" type="submit" name="submit" value="Supprimer">
                     </a>
                 </td>
             </tr>
@@ -29,7 +29,7 @@ $realisateurs = $requete->fetchAll();
 </table>
 <br>
 <p class="px-2" style="width: 200px">
-    <a href="index.php?action=ajoutRealisateur"><input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submitRealisateur" value="Ajouter réalisateur"> </a>
+    <a href="index.php?action=ajoutRealisateur"><input id="i" class="form-control text-white text-center" type="submit" name="submitRealisateur" value="Ajouter réalisateur"> </a>
 </p>
 
 <?php

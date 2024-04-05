@@ -12,7 +12,7 @@ nav {
     align-content: center;
     justify-content: center;
     align-items: center;
-    background-color:#130989;
+    background-color:black;
     gap: 200px;
     width: 100%;
     height: 100px;
@@ -54,7 +54,7 @@ main {
 #contenu {
     margin-bottom: 40px;
     margin-left: 30px;
-    color: #130989;
+    color: black;
     align-items: center;
     display: flex;
     align-self: center;

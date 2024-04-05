@@ -18,7 +18,7 @@
             </td>
             <td>
                 <a href="index.php?action=supprimeCategorie&id=<?= $categorie["id_genreCine"]?>">
-                    <input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Supprimer">
+                    <input id="ii" class="form-control text-white text-center" type="submit" name="submit" value="Supprimer">
                 </a>
             </td>
         </tr>
@@ -31,7 +31,7 @@
 <br>
 <p class="px-2" style="width: 200px">
     <a href="index.php?action=ajoutCategorie">
-        <input id="i" style="margin-left: 30px;" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter catégorie">
+        <input id="i" style="margin-left: 30px;" class="form-control text-white text-center" type="submit" name="submit" value="Ajouter catégorie">
     </a>
 </p>
 <?php 
