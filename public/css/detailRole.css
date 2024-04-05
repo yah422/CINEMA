@@ -1,0 +1,44 @@
+section {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#infoRole {
+    background-color: black;
+    width: 80%;
+    height: 450px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+#infoRole p {
+   color:  #bd7d07;
+
+}
+
+#infoRole h1 {
+    color:  #bd7d07;
+ 
+ }
+
+#infoRole p a {
+color:  #bd7d07;
+
+}
+
+#infoRole img {
+    border-radius: 15px;
+ 
+ }
+

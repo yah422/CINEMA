@@ -33,8 +33,9 @@ $detailReal = $requete->fetch();
         <div class="ligneAcceuil"> </div>
         <h2> Filmographie : <br>  </h2>
     </div>
+    
     <div class="title">
-        <table class="table-responsive" style="width: 600px; margin-left: 30px;">
+        <table class="table-responsive" style="width: 600px;">
         <tbody id="tbody">
             <?php   
             

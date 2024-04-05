@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="public/css/listeRole.css">
     <link rel="stylesheet" href="public/css/listeCategorie.css">
     <link rel="stylesheet" href="public/css/detailReal.css">
+    <link rel="stylesheet" href="public/css/detailRole.css">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
