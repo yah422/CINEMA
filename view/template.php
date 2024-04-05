@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="public/css/listeCategorie.css">
     <link rel="stylesheet" href="public/css/detailReal.css">
     <link rel="stylesheet" href="public/css/detailRole.css">
+    <link rel="stylesheet" href="public/css/detailCategorie.css.css">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
