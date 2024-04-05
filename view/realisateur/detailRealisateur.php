@@ -13,6 +13,7 @@ $detailReal = $requete->fetch();
             <p>Réalisateur : <?= $detailReal["reali"] ?></p>
             <p>Date de Naissance : <?= $detailReal["dateNaissance"] ?> </p> 
             <p>Sexe : <?= $detailReal["sexe_personne"] ?></p>
+            <br>
 
             <div id="carriere" > <?= $detailReal["carriere_personne"]?> ans de carrière</div>
 

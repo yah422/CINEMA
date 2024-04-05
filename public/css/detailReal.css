@@ -12,9 +12,9 @@
 }
 
 #infoReal {
-    gap: 60px;
+    gap: 150px;
     width: 80%;
-    height: 350px;
+    height: 500px;
     border-radius: 15px;
     background-color: black;
     text-align: center;
@@ -29,6 +29,7 @@
 
 #infoReal img {
     width:350px;
+    height: 300px;
 }
 #infoReal p {
     color: #bd7d07;
