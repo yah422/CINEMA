@@ -28,11 +28,19 @@ class RealisateurController {
 
     $pdo = Connect::seConnecter();
 
-    $requete = $pdo->prepare("SELECT  
-      CONCAT(prenom_personne, ' ',nom_personne ) as reali
-      FROM realisateur
-      INNER JOIN personne ON personne.id_personne = realisateur.id_personne
-      WHERE realisateur.id_realisateur= :id;"
+    $requete = $pdo->prepare("SELECT
+    CONCAT(prenom_personne, ' ',nom_personne ) as reali,
+    DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
+    sexe_personne,
+    personne.affiche_acteur,
+    personne.bibliographie_acteur,
+    personne.carriere_personne,
+    film.titre_film,
+    film.affiche_film
+    FROM realisateur
+    INNER JOIN personne ON personne.id_personne = realisateur.id_personne
+    INNER JOIN film ON realisateur.id_realisateur = film.id_realisateur
+    WHERE realisateur.id_realisateur= :id;"
     );
 
     $requete->execute(["id"=> $id]);
