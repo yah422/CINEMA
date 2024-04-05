@@ -16,6 +16,8 @@ $detailFilm = $requeteFilm ->fetch();
             <p> Durée : <?= $detailFilm["duree_formatee"]?></p>
             <p> Année de parution : <?= $detailFilm["anneeSortie_film"]?></p>
             <p> Réalisateur : <?= $detailFilm["realisateurName"]?> </p>
+            
+            <br>
 
             <div id="note" > Note : <?= $detailFilm["note_film"]?></div>
         </div>
