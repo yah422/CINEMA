@@ -2,7 +2,7 @@
 ob_start(); 
 $detailReal = $requete->fetch();
 ?>
-<section>
+<section id="realisa">
     <div id="infoReal">
     <!-- inserer photo du réalisateur  -->
         <div>

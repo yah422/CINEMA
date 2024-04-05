@@ -3,7 +3,7 @@ ob_start();
 $role = $requeteActRole->fetch();
 
 ?>
-<section>
+<section id="role">
     <div id="infoRole">
         <h1><?= $role["nom_role"] ?></h1>
 
