@@ -16,7 +16,7 @@ $detailFilm = $requeteFilm ->fetch();
             <p> Durée : <?= $detailFilm["duree_formatee"]?></p>
             <p> Année de parution : <?= $detailFilm["anneeSortie_film"]?></p>
 
-            <div style="width:150px; height: 70px; border-radius: 10px; background-color: #130989; text-align: center; color:white; display:flex; justify-content: center; align-items:center;" > Note : <?= $detailFilm["note_film"]?></div>
+            <div id="note" > Note : <?= $detailFilm["note_film"]?></div>
         </div>
     </div>
 

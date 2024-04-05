@@ -21,3 +21,15 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
+
+#note {
+    width:150px; 
+    height: 70px; 
+    border-radius: 10px; 
+    background-color: black; 
+    text-align: center; 
+    color: orange; 
+    display:flex; 
+    justify-content: center; 
+    align-items:center;
+}

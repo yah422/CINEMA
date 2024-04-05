@@ -59,6 +59,7 @@ class ActeurController {
             CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
             rolefilm.nom_role,
             film.affiche_film,
+            rolefilm.id_role,
             personne.affiche_acteur,
             personne.sexe_personne,
             personne.bibliographie_acteur
