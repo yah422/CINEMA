@@ -59,6 +59,7 @@ $detailFilm = $requeteFilm ->fetch();
             <?php } ?>
         </tbody>
     </table>
+    <br>
 
 
 </section>
