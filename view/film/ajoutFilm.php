@@ -61,9 +61,10 @@ ob_start();
 
         </p>
         <p>
-            <label for="file"> Affiche Film </label>
-            <input type="file" name="file">
+            <label for="file">Affiche Film :</label>
+            <input type="file" name="file" id="file" accept="image/*">
         </p>
+
 
         <p class="px-2">
             <label>Note: </label><br>

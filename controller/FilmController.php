@@ -98,24 +98,33 @@ class FilmController {
         if(isset($_POST["submitFilm"])) {
 
               //upload image
-              if(isset($_FILES['file'])){
-                $tmpName = $_FILES['file']['tmp_name'];
-                $name = $_FILES['file']['name'];
-                $size = $_FILES['file']['size'];
-                $error = $_FILES['file']['error'];
-                $type = $_FILES['file']['type'];
-                
-                $tabExtension = explode('.',$name);
-                $extension = strtolower(end($tabExtension));
-                $tailleMax = 200000;
-                $extesionAutorisees = ['jpg','jpeg','gif','png'];
-                
-                if(in_array($extension, $extesionAutorisees) && $size <= $tailleMax && $error == 0){
-                    $uniqueName = uniqid('',true);
-                    $fileName = $uniqueName. '.' .$extension;
-                    move_uploaded_file($tmpName, 'public/images/'.$fileName);
-                }
+            if(isset($_FILES['file'])){
+            $tmpName = $_FILES['file']['tmp_name'];
+            $name = $_FILES['file']['name'];
+            $size = $_FILES['file']['size'];
+            $error = $_FILES['file']['error'];
+            $type = $_FILES['file']['type'];
+            
+            $tabExtension = explode('.',$name);
+            $extension = strtolower(end($tabExtension));
+            $tailleMax = 200000; // Taille maximale autorisée en octets
+            $extesionAutorisees = ['jpg','jpeg','gif','png']; // Extensions autorisées
+            
+            if(in_array($extension, $extesionAutorisees) && $size <= $tailleMax && $error == 0){
+                // Générer un nom de fichier unique pour éviter les collisions
+                $uniqueName = uniqid('',true);
+                $fileName = $uniqueName. '.' .$extension;
+                // Déplacer le fichier téléchargé vers le dossier de destination
+                move_uploaded_file($tmpName, 'public/images/'.$fileName);
+            } else {
+                // Gérer les erreurs de téléchargement
+                $_SESSION["message"] = "Erreur lors du téléchargement de l'image. Assurez-vous que le fichier est une image et qu'il ne dépasse pas la taille maximale autorisée.";
+                // Redirection ou autre action en cas d'erreur
             }
+        }
+            
+            
+            
      
             // Filtrage des données du formulaire
             $titre_film = filter_input(INPUT_POST, "titre_film", FILTER_SANITIZE_SPECIAL_CHARS);
