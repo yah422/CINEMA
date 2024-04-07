@@ -27,7 +27,7 @@ $acteur = $requeteActeur ->fetch();
         <br>
     </div>
     <div class="title">
-        <p style="text-align:justify; width:90%;"><?= $acteur["bibliographie_acteur"] ?></p>
+        <p style="text-align:justify;"><?= $acteur["bibliographie_acteur"] ?></p>
     </div>
 
     <br>
