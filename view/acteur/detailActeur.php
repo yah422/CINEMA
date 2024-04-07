@@ -7,9 +7,9 @@ $acteur = $requeteActeur ->fetch();
 ?>
  
 <section style="display: flex; flex-direction: column;">
-    <div style="display: flex; flex-direction: row;align-content: center;
-    justify-content: center;
-    align-items: center;">
+    
+    <div id="wrapper">
+
         <div style="margin-left: 30px;">
             <img src='public/images/<?= $acteur["affiche_acteur"] ?>' alt='Affiche du film' style="width:250px;">
         </div>
@@ -19,13 +19,16 @@ $acteur = $requeteActeur ->fetch();
             <p>Sexe : <?= $acteur["sexe_personne"] ?></p>
         </div>
     </div>
+
     <br>
     <br>
+
     <div class="parts">
         <div class="ligneAcceuil"></div>
         <h2> Bibliographie <br> </h2>
         <br>
     </div>
+
     <div class="title">
         <p style="text-align:justify;"><?= $acteur["bibliographie_acteur"] ?></p>
     </div>
