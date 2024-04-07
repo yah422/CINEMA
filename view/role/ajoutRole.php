@@ -13,7 +13,7 @@ ob_start();
     </p>
 
     <p class="px-2" style="width: 200px">
-        <a href="controller/RoleController.php"><input id="i" class="form-control bg-primary text-white text-center" type="submit" name="submit" value="Ajouter un rôle"></a>    
+        <a href="controller/RoleController.php"><input id="i" class="form-control text-white text-center" type="submit" name="submit" value="Ajouter un rôle"></a>    
     </p>
     
 </form>
