@@ -7,7 +7,9 @@ $acteur = $requeteActeur ->fetch();
 ?>
  
 <section style="display: flex; flex-direction: column;">
-    <div style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row;align-content: center;
+    justify-content: center;
+    align-items: center;">
         <div style="margin-left: 30px;">
             <img src='public/images/<?= $acteur["affiche_acteur"] ?>' alt='Affiche du film' style="width:250px;">
         </div>
@@ -19,38 +21,47 @@ $acteur = $requeteActeur ->fetch();
     </div>
     <br>
     <br>
-    <div class="title" style="margin-left: 30px;">
+    <div class="parts">
         <div class="ligneAcceuil"></div>
         <h2> Bibliographie <br> </h2>
         <br>
+    </div>
+    <div class="title">
         <p style="text-align:justify; width:90%;"><?= $acteur["bibliographie_acteur"] ?></p>
     </div>
+
     <br>
     <br>
-    <div class="title" style="margin-left: 30px;">
+
+    
+        <div class="parts">
         <div class="ligneAcceuil"></div>
         <h2> Filmographie <br> </h2>
+        </div>
+
         <br>
-    </div>
-    <div style="margin-left: 30px;">
-        <table class="table-responsive" style="width: 600px;">
-            <thead>
-                <tr>
-                    <th>Affiche Film</th>
-                    <th>Titre film</th>
-                    <th>Rôle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($requeteFilmActeur->fetchAll() as $detailActeur) {?>
+    <div class="title">
+    
+        <div>
+            <table class="table-responsive" style="width: 600px;">
+                <thead>
                     <tr>
-                        <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><img src='public/images/<?= $detailActeur["affiche_film"] ?>' alt='Affiche du film'></a></td>
-                        <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><?= $detailActeur["titre_film"] ?></a></td>
-                        <td><a style="text-decoration: none;" href="index.php?action=detailRole&id=<?= $detailActeur["id_role"] ?>"><?= $detailActeur["nom_role"] ?></a></td>
+                        <th>Affiche Film</th>
+                        <th>Titre film</th>
+                        <th>Rôle</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($requeteFilmActeur->fetchAll() as $detailActeur) {?>
+                        <tr>
+                            <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><img src='public/images/<?= $detailActeur["affiche_film"] ?>' alt='Affiche du film'></a></td>
+                            <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><?= $detailActeur["titre_film"] ?></a></td>
+                            <td><a style="text-decoration: none;" href="index.php?action=detailRole&id=<?= $detailActeur["id_role"] ?>"><?= $detailActeur["nom_role"] ?></a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+    </div>
         <br>
     </div>
 </section>
