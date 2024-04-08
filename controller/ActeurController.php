@@ -36,40 +36,37 @@ class ActeurController {
         
         // requete acteur/personne
         $requeteActeur = $pdo -> prepare ("SELECT
+        DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
         CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
-            DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
-            personne.sexe_personne,
-            personne.affiche_acteur,
-            jouer.id_film,
-            jouer.id_role,
-           
-            personne.bibliographie_acteur
+        personne.affiche_acteur,
+        personne.sexe_personne,
+        personne.bibliographie_acteur,
+        personne.carriere_personne
         FROM acteur
-        INNER JOIN jouer on acteur.id_acteur = jouer.id_acteur
-        INNER JOIN personne ON acteur.id_personne = personne.id_personne
+        INNER JOIN personne on acteur.id_personne = personne.id_personne
         WHERE acteur.id_acteur =:id ");
         
         $requeteActeur -> execute(["id"=> $id]);
         
         // requete acteur/film/jouer
         $requeteFilmActeur = $pdo -> prepare ("SELECT
-            film.titre_film,
-            film.id_film,
-            DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
-            CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
-            rolefilm.nom_role,
-            film.affiche_film,
-            rolefilm.id_role,
-            personne.affiche_acteur,
-            personne.sexe_personne,
-            personne.bibliographie_acteur
+        film.titre_film,
+        film.id_film,
+        DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
+        CONCAT(prenom_personne, ' ',nom_personne ) as acteur,
+        rolefilm.nom_role,
+        film.affiche_film,
+        rolefilm.id_role,
+        personne.affiche_acteur,
+        personne.sexe_personne,
+        personne.bibliographie_acteur,
+        personne.carriere_personne
         FROM acteur
         INNER JOIN personne on acteur.id_personne = personne.id_personne
         INNER  JOIN jouer ON acteur.id_acteur = jouer.id_acteur
         INNER JOIN rolefilm ON jouer.id_role = rolefilm.id_role
         INNER JOIN film ON jouer.id_film = film.id_film
-        WHERE 
-            acteur.id_acteur = :id");
+        WHERE acteur.id_acteur = :id");
         $requeteFilmActeur -> execute(["id" => $id]); 
 
         // Inclusion de la vue pour le detail d'un acteur
