@@ -13,6 +13,15 @@
 #form1 label {
     font-family: "Raleway", sans-serif;
 }
+
 p {
     text-align: justify;
+}
+
+#contient{
+    border: solid black;
+    width: 80%;
+    height: auto;
+
+
 }

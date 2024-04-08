@@ -58,7 +58,11 @@
 
         <br>
 
-        <div id="contient">
+        <div style="display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;" id="contient">
             <?= $contenu ?>
         </div>
 

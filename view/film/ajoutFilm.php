@@ -2,81 +2,72 @@
 ob_start(); 
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/ajoutFilm.css">
-</head>
 
-<div>
-    <form id="form1" action="index.php?action=ajoutFilm" method="post" enctype="multipart/form-data">
-        <p  class="px-2">
-            <label>Titre du film : </label><br>
-            <input id="titre_film" class="border-1" name="titre_film" type="text" required>
-        </p>
+<div id="formulaireADD" style="    border: solid black;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding-top: 30px;">
 
-        <p class="px-2">
-            <label>Durée du film : </label><br>
-            <input id="duree_formatee" class="border-1" name="duree_film" type="number" required>
-                
-        </p>
+    <form action="index.php?action=ajoutFilm" method="post" enctype="multipart/form-data">
 
-        <p class="px-2">
-            <label>Année de parution : </label><br>
-            <input id="anneeSortie_film" class="border-1" name="anneeSortie_film" type="number" required>
-            
-            
-        </p>
-
-        <p class="px-2">
-            <label>Synopsis : </label><br>
-            <textarea id="synopsis_film" name="synopsis_film" > Résumé l'histoire . . . </textarea>
-        </p>
-
-        <p class="px-2">
-            <label>Réalisateur: </label><br>
-            <select id="realisateurName" class="border-1" name="id_realisateur" >
-                <option value="">
-                <?php
-                foreach($requeteRealFilm ->fetchAll() as $realFilm) {?>
-                
-                    <option value="<?=$realFilm["id_realisateur"]?>"><?= $realFilm["realisateurName"]?></option>
-                
-                <?php }  ?>
-                </option>
-            </select>
-        </p>
+        <label style=" color: #bd7d07;" for="titre_film">Titre du film :</label><br>
+        <input style="border-radius:15px; color:orange; background-color: black;" type="text" id="titre_film" name="titre_film" required><br>
+    
+      
+    
+        <label style=" color: #bd7d07;" for="anneeSortie_film">Année de sortie :</label><br>
+        <input style="border-radius:15px; color:orange; background-color: black;" type="number" id="anneeSortie_film" name="anneeSortie_film" required><br>
+    
+        <label style=" color: #bd7d07;" for="duree_film">Durée du film :</label><br>
+        <input style="border-radius:15px; color:orange; background-color: black;" type="number" id="duree_formatee" name="duree_film" required><br>
 
         <p>
-            <label> Genre :</label>
+            <label style=" color: #bd7d07;"> Genre :</label><br>
             <?php
                 foreach($requeteCateFilm ->fetchAll() as $cateFilm) {?>
 
-                    <input type="checkbox" id="id_genreCine" value=<?=$cateFilm["id_genreCine"]?> name="nom_genreCine" >
-                    <label><?= $cateFilm["nom_genreCine"]?></label>
+                    <input style="border-radius:15px; color:orange; background-color: black;" type="checkbox" id="id_genreCine" value=<?=$cateFilm["id_genreCine"]?> name="nom_genreCine" >
+                    <label style=" color: #bd7d07;"><?= $cateFilm["nom_genreCine"]?></label>
                 
                 <?php }  ?>
 
         </p>
-        <p>
-            <label for="file">Affiche Film :</label>
-            <input type="file" name="file" id="file" accept="image/*">
-        </p>
 
-
+        <label style=" color: #bd7d07;" for="synopsis_film">Synopsis : </label><br>
+        <textarea style=" background-color: black;" id="synopsis_film" name="synopsis_film" required></textarea><br>
+    
+        <label style=" color: #bd7d07;" for="note_film">Note :</label><br>
+        <input style="border-radius:15px; color:orange; background-color: black;" type="number" class="border-1" min="0" max="5" id="note_film" name="note_film" required><br>
+        
         <p class="px-2">
-            <label>Note: </label><br>
-            <input id="note_film" class="border-1" min="0" max="5" name="note_film" type="number" required>
+                <label  style=" color: #bd7d07;">Réalisateur : </label><br>
+                <select style="background-color:black; color:  #bd7d07;" id="realisateurName" class="border-1" name="id_realisateur" >
+                    <option value="">
 
-        </p>
+                    <?php
+                    foreach($requeteRealFilm ->fetchAll() as $realFilm) {?>
+                    
+                        <option style="color: #bd7d07;" value="<?=$realFilm["id_realisateur"]?>"><?= $realFilm["realisateurName"]?></option>
+                    
+                    <?php }  ?>
+                    </option>
+                </select>
+            </p><br>
+    
+        <label style=" color: #bd7d07;" for="affiche">Affiche du film:</label><br>
 
+        <input style="  color: #bd7d07; background-color: black;" type="file" id="affiche" name="affiche" accept="image/*" required><br>
 
-        <div class="btn-submit"><br>
-            <input type="submit" class="submit" name="submitFilm" id="submitFilm">
-        </div>
-
+        <button style="border-radius:15px; width:150px; height:45px;  color: #bd7d07; background-color: black; margin-top: 15px; margin-bottom: 15px;" type="submit" name="submitFilm">Ajouter le film</button> 
+        
         <div class="messages">
             <?php
                 if (isset($_SESSION["message"])) {
@@ -86,7 +77,6 @@ ob_start();
             ?>
         </div>
     </form>
-
 </div>
 
 <?php
