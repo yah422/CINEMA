@@ -77,6 +77,7 @@ class RealisateurController {
       $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
       
       if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
+
           $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance) 
           VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance)");
           $requeteAjouterPersonne->execute([

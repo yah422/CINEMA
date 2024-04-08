@@ -32,6 +32,15 @@
                             <input type="date" name="dateNaissance" id="dateNaissance" required>
                         </div>
 
+                        <div>
+                            <p>
+                                <label for="file"> Photo Réalisateur </label>
+                                <br>
+                                <input type="file" name="file">
+                            </p>
+
+                        </div>
+
                     <div class="btn-submit"><br>
                         <input type="submit" class="submit" name="submitRealisateur" id="submitRealisateur">
                     </div>
