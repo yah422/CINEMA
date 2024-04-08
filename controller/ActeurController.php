@@ -124,9 +124,9 @@ class ActeurController {
                     "nom_personne" => $nom_personne,
                     "sexe_personne" => $sexe_personne,
                     "dateNaissance" => $dateNaissance,
-                    "affiche_acteur" => $fileName, // Utilisation du nom du fichier de l'image
-                    "bibliographie_acteur" => $bibliographie_acteur, // Ajout de la bibliographie
-                    "carriere_personne" => $carriere_personne // Ajout de la carrière
+                    "affiche_acteur" => $fileName,
+                    "bibliographie_acteur" => $bibliographie_acteur,
+                    "carriere_personne" => $carriere_personne 
                 ]);
         
                 // Récupération de l'ID de la personne ajoutée
