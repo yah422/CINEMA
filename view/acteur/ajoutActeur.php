@@ -51,6 +51,11 @@ ob_start();
 
             </div>
 
+            <div class="formInput">
+                <label for="carriere_personne"> Carrière : </label> <br>
+                <input type="number" placeholder="Carrière" name="carriere_personne" id="carriere_personne" required>
+            </div>
+
             <div class="btn-submit"><br>
             <input type="submit" class="submit" name="submitActeur" id="submitActeur">
             </div>

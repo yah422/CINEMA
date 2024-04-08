@@ -85,64 +85,67 @@ class ActeurController {
      
         // Vérification si le formulaire a été soumis
         if(isset($_POST["submitActeur"])){
-
-              //upload image
-              if(isset($_FILES['file'])){
+        
+            //upload image
+            if(isset($_FILES['file'])){
+        
                 $tmpName = $_FILES['file']['tmp_name'];
                 $name = $_FILES['file']['name'];
                 $size = $_FILES['file']['size'];
                 $error = $_FILES['file']['error'];
                 $type = $_FILES['file']['type'];
-                
+        
                 $tabExtension = explode('.',$name);
                 $extension = strtolower(end($tabExtension));
                 $tailleMax = 200000;
                 $extesionAutorisees = ['jpg','jpeg','gif','png'];
-                
+        
                 if(in_array($extension, $extesionAutorisees) && $size <= $tailleMax && $error == 0){
                     $uniqueName = uniqid('',true);
                     $fileName = $uniqueName. '.' .$extension;
+                    // Déplacer l'image téléchargée vers le dossier public/images
                     move_uploaded_file($tmpName, 'public/images/'.$fileName);
                 }
             }
-     
+        
             // Récupération et filtrage des données du formulaire
             $prenom_personne = filter_input(INPUT_POST, "prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
             $nom_personne = filter_input(INPUT_POST, "nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
             $sexe_personne = filter_input(INPUT_POST, "sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
-            $affiche_acteur = filter_input(INPUT_POST, "affiche_acteur", FILTER_SANITIZE_SPECIAL_CHARS);
-
-     
+            $bibliographie_acteur = filter_input(INPUT_POST, "bibliographie_acteur", FILTER_SANITIZE_SPECIAL_CHARS);
+            $carriere_personne = filter_input(INPUT_POST, "carriere_personne", FILTER_SANITIZE_SPECIAL_CHARS);
+        
             // Vérification si les données obligatoires sont présentes
             if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
                 $affiche_acteur = ($affiche_acteur!= null && $affiche_acteur != false) ? $affiche_acteur : ""; 
-
+        
                 // Préparation de la requête pour ajouter une personne
-                $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance, affiche_acteur) VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance, :affiche_acteur)");
+                $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance, affiche_acteur, bibliographie_acteur, carriere_personne) VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance, :affiche_acteur, :bibliographie_acteur, :carriere_personne)");
                 $requeteAjouterPersonne->execute([
                     "prenom_personne" => $prenom_personne,
                     "nom_personne" => $nom_personne,
                     "sexe_personne" => $sexe_personne,
                     "dateNaissance" => $dateNaissance,
-                    "affiche_acteur" => $fileName
+                    "affiche_acteur" => $fileName, // Utilisation du nom du fichier de l'image
+                    "bibliographie_acteur" => $bibliographie_acteur, // Ajout de la bibliographie
+                    "carriere_personne" => $carriere_personne // Ajout de la carrière
                 ]);
-                
+        
                 // Récupération de l'ID de la personne ajoutée
                 $id_personne = $pdo->lastInsertId();
-    
+        
                 // Préparation de la requête pour lier la personne à l'acteur avec le rôle correspondant
                 $requeteAjouterActeur = $pdo->prepare("INSERT INTO acteur (id_personne) VALUES (:id_personne)");
                 $requeteAjouterActeur->execute([
                     "id_personne" => $id_personne,
                 ]);
-     
+        
                 // Message de succès
                 $_SESSION["message"] = "L'acteur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
-     
+        
                 // Redirection vers la liste des acteurs
                 header("Location: index.php?action=listActeur");
-     
             } else {
                 // Message d'erreur si des données obligatoires sont manquantes
                 $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
