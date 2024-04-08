@@ -1,6 +1,8 @@
 <?php 
 ob_start(); 
 $detailReal = $requete->fetch();
+$hasReal = (count($detailReal) > 0 ) ? True : False ;
+
 ?>
 <section id="realisa">
     <div id="infoReal">
@@ -29,6 +31,9 @@ $detailReal = $requete->fetch();
         <p style="text-align:justify;">  <?= $detailReal["bibliographie_acteur"]?></p>
     </div>
 
+
+    <?php if ($hasFilms) {  ?>
+
     <div class="parts">
         <div class="ligneAcceuil"> </div>
         <h2> Filmographie : <br>  </h2>
@@ -49,6 +54,8 @@ $detailReal = $requete->fetch();
         </tbody>
     </table>
     </div>
+    
+    <?php } ?>
     <br>
 
 </section>
