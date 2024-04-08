@@ -24,7 +24,7 @@ $hasReal = (count($detailReal) > 0 ) ? True : False ;
 
     <div class="parts">
         <div class="ligneAcceuil"> </div>
-        <h2> Bibliographie : <br>  </h2>
+        <h2> Bibliographie <br>  </h2>
     </div>
 
     <div class="title">
@@ -32,11 +32,11 @@ $hasReal = (count($detailReal) > 0 ) ? True : False ;
     </div>
 
 
-    <?php if ($hasFilms) {  ?>
+    <?php if ($hasReal) {  ?>
 
     <div class="parts">
         <div class="ligneAcceuil"> </div>
-        <h2> Filmographie : <br>  </h2>
+        <h2> Filmographie <br>  </h2>
     </div>
     
     <div class="title">
@@ -54,7 +54,7 @@ $hasReal = (count($detailReal) > 0 ) ? True : False ;
         </tbody>
     </table>
     </div>
-    
+
     <?php } ?>
     <br>
 
