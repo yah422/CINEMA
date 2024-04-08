@@ -5,7 +5,7 @@ $acteur = $requeteActeur->fetch();
 // Vérifier s'il y a des films associés à l'acteur
 $filmsActeur = $requeteFilmActeur->fetchAll();
 // compte le nombre de films recup
-$hasFilms = count($filmsActeur) > 0;
+$hasFilms = (count($filmsActeur) > 0 ) ? True : False ;
  
 ?>
  
@@ -31,7 +31,7 @@ $hasFilms = count($filmsActeur) > 0;
     </div>
     <br><br>
  
-    <?php if($hasFilms): ?>
+    <?php if ($hasFilms) {  ?>
         <div class="parts">
             <div class="ligneAcceuil"></div>
             <h2> Filmographie <br> </h2>
@@ -60,7 +60,7 @@ $hasFilms = count($filmsActeur) > 0;
             </div>
             <br>
         </div>
-    <?php endif; ?>
+        <?php } ?>
 </section>
  
 <?php
