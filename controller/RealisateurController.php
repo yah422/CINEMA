@@ -70,29 +70,39 @@ class RealisateurController {
   public function AjoutRealisateur(){
     $pdo = Connect::seConnecter();
     if(isset($_POST["submitRealisateur"])){
-
-      $prenom_personne = filter_input(INPUT_POST, "prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
-      $nom_personne = filter_input(INPUT_POST, "nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
-      $sexe_personne = filter_input(INPUT_POST, "sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-      $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
       
-      if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance){
-
-          $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance) 
-          VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance)");
-          $requeteAjouterPersonne->execute([
-              "prenom_personne" => $prenom_personne,
-              "nom_personne" => $nom_personne,
-              "sexe_personne" => $sexe_personne,
-              "dateNaissance" => $dateNaissance]);
-          $id_realisateur = $pdo->lastInsertId();
-          $requeteAjouterRealisateur = $pdo->prepare("INSERT INTO realisateur (id_personne) VALUES (:id_personne)");   
-          $requeteAjouterRealisateur->execute(["id_personne" => $id_realisateur]);
-      }
-      $_SESSION["message"] = "Le réalisateur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
-      header("Location: index.php?action=listRealisateur");
-    } else {
-        $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+        $prenom_personne = filter_input(INPUT_POST, "prenom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
+        $nom_personne = filter_input(INPUT_POST, "nom_personne", FILTER_SANITIZE_SPECIAL_CHARS);
+        $sexe_personne = filter_input(INPUT_POST, "sexe_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $dateNaissance = filter_input(INPUT_POST, "dateNaissance", FILTER_SANITIZE_SPECIAL_CHARS);
+        $photo_personne = $_FILES["photo_personne"]["name"]; // Récupérer le nom du fichier photo
+        
+        if($prenom_personne && $nom_personne && $sexe_personne && $dateNaissance && $photo_personne){
+            // Enregistrer la photo dans le dossier d'images
+            $dossier_images = "public/images/";
+            $chemin_photo = $dossier_images . basename($photo_personne);
+            move_uploaded_file($_FILES["photo_personne"]["tmp_name"], $chemin_photo);
+            
+            // Insérer les données du réalisateur dans la base de données
+            $requeteAjouterPersonne = $pdo->prepare("INSERT INTO personne (prenom_personne, nom_personne, sexe_personne, dateNaissance, photo_personne) VALUES (:prenom_personne, :nom_personne, :sexe_personne, :dateNaissance, :photo_personne)");
+            $requeteAjouterPersonne->execute([
+                "prenom_personne" => $prenom_personne,
+                "nom_personne" => $nom_personne,
+                "sexe_personne" => $sexe_personne,
+                "dateNaissance" => $dateNaissance,
+                "photo_personne" => $chemin_photo // Enregistrer le chemin de la photo dans la base de données
+            ]);
+            
+            $id_realisateur = $pdo->lastInsertId();
+            
+            $requeteAjouterRealisateur = $pdo->prepare("INSERT INTO realisateur (id_personne) VALUES (:id_personne)");
+            $requeteAjouterRealisateur->execute(["id_personne" => $id_realisateur]);
+            
+            $_SESSION["message"] = "Le réalisateur a bien été ajouté ! <i class='fa-solid fa-check'></i>";
+            header("Location: index.php?action=listRealisateur");
+        } else {
+            $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
+        }
     }
     require "view/realisateur/ajoutRealisateur.php";
 }
