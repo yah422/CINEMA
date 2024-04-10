@@ -100,6 +100,7 @@ class FilmController {
             $requeteSupprimeFilmC = $pdo->prepare("DELETE FROM categorie WHERE id_film=:id");
             $requeteSupprimeFilmC->execute(["id" => $id]);
             
+            
             $requeteSupprimerFilmJ = $pdo->prepare("DELETE FROM jouer WHERE id_film=:id");
             $requeteSupprimerFilmJ->execute(["id" => $id]);
             
@@ -115,6 +116,6 @@ class FilmController {
 
     // ajouter un Casting
     public function ajouterCast(){
-        
+
     }
 }
