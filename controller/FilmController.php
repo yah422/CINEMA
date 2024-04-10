@@ -112,4 +112,9 @@ class FilmController {
             $_SESSION["message"] = "Une erreur a été détectée dans la saisie";
         }
     }
+
+    // ajouter un Casting
+    public function ajouterCast(){
+        
+    }
 }
