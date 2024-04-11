@@ -15,7 +15,7 @@ ob_start();
 
                         <option disabled selected> Choix du film </option>
                             <?php foreach($requeteFilm->fetchAll() as $film){ ?>
-                            <option value="<?= $film["id_film"] ?>"><?= $film["title_film"]?></option>
+                            <option value="<?= $film["id_film"] ?>"><?= $film["titre_film"]?></option>
                             <?php } ?>
                     </select>
                 </div>
@@ -35,7 +35,7 @@ ob_start();
                     <select name="acteur" id="acteur" required>
                         <option disabled selected> Choix des acteur </option>
                             <?php foreach($requeteActeur->fetchAll() as $acteur){ ?>
-                                <option value="<?= $actor["id_acteur"] ?>"><?= $acteur["nom_personne"] . ' ' . $actor["prenom_personne"]?></option>
+                                <option value="<?= $acteur["id_acteur"] ?>"><?= $acteur["nom_personne"] . ' ' . $acteur["prenom_personne"]?></option>
                             <?php } ?>
                         </select>
                 </div>

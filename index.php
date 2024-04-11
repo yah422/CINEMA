@@ -37,6 +37,8 @@ if(isset($_GET["action"])){
         case "supprimeFilm" : $ctrlFilm -> supprimeFilm($id); break;
         // &-------------- AJOUT HOMEPAGE ---------------
         case "homePage" : $ctrlFilm -> homePage(); break;
+        // &-------------- Ajout CASTING ---------------
+        case "ajoutCasting" : $ctrlFilm -> ajoutCasting();break;
 
 
         //^^ ---------- ACTEURS -----------

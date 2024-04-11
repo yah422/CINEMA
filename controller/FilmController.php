@@ -94,7 +94,7 @@ class FilmController {
     }
 
     // ajouter un Casting
-    public function ajouterCasting() {
+    public function ajoutCasting() {
         $pdo= Connect::seConnecter();
         $requeteFilm = $pdo->query("SELECT film.id_film, film.titre_film FROM film");
         $requeteActeur = $pdo->query("SELECT acteur.id_acteur, personne.prenom_personne, ' ', personne.nom_personne
