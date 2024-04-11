@@ -3,8 +3,8 @@ ob_start();
 
 ?>
 
-<div id="formulaireADD" style="    border: solid black;
-    width: 50%;
+<div id="formulaireADD" style="
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
