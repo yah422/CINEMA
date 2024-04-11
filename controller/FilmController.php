@@ -92,7 +92,40 @@ class FilmController {
         }
         require "view/film/ajoutFilm.php";
     }
-    
+
+    // ajouter un Casting
+    public function ajouterCasting() {
+        $pdo= Connect::seConnecter();
+        $requeteFilm = $pdo->query("SELECT film.id_film, film.titre_film FROM film");
+        $requeteActeur = $pdo->query("SELECT acteur.id_acteur, personne.prenom_personne, ' ', personne.nom_personne
+        FROM personne
+        INNER JOIN acteur ON personne.id_personne = acteur.id_personne");
+        $requeteRole = $pdo->query("SELECT id_role, rolefilm.nom_role
+        FROM rolefilm");
+
+        if(isset($_POST["submitCasting"])) {
+            $film = filter_input(INPUT_POST, "film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $rolefilm = filter_input(INPUT_POST, "rolefilm", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $acteur = filter_input(INPUT_POST, "acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($film  &&  $rolefilm  && $acteur) {
+                $requeteAjouterCasting = $pdo->prepare("INSERT INTO jouer(id_film, id_acteur, id_role)
+                VALUES (:film, :acteur, :role)");
+
+                $requeteAjouterCasting ->execute([
+                    "film" => $film,
+                    "rolefilm" => $rolefilm,
+                    "acteur" => $acteur,]);
+
+                $_SESSION["message"] = " Le casting a bien été ajouter ! <i class='fa-solid fa-check'></i> ";
+            } else {
+                $_SESSION["message"] = "Veuillez sélectionné un film un acteur et un rôle avant de valider !";
+            }
+        }
+        require "view/film/ajoutCasting.php"; 
+    }
+
+
     // Supprimer un film
     public function supprimeFilm($id){
         if(isset($id)) {
@@ -114,8 +147,5 @@ class FilmController {
         }
     }
 
-    // ajouter un Casting
-    public function ajouterCast(){
-
-    }
+    
 }
