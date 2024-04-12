@@ -33,7 +33,6 @@
     align-items: center;
     align-content: center;
     flex-direction: row;
-    margin-left: 200px;
 }
 
 #infoReal img {
@@ -57,21 +56,17 @@
     border: solid #bd7d07;
 }
 
-.title {
+.titleReal {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
     width: 80%;
+    margin-left: 0;
 }
 
-.parts {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* margin-left: 200px; */
-    margin-bottom: 50px;
-    margin-top: 50px;
+.partsReal {
+    width: 80%;
 
 }

@@ -22,39 +22,40 @@ $hasReal = (count($detailReal) > 0 ) ? True : False ;
         </div>
     </div>
 
-    <div class="parts">
-        <div class="ligneAcceuil"> </div>
-        <h2> Bibliographie <br>  </h2>
+    <div id="wrap">
+        <div class="partsReal">
+            <div class="ligneAcceuil"> </div>
+            <h2> Bibliographie <br>  </h2>
+        </div>
+
+        <div class="titleReal">
+            <p style="text-align:justify;">  <?= $detailReal["bibliographie_acteur"]?></p>
+        </div>
+
+
+        <?php if ($hasReal) {  ?>
+
+        <div class="partsReal">
+            <div class="ligneAcceuil"> </div>
+            <h2> Filmographie <br>  </h2>
+        </div>
+        
+        <div class="titleReal">
+            <table class="table-responsive" style="width: 600px;">
+            <tbody id="tbody">
+                <?php   
+                
+                    foreach($requeteRealisateur->fetchAll() as $filmo) {?>
+                        <tr> 
+                            <td> <img id="filmAffiche" src='public/images/<?= $filmo["affiche_film"]?>' alt='Affiche du film'> </td>
+                            <td> <?= $filmo["titre_film"]?> </td> 
+                        </tr> 
+
+                <?php } ?>
+            </tbody>
+        </table>
+        </div>
     </div>
-
-    <div class="title">
-        <p style="text-align:justify;">  <?= $detailReal["bibliographie_acteur"]?></p>
-    </div>
-
-
-    <?php if ($hasReal) {  ?>
-
-    <div class="parts">
-        <div class="ligneAcceuil"> </div>
-        <h2> Filmographie <br>  </h2>
-    </div>
-    
-    <div class="title">
-        <table class="table-responsive" style="width: 600px;">
-        <tbody id="tbody">
-            <?php   
-            
-                foreach($requeteRealisateur->fetchAll() as $filmo) {?>
-                    <tr> 
-                        <td> <img id="filmAffiche" src='public/images/<?= $filmo["affiche_film"]?>' alt='Affiche du film'> </td>
-                        <td> <?= $filmo["titre_film"]?> </td> 
-                    </tr> 
-
-            <?php } ?>
-        </tbody>
-    </table>
-    </div>
-
     <?php } ?>
     <br>
 
