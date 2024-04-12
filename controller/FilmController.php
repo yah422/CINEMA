@@ -105,19 +105,20 @@ class FilmController {
 
         if(isset($_POST["submitCasting"])) {
             $film = filter_input(INPUT_POST, "film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $rolefilm = filter_input(INPUT_POST, "rolefilm", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $acteur = filter_input(INPUT_POST, "acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            if($film  &&  $rolefilm  && $acteur) {
+            if($film  &&  $role  && $acteur) {
                 $requeteAjouterCasting = $pdo->prepare("INSERT INTO jouer(id_film, id_acteur, id_role)
                 VALUES (:film, :acteur, :role)");
 
                 $requeteAjouterCasting ->execute([
                     "film" => $film,
-                    "rolefilm" => $rolefilm,
+                    "role" => $role,
                     "acteur" => $acteur,]);
 
                 $_SESSION["message"] = " Le casting a bien été ajouter ! <i class='fa-solid fa-check'></i> ";
+                
                 header("Location: index.php?action=listFilm");
             } else {
                 $_SESSION["message"] = "Veuillez sélectionné un film un acteur et un rôle avant de valider !";
