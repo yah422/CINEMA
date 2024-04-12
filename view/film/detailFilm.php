@@ -15,7 +15,7 @@ $detailFilm = $requeteFilm ->fetch();
             <p> Titre Film : <?= $detailFilm["titre_film"]?></p>
             <p> Durée : <?= $detailFilm["duree_formatee"]?></p>
             <p> Année de parution : <?= $detailFilm["anneeSortie_film"]?></p>
-            <p> Réalisateur : <?= $detailFilm["realisateurName"]?> </p>
+             <a href="index.php?action=detailRealisateur&id=<?= $detailFilm["id_realisateur"] ?>"><p> Réalisateur : <?= $detailFilm["realisateurName"]?> </p></a>
 
             <br>
 
@@ -58,7 +58,7 @@ $detailFilm = $requeteFilm ->fetch();
                     
                         foreach($requeteCast ->fetchAll() as $detailCast) {?>
                             <tr> 
-                                <td> <img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'> </td>
+                                <td> <a href="index.php?action=detailActeur&id=<?= $detailFilm["id_acteur"]?>"><img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'></a> </td>
                                 <td> <?= $detailCast["acteurName"]?> </td> 
                                 <td> <?= $detailCast["nom_role"]?> </td>
                             </tr> 
