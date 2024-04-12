@@ -2,7 +2,7 @@
 
 <div align="center">
 <a href="">
-    <img src="public/images/readme.jpg" alt="Logo" width="80">
+    <img src="public/images/readme.jpg" alt="Logo" width="100%">
   </a>
 </div>
 
