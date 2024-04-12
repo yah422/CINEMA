@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="public/css/listeCategorie.css">
     <link rel="stylesheet" href="public/css/detailReal.css">
     <link rel="stylesheet" href="public/css/detailRole.css">
-    <link rel="stylesheet" href="public/css/detailCategorie.css.css">
+    <link rel="stylesheet" href="public/css/detailCategorie.css">
+    <link rel="stylesheet" href="public/css/ajoutCasting.css">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
     <title> <?= $titre ?> </title>
-    
+
 </head>
 <body style="background: #f1f1f1;">
     <header>
@@ -43,6 +44,7 @@
                 <li><a href="index.php?action=listRealisateur"> REALISATEURS </a></li>
                 <li><a href="index.php?action=listRole">ROLES</a>  </li>
                 <li><a href="index.php?action=listCategorie"> CATEGORIE </a></li>
+                <li><a href="index.php?action=ajoutCasting"> CASTING </a></li>
             </ul>
         </nav> 
 
@@ -91,10 +93,10 @@
     </footer>
 
     <?php
-    if(isset($_SESSION['message'])){
-        echo $_SESSION['message'];
-        unset($_SESSION['message']); 
-    }
+        if(isset($_SESSION['message'])){
+            echo $_SESSION['message'];
+            unset($_SESSION['message']); 
+        }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
