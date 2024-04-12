@@ -7,7 +7,7 @@ ob_start();
     <div class="form_info">
 
         <form action="index.php?action=ajoutCasting" enctype="multipart/form-data" method="POST">
-            <div class=" ">
+            <div id="choix">
 
                 <div class=" ">
                     <label for="film"></label>
@@ -20,6 +20,8 @@ ob_start();
                     </select>
                 </div>
 
+                <br>
+
                 <div class=" ">
                     <label for="role"></label>
                     <select name="role" id="role" required>
@@ -30,9 +32,11 @@ ob_start();
                     </select>
                 </div>
 
+                <br>
+
                 <div class=" ">
                     <label for="acteur"></label>
-                    <select name="acteur" id="acteur" required>
+                    <select name="acteur" id="actor" required>
                         <option disabled selected> Choix des acteur </option>
                             <?php foreach($requeteActeur->fetchAll() as $acteur){ ?>
                                 <option value="<?= $acteur["id_acteur"] ?>"><?= $acteur["nom_personne"] . ' ' . $acteur["prenom_personne"]?></option>
@@ -41,9 +45,13 @@ ob_start();
                 </div>
             </div>
 
+            <br>
+
             <div class="btn-submit">
                 <input type="submit" name="submitCasting" value="Submit" class="button-casting">
             </div>
+
+            <br>
         </form>
 
         <div class="messages_neutral">
@@ -57,13 +65,6 @@ ob_start();
     </div>
     
 </div>
-
-
-
-
-
-
-
 
 <?php
 

@@ -26,44 +26,48 @@ $detailFilm = $requeteFilm ->fetch();
     <br>
     <br>
 
-    <div class="parts">
-        <div class="ligneAcceuil"> </div>
-        <h2> SYNOPSIS <br>  </h2>
-    </div>
+    <div id="wrap">
 
-    <div class="title">
-        <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
-    </div>
-    <br>
+        <div class="parts">
+            <div class="ligneAcceuil"> </div>
+            <h2> SYNOPSIS <br>  </h2>
+        </div>
 
-    <div class="parts">
-        <div class="ligneAcceuil"> </div>
-        <h2> CASTING <br>  </h2>
-    </div>
+        <div class="title">
+            <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
+        </div>
+        <br>
 
-    <br>
-    <div class="title">
-        <table class="table-responsive" style="width: 600px;">
-            <thead>
-                <tr>
-                    <th> </th>
-                    <th> Acteur </th>
-                    <th> Rôle </th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php   
-                
-                    foreach($requeteCast ->fetchAll() as $detailCast) {?>
-                        <tr> 
-                            <td> <img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'> </td>
-                            <td> <?= $detailCast["acteurName"]?> </td> 
-                            <td> <?= $detailCast["nom_role"]?> </td>
-                        </tr> 
+        <div class="parts">
+            <div class="ligneAcceuil"> </div>
+            <h2> CASTING <br>  </h2>
+        </div>
 
-                <?php } ?>
-            </tbody>
-        </table>
+        <br>
+        <div class="title">
+            <table class="table-responsive" style="width: 600px;">
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th> Acteur </th>
+                        <th> Rôle </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php   
+                    
+                        foreach($requeteCast ->fetchAll() as $detailCast) {?>
+                            <tr> 
+                                <td> <img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'> </td>
+                                <td> <?= $detailCast["acteurName"]?> </td> 
+                                <td> <?= $detailCast["nom_role"]?> </td>
+                            </tr> 
+
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+
     </div>
     <br>
 
