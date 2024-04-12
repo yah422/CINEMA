@@ -48,7 +48,7 @@ ob_start();
             <br>
 
             <div class="btn-submit">
-                <a href="index.php?action=listFilms"><input type="submit" name="submitCasting" value="Submit" class="button-casting"></a>
+                <input type="submit" name="submitCasting" value="Submit" class="button-casting">
             </div>
 
             <br>

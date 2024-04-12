@@ -118,6 +118,7 @@ class FilmController {
                     "acteur" => $acteur,]);
 
                 $_SESSION["message"] = " Le casting a bien été ajouter ! <i class='fa-solid fa-check'></i> ";
+                header("Location: index.php?action=listFilm");
             } else {
                 $_SESSION["message"] = "Veuillez sélectionné un film un acteur et un rôle avant de valider !";
             }
