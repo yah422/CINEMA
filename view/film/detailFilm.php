@@ -58,7 +58,7 @@ $detailFilm = $requeteFilm ->fetch();
                     
                         foreach($requeteCast ->fetchAll() as $detailCast) {?>
                             <tr> 
-                                <td> <a href="index.php?action=detailActeur&id=<?= $detailFilm["id_acteur"]?>"><img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'></a> </td>
+                                <td> <a href="index.php?action=detailActeur&id=<?= $detailFilm["id_personne"]?>"><img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'></a> </td>
                                 <td> <?= $detailCast["acteurName"]?> </td> 
                                 <td> <?= $detailCast["nom_role"]?> </td>
                             </tr> 

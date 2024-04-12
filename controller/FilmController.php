@@ -16,7 +16,11 @@ class FilmController {
         $pdo = Connect::seConnecter();
         
         // On exécute la requête de notre choix
-        $requete = $pdo->query("SELECT film.id_film, film.titre_film, film.anneeSortie_film FROM Film");
+        $requete = $pdo->query("SELECT 
+        film.id_film, 
+        film.titre_film, 
+        film.anneeSortie_film 
+        FROM Film");
         
         // On relie par un "require" la vue qui nous intéresse
         require "view/film/listFilms.php";
@@ -28,10 +32,10 @@ class FilmController {
         $requeteFilm = $pdo->prepare("SELECT * FROM film WHERE id_film = :id");
         $requeteFilm->execute(["id"=> $id]);
         
-        $requeteFilm = $pdo->prepare ("SELECT film.id_film, 
+        $requeteFilm = $pdo->prepare ("SELECT 
+        film.id_film, 
         realisateur.id_realisateur,
         film.titre_film,
-        
         film.anneeSortie_film, 
         film.synopsis_film, 
         film.note_film, TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee, 
