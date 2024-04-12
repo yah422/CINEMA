@@ -45,8 +45,25 @@ class FilmController {
         INNER JOIN personne ON personne.id_personne = realisateur.id_personne 
         WHERE id_film = :id");
         $requeteFilm->execute(["id"=> $id]);
+
+        $requeteFilmS = $pdo->prepare ("SELECT 
+        film.synopsis_film 
+        FROM Film 
+        WHERE id_film = :id");
+        $requeteFilmS->execute(["id"=> $id]);
         
-        $requeteCast = $pdo->prepare ("SELECT film.id_film, acteur.id_acteur, affiche_acteur, CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS acteurName, personne.sexe_personne, rolefilm.nom_role FROM film INNER JOIN jouer ON film.id_film = jouer.id_film INNER JOIN rolefilm ON jouer.id_role = rolefilm.id_role INNER JOIN acteur ON jouer.id_acteur = acteur.id_acteur INNER JOIN personne ON acteur.id_personne = personne.id_personne WHERE film.id_film = :id");
+        $requeteCast = $pdo->prepare ("SELECT 
+        film.id_film, 
+        acteur.id_acteur, 
+        affiche_acteur, 
+        CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS acteurName, 
+        personne.sexe_personne, rolefilm.nom_role 
+        FROM film 
+        INNER JOIN jouer ON film.id_film = jouer.id_film 
+        INNER JOIN rolefilm ON jouer.id_role = rolefilm.id_role 
+        INNER JOIN acteur ON jouer.id_acteur = acteur.id_acteur 
+        INNER JOIN personne ON acteur.id_personne = personne.id_personne 
+        WHERE film.id_film = :id");
         $requeteCast->execute(["id"=> $id]);
         
         require "view/film/detailFilm.php";

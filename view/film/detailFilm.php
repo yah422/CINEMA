@@ -2,6 +2,7 @@
 ob_start(); 
 
 $detailFilm = $requeteFilm ->fetch();
+$detailS = $requeteFilmS ->fetch();
 
 ?>
 
@@ -34,9 +35,10 @@ $detailFilm = $requeteFilm ->fetch();
         </div>
 
         <div class="title">
-            <p style="text-align:justify;">  <?= $detailFilm["synopsis_film"]?></p>
+            <p style="text-align:justify;">  <?= $detailS["synopsis_film"]?></p>
         </div>
         <br>
+
 
         <div class="parts">
             <div class="ligneAcceuil"> </div>
@@ -58,7 +60,7 @@ $detailFilm = $requeteFilm ->fetch();
                     
                         foreach($requeteCast ->fetchAll() as $detailCast) {?>
                             <tr> 
-                                <td> <a href="index.php?action=detailActeur&id=<?= $detailFilm["id_personne"]?>"><img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'></a> </td>
+                                <td> <a href="index.php?action=detailActeur&id=<?= $detailCast["id_acteur"]?>"><img src='public/images/<?= $detailCast["affiche_acteur"]?>' alt='Affiche du film'></a> </td>
                                 <td> <?= $detailCast["acteurName"]?> </td> 
                                 <td> <?= $detailCast["nom_role"]?> </td>
                             </tr> 
