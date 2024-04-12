@@ -6,11 +6,11 @@
   </a>
 </div>
 
-## ![features](https://img.shields.io/badge/%E2%9C%A6-%23ec4c50?style=flat) Description 
+## Description 
 Ce projet est une application web qui fonctionne comme une base de données de cinéma et une plateforme collaborative pour les passionnés de films. Les utilisateurs peuvent contribuer des informations sur les films, les acteurs, les réalisateurs, les genres, et plus encore pour créer des profils détaillés.
 
 ## Technologies utilisées
-HTML-CSS | PHP | MySQL | JavaScript | jQuery | AJAX
+HTML-CSS | PHP | MySQL | JavaScript 
 
 
 ## Points important
