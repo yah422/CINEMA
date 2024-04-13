@@ -51,13 +51,15 @@ class FilmController {
         FROM Film 
         WHERE id_film = :id");
         $requeteFilmS->execute(["id"=> $id]);
-        
+
         $requeteCast = $pdo->prepare ("SELECT 
         film.id_film, 
         acteur.id_acteur, 
-        affiche_acteur, 
+        affiche_acteur,
+        rolefilm.id_role,
         CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS acteurName, 
-        personne.sexe_personne, rolefilm.nom_role 
+        personne.sexe_personne, 
+        rolefilm.nom_role 
         FROM film 
         INNER JOIN jouer ON film.id_film = jouer.id_film 
         INNER JOIN rolefilm ON jouer.id_role = rolefilm.id_role 
