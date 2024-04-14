@@ -1,6 +1,7 @@
 # CINEMA 
 
 <div align="center">
+    
 <a href="">
     <img src="public/images/readme.jpg" alt="Logo" width="100%">
   </a>
