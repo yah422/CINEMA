@@ -51,11 +51,13 @@ class RealisateurController {
     personne.affiche_acteur,
     personne.bibliographie_acteur,
     film.titre_film,
+    film.anneeSortie_film,
     film.affiche_film
     FROM realisateur
     INNER JOIN personne ON personne.id_personne = realisateur.id_personne
     INNER JOIN film ON realisateur.id_realisateur = film.id_realisateur
-    WHERE realisateur.id_realisateur= :id;"
+    WHERE realisateur.id_realisateur= :id
+    ORDER BY anneeSortie_film DESC;"
     );
 
     $requeteRealisateur->execute(["id"=> $id]);

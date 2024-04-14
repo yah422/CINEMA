@@ -20,7 +20,8 @@ class FilmController {
         film.id_film, 
         film.titre_film, 
         film.anneeSortie_film 
-        FROM Film");
+        FROM Film
+        ORDER BY anneeSortie_film DESC");
         
         // On relie par un "require" la vue qui nous intéresse
         require "view/film/listFilms.php";
