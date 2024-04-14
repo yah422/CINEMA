@@ -47,6 +47,7 @@ class RealisateurController {
     CONCAT(prenom_personne, ' ',nom_personne ) as reali,
     DATE_FORMAT(personne.dateNaissance, '%D %b %Y') as dateNaissance,
     sexe_personne,
+    film.id_film,
     personne.affiche_acteur,
     personne.bibliographie_acteur,
     film.titre_film,

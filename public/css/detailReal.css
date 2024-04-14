@@ -33,6 +33,8 @@
     align-items: center;
     align-content: center;
     flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px
 }
 
 #infoReal img {

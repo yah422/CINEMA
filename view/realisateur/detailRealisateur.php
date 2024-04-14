@@ -47,8 +47,8 @@ $hasReal = (count($detailReal) > 0 ) ? True : False ;
                 
                     foreach($requeteRealisateur->fetchAll() as $filmo) {?>
                         <tr> 
-                            <td> <img id="filmAffiche" src='public/images/<?= $filmo["affiche_film"]?>' alt='Affiche du film'> </td>
-                            <td> <?= $filmo["titre_film"]?> </td> 
+                            <td> <a href="index.php?action=detailFilm&id=<?= $filmo["id_film"]?>"><img id="filmAffiche" src='public/images/<?= $filmo["affiche_film"]?>' alt='Affiche du film'></a> </td>
+                            <td> <a href="index.php?action=detailFilm&id=<?= $filmo["id_film"]?>"><?= $filmo["titre_film"]?></a> </td> 
                         </tr> 
 
                 <?php } ?>
