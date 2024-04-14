@@ -123,6 +123,7 @@ class FilmController {
                     "afficheChemin" => $afficheChemin,
                     "realisateur" => $realisateur
                 ]);
+                header("Location: index.php?action=listFilm");
             }
         }
         require "view/film/ajoutFilm.php";
