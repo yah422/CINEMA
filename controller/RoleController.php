@@ -58,7 +58,6 @@ class RoleController {
   ");
     $requeteActRole -> execute(["id" => $id]);
 
-
     require "view/role/detailRole.php";
 
    }

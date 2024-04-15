@@ -76,8 +76,6 @@ if(isset($_GET["action"])){
         case "listRole" : $ctrlRole -> listRole(); break;
         // ~~ ---------------- DETAILS ROLES ---------------
         case "detailRole" : $ctrlRole -> detailRole($id); break;
-        // ~~------------- afficher detail role ------------
-        case "afficherDetailRole" : $ctrlRole -> afficherDetailRole($role); break;
         // ~~-------------- AJOUT ROLE -----------------
         case "ajoutRole" : $ctrlRole -> ajoutRole(); break;
         // ~~------------ SUPPRIMER UN ROLE --------------
