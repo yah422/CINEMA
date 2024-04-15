@@ -53,6 +53,12 @@ class FilmController {
         WHERE film.id_film = :id");
         $requeteFilm->execute(["id"=> $id]);
 
+        $requeteG = $pdo->prepare ("SELECT 
+        genrecine.nom_genreCine,
+        genrecine.id_genreCine
+        FROM genrecine  
+        WHERE genrecine.id_genreCine = 2 :id");
+
         $requeteFilmS = $pdo->prepare ("SELECT 
         film.synopsis_film 
         FROM Film 
