@@ -1,13 +1,13 @@
 <?php 
 ob_start();
 
-$films = $requeteFilm -> fetchAll();
+$film = $requeteFilm -> fetch();
 $syno = $requeteFilmS -> fetch();
 
 ?>
 
 <section>
-    <?php foreach ($films as $film): ?>
+    
         <div id="wrapper">
             <div>
                 <img src='public/images/<?= $film["affiche_film"] ?>' alt='Affiche du film' style="width:250px;">
@@ -25,7 +25,7 @@ $syno = $requeteFilmS -> fetch();
             </div>
         </div>
         
-    <?php endforeach; ?>
+
 
         <br>
         <br>

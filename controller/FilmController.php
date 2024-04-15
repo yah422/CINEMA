@@ -113,9 +113,9 @@ class FilmController {
                 $duree = filter_input(INPUT_POST, "duree_film", FILTER_SANITIZE_NUMBER_INT);
                 $synopsis = filter_input(INPUT_POST, "synopsis_film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $note = filter_input(INPUT_POST, "note_film", FILTER_SANITIZE_NUMBER_INT);
-                $realisateur = filter_input(INPUT_POST, "realisateur", FILTER_SANITIZE_NUMBER_INT);
+                $realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);
                 
-                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film, affiche_film, id_realisateur) VALUES(:titre_film, :anneeSortie_film, :duree_film, :synopsis_film, :note_film, :afficheChemin, :realisateur)");
+                $requeteAjouterFilm = $pdo->prepare("INSERT INTO film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film, affiche_film, id_realisateur) VALUES(:titre_film, :anneeSortie_film, :duree_film, :synopsis_film, :note_film, :afficheChemin, :id_realisateur)");
                 $requeteAjouterFilm->execute([
                     "titre_film" => $titre,
                     "anneeSortie_film" => $anneeSortie,
@@ -123,7 +123,7 @@ class FilmController {
                     "synopsis_film" => $synopsis,
                     "note_film" => $note,
                     "afficheChemin" => $afficheChemin,
-                    "realisateur" => $realisateur
+                    "id_realisateur" => $realisateur
                 ]);
                 header("Location: index.php?action=listFilm");
             }
