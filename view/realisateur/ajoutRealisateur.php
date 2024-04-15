@@ -28,6 +28,11 @@
                         </div>
 
                         <div class="formInput">
+                            <label for="carriere_personne">Carrière :</label> <br>
+                            <input type="number" min=0 placeholder="Carrière" name="carriere_personne" id="carriere_personne" required>
+                        </div>
+
+                        <div class="formInput">
                             <label for="dateNaissance">Date de naissance :</label><br>
                             <input type="date" name="dateNaissance" id="dateNaissance" required>
                         </div>
@@ -36,15 +41,6 @@
                             <label> Bibliographie : </label><br>
                             <textarea id="synopsis_film" name="bibliographie_acteur" > Résumé son histoire . . . </textarea>
                         </p>
-
-                        <div>
-                            <p>
-                                <label for="file"> Photo Réalisateur </label>
-                                <br>
-                                <input type="file" name="file">
-                            </p>
-
-                        </div>
 
                     <div class="btn-submit"><br>
                         <input type="submit" class="submit" name="submitRealisateur" id="submitRealisateur">

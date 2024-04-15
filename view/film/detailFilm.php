@@ -10,7 +10,7 @@ $syno = $requeteFilmS -> fetch();
     
         <div id="wrapper">
             <div>
-                <img src='public/images/<?= $film["affiche_film"] ?>' alt='Affiche du film' style="width:250px;">
+                <img src='<?= $film["affiche_film"] ?>' alt='Affiche du film' style="width:250px;">
             </div>
 
             <div>

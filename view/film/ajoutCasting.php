@@ -23,8 +23,8 @@ ob_start();
                 <br>
 
                 <div class=" ">
-                    <label for="role"></label>
-                    <select name="role" id="role" required>
+                    <label for="roler"></label>
+                    <select name="roler" id="roler" required>
                         <option disabled selected> Choix du rôle </option>
                             <?php foreach($requeteRole->fetchAll() as $role){ ?>
                             <option value="<?= $role["id_role"] ?>"><?= $role["nom_role"] ?></option>

@@ -90,6 +90,7 @@ class RealisateurController {
               "carriere_personne" => $carriere_personne
             ]);
           $id_realisateur = $pdo->lastInsertId();
+
           $requeteAjouterRealisateur = $pdo->prepare("INSERT INTO realisateur (id_personne) VALUES (:id_personne)");   
           $requeteAjouterRealisateur->execute(["id_personne" => $id_realisateur]);
       }
@@ -108,6 +109,7 @@ public function supprimeRealisateur($id){
     // ^^ on supprime d'abord la table film
     $requeteSupprimeFilmR = $pdo->prepare("DELETE FROM film WHERE id_realisateur=:id");
     $requeteSupprimeFilmR -> execute(["id" => $id]);
+    
     // ^^ on supprime ensuite la table realisateur
     $requeteSupprimerReal = $pdo->prepare("DELETE FROM realisateur WHERE id_realisateur=:id");
     $requeteSupprimerReal-> execute(["id" => $id]);
