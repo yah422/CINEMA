@@ -114,6 +114,7 @@ class FilmController {
                 $synopsis = filter_input(INPUT_POST, "synopsis_film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $note = filter_input(INPUT_POST, "note_film", FILTER_SANITIZE_NUMBER_INT);
                 $realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);
+                $genreCine = filter_input(INPUT_POST, "genreCine", FILTER_SANITIZE_SPECIAL_CHARS);
                 
                 $requeteAjouterFilm = $pdo->prepare("INSERT INTO film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film, affiche_film, id_realisateur) VALUES(:titre_film, :anneeSortie_film, :duree_film, :synopsis_film, :note_film, :afficheChemin, :id_realisateur)");
                 $requeteAjouterFilm->execute([
@@ -125,7 +126,18 @@ class FilmController {
                     "afficheChemin" => $afficheChemin,
                     "id_realisateur" => $realisateur
                 ]);
+
+                $id_film = $pdo -> lastInsertId();
+
+                foreach($genreCine as $g) {
+                    $requeteAjouterGenre = $pdo -> prepare("INSEERT INTO categorie (id_film, id_genreCine) VALUES (:id_film, :id_genreCine)");
+                    $requeteAjouterGenre -> execute([
+                        "id_film" => $id_film,
+                        "id_genreCine" => $g
+                    ]);
+                }
                 header("Location: index.php?action=listFilm");
+                die();
             }
         }
         require "view/film/ajoutFilm.php";
