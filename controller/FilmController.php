@@ -30,8 +30,9 @@ class FilmController {
     // Détail d'un film
     public function detailFilm($id){
         $pdo = Connect::seConnecter();
-        $requeteFilm = $pdo->prepare("SELECT * FROM film WHERE id_film = :id");
-        $requeteFilm->execute(["id"=> $id]);
+
+        // $requeteFilm = $pdo->prepare("SELECT * FROM film WHERE id_film = :id");
+        // $requeteFilm->execute(["id"=> $id]);
         
         $requeteFilm = $pdo->prepare ("SELECT 
         film.id_film, 
@@ -40,7 +41,8 @@ class FilmController {
         film.anneeSortie_film, 
         film.synopsis_film, 
         film.note_film, TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee, 
-        film.affiche_film, CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName 
+        film.affiche_film, 
+        CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName 
         FROM Film 
         INNER JOIN realisateur ON realisateur.id_realisateur = film.id_realisateur 
         INNER JOIN personne ON personne.id_personne = realisateur.id_personne 
