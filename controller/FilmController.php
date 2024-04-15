@@ -114,7 +114,7 @@ class FilmController {
                 $synopsis = filter_input(INPUT_POST, "synopsis_film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $note = filter_input(INPUT_POST, "note_film", FILTER_SANITIZE_NUMBER_INT);
                 $realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);
-                $genreCine = filter_input(INPUT_POST, "genreCine", FILTER_SANITIZE_SPECIAL_CHARS);
+                $genreCine = filter_input(INPUT_POST, "genreCine", FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
                 
                 $requeteAjouterFilm = $pdo->prepare("INSERT INTO film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film, affiche_film, id_realisateur) VALUES(:titre_film, :anneeSortie_film, :duree_film, :synopsis_film, :note_film, :afficheChemin, :id_realisateur)");
                 $requeteAjouterFilm->execute([

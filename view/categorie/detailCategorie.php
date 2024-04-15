@@ -20,7 +20,7 @@ $name = $requeteCategorie->fetch();
                     <tr>
                         <td>
                             <a href="index.php?action=detailFilm&id=<?= $detail["id_film"] ?>">
-                                <img style="width: 200px;" src='public/images/<?= $detail["affiche_film"]?>' alt='Affiche acteur'>
+                                <img style="width: 200px;" src='<?= $detail["affiche_film"]?>' alt='Affiche acteur'>
                             </a>
                         </td>
 
