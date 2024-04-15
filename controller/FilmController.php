@@ -40,13 +40,17 @@ class FilmController {
         film.titre_film,
         film.anneeSortie_film, 
         film.synopsis_film, 
+        genrecine.nom_genreCine,
+        categorie.id_genreCine,
         film.note_film, TIME_FORMAT(SEC_TO_TIME(film.duree_film*60),'%Hh%imin') AS duree_formatee, 
         film.affiche_film, 
         CONCAT(personne.nom_personne, ' ', personne.prenom_personne) AS realisateurName 
         FROM Film 
+        INNER JOIN categorie ON categorie.id_film = film.id_film
+        INNER JOIN genrecine ON categorie.id_genreCine = genrecine.id_genreCine
         INNER JOIN realisateur ON realisateur.id_realisateur = film.id_realisateur 
         INNER JOIN personne ON personne.id_personne = realisateur.id_personne 
-        WHERE id_film = :id");
+        WHERE film.id_film = :id");
         $requeteFilm->execute(["id"=> $id]);
 
         $requeteFilmS = $pdo->prepare ("SELECT 
@@ -115,6 +119,8 @@ class FilmController {
                 $note = filter_input(INPUT_POST, "note_film", FILTER_SANITIZE_NUMBER_INT);
                 $realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);
                 $genreCine = filter_input(INPUT_POST, "genreCine", FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+
+                //var_dump($genreCine);die;
                 
                 $requeteAjouterFilm = $pdo->prepare("INSERT INTO film (titre_film, anneeSortie_film, duree_film, synopsis_film, note_film, affiche_film, id_realisateur) VALUES(:titre_film, :anneeSortie_film, :duree_film, :synopsis_film, :note_film, :afficheChemin, :id_realisateur)");
                 $requeteAjouterFilm->execute([
@@ -129,8 +135,10 @@ class FilmController {
 
                 $id_film = $pdo -> lastInsertId();
 
+                // var_dump($id_film);die;
+
                 foreach($genreCine as $g) {
-                    $requeteAjouterGenre = $pdo -> prepare("INSEERT INTO categorie (id_film, id_genreCine) VALUES (:id_film, :id_genreCine)");
+                    $requeteAjouterGenre = $pdo -> prepare("INSERT INTO categorie (id_film, id_genreCine) VALUES (:id_film, :id_genreCine)");
                     $requeteAjouterGenre -> execute([
                         "id_film" => $id_film,
                         "id_genreCine" => $g

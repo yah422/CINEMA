@@ -17,6 +17,7 @@ $syno = $requeteFilmS -> fetch();
                 <p> Titre Film : <?= $film["titre_film"] ?></p>
                 <p> Durée : <?= $film["duree_formatee"] ?></p>
                 <p> Année de parution : <?= $film["anneeSortie_film"] ?></p>
+                <a href="index.php?action=detailCategorie&id=<?= $film["id_genreCine"]?>"><p> Catégorie : <?= $film["nom_genreCine"] ?></p></a>
                 <a href="index.php?action=detailRealisateur&id=<?= $film["id_realisateur"] ?>"><p> Réalisateur : <?= $film["realisateurName"] ?> </p></a>
 
                 <br>

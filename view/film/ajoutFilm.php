@@ -33,7 +33,7 @@ ob_start();
             <?php
                 foreach($requeteCateFilm ->fetchAll() as $cateFilm) {?>
 
-                    <input style="border-radius:15px;" type="checkbox" id="id_genreCine" value=<?=$cateFilm["id_genreCine"]?> name="nom_genreCine[]" >
+                    <input style="border-radius:15px;" type="checkbox" id="id_genreCine" value=<?=$cateFilm["id_genreCine"]?> name="genreCine[]" >
                     <label style=""><?= $cateFilm["nom_genreCine"]?></label>
                 
                 <?php }  ?>

@@ -50,7 +50,7 @@ $hasFilms = (count($filmsActeur) > 0 ) ? True : False ;
                     <tbody>
                         <?php foreach ($filmsActeur as $detailActeur): ?>
                             <tr>
-                                <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><img style="width:200px;" src='public/images/<?= $detailActeur["affiche_film"] ?>' alt='Affiche du film'></a></td>
+                                <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><img style="width:200px;" src='<?= $detailActeur["affiche_film"] ?>' alt='Affiche du film'></a></td>
                                 <td><a style="text-decoration: none;" href="index.php?action=detailFilm&id=<?= $detailActeur["id_film"] ?>"><?= $detailActeur["titre_film"] ?></a></td>
                                 <td><a style="text-decoration: none;" href="index.php?action=detailRole&id=<?= $detailActeur["id_role"] ?>"><?= $detailActeur["nom_role"] ?></a></td>
                             </tr>
