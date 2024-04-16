@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<table >
+<table style="background: transparent;">
     <thead>
         <tr >
             <th> </th>

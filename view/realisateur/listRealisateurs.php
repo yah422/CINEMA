@@ -5,7 +5,7 @@ $realisateurs = $requete->fetchAll();
 ?>
 
 <!-- Mise en place d'une table pour représenter la base de données -->
-<table style="background: #f1f1f1; width:700px; margin-left: 30px;">
+<table style="background: transparent; width:700px; margin-left: 30px;">
     <thead>
         <tr>
             <th> </th>
