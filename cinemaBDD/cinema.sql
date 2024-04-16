@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   CONSTRAINT `acteur_ibfk_1` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.acteur : ~32 rows (environ)
+-- Listage des données de la table cinema_asma.acteur : ~33 rows (environ)
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 11),
 	(2, 12),
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   CONSTRAINT `categorie_ibfk_2` FOREIGN KEY (`id_genreCine`) REFERENCES `genrecine` (`id_genreCine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.categorie : ~15 rows (environ)
+-- Listage des données de la table cinema_asma.categorie : ~16 rows (environ)
 INSERT INTO `categorie` (`id_film`, `id_genreCine`) VALUES
 	(1, 1),
 	(24, 1),
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `film` (
   CONSTRAINT `film_ibfk_1` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.film : ~14 rows (environ)
+-- Listage des données de la table cinema_asma.film : ~12 rows (environ)
 INSERT INTO `film` (`id_film`, `titre_film`, `anneeSortie_film`, `synopsis_film`, `note_film`, `duree_film`, `affiche_film`, `id_realisateur`) VALUES
 	(1, 'Inception', 2010, 'Un voleur d élite est capable dinfiltrer les rêves des autres pour voler leurs secrets les plus précieux.', 5, 148, './public/images/afficheInception.jpg', 1),
 	(2, 'La La Land', 2016, 'Une romance musicale entre une actrice en herbe et un musicien de jazz passionné à Los Angeles.', 5, 128, './public/images/lalalandAffiche.jpg', 6),
@@ -118,11 +118,9 @@ INSERT INTO `film` (`id_film`, `titre_film`, `anneeSortie_film`, `synopsis_film`
 	(7, 'The Godfather', 1972, 'La saga de la famille Corleone, chef dune puissante famille mafieuse italo-américaine.', 5, 175, './public/images/thegodfather.jpg', 9),
 	(12, 'La Malédiction : L Origine', 2024, 'Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l Église, mais elle est confrontée à des ténèbres qui l amènent à remettre sa foi en question et à découvrir une terrifiante conspiration.', 4, 120, './public/images/malediction.jpg', 3),
 	(17, 'bababa', 2025, 'agziuazgegaougruoazeguogrz', 4, 120, './public/images/661d1289a2e7e5.94714677.png', 12),
-	(18, 'yo_test', 2028, 'qrgtzeyzyzeyztar', 2, 125, './public/images/661d13ad8945e7.13650173.png', 9),
 	(20, 'zgefzae', 2023, 'estrudyufkiukjuytzeeyu', 0, 120, './public/images/661d322f348808.36090135.png', 6),
-	(21, 'Test film', 2000, 'aaa', 4, 123, NULL, 6),
-	(22, 'Test film', 2000, 'aaa', 4, 123, NULL, 6),
-	(23, 'Test 2', 2000, 'aaa', 4, 120, './public/images/661d3d289a5a27.92472994.png', 5),
+	(21, 'Test film', 2000, 'aaa', 4, 123, './public/images/661d322f348808.36090135.png', 6),
+	(22, 'Test film', 2000, 'aaa', 4, 123, './public/images/661d322f348808.36090135.png', 15),
 	(24, 'Test 2', 2000, 'aaa', 4, 120, './public/images/661d3d416c9d57.88758702.png', 5);
 
 -- Listage de la structure de table cinema_asma. genrecine
@@ -132,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `genrecine` (
   PRIMARY KEY (`id_genreCine`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.genrecine : ~9 rows (environ)
+-- Listage des données de la table cinema_asma.genrecine : ~10 rows (environ)
 INSERT INTO `genrecine` (`id_genreCine`, `nom_genreCine`) VALUES
 	(1, 'Science-fiction'),
 	(2, 'Musical'),
@@ -204,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   PRIMARY KEY (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.personne : ~33 rows (environ)
+-- Listage des données de la table cinema_asma.personne : ~37 rows (environ)
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `dateNaissance`, `sexe_personne`, `affiche_acteur`, `bibliographie_acteur`, `carriere_personne`) VALUES
 	(1, 'Nolan', 'Christopher', '1970-07-30', 'M', 'christopherNolan.jpg', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem quo earum perferendis tempore ex explicabo ut molestias? Velit error necessitatibus distinctio excepturi quo illum laboriosam quas veritatis vitae numquam quidem, illo porro possimus repudiandae facere pariatur sed nobis! Voluptatem quis expedita quae reprehenderit corrupti laudantium facere sed dicta porro dolorum earum facilis autem iusto at assumenda pariatur laboriosam, quas aliquam tenetur nihil deserunt? Quam alias aut perferendis laudantium inventore placeat suscipit voluptatem beatae enim. Quaerat iusto corporis tempore, repudiandae laborum velit qui facere placeat dolore doloremque dignissimos obcaecati nesciunt delectus sed totam? Ex, accusantium voluptate? Minima iste consequuntur corporis harum ab, amet animi quibusdam ut nesciunt quaerat in rerum ad voluptate eveniet saepe cupiditate, nostrum omnis maiores aut. Temporibus quas illum nulla mollitia ab dolore dolorem voluptate aut deserunt ducimus magnam suscipit omnis molestiae, natus sunt harum dicta quo officiis! Ducimus accusantium nostrum repellendus assumenda magnam laborum qui cumque, eligendi deleniti quos quam in quo perferendis dolorum vitae est velit ad placeat consequatur ratione voluptatibus excepturi sit. Quasi officiis, recusandae a consequuntur iste ea dolor similique accusantium perferendis officia id minima dignissimos accusamus libero animi quo doloribus fugiat voluptatibus nisi obcaecati, earum quia quas placeat. Commodi odio ullam dolor natus sint dolorum quae, et omnis at eum in a ratione quisquam ea fugit cum autem accusamus consequatur saepe temporibus eveniet aperiam. Dicta necessitatibus optio ipsa nam explicabo aspernatur ullam consequatur deleniti, consequuntur molestias eum sapiente perferendis voluptate in veniam facilis deserunt ad maiores voluptatem praesentium hic. Modi commodi dolorem praesentium? Expedita, magnam, beatae porro sed repellat doloremque minus esse sunt ratione ut fugiat odit non ea aliquid cupiditate excepturi ullam in molestias quasi, soluta amet libero? Architecto dignissimos, et necessitatibus soluta tempora vitae! Dolorum consequuntur impedit aspernatur ex, a nisi asperiores earum, fuga, vitae ullam illo! Dignissimos asperiores minima porro rem tenetur velit aliquid animi odio dolore. At totam quo voluptatibus cupiditate commodi, laboriosam corporis animi modi, quisquam fuga quidem sint neque ducimus. Odio iste, hic commodi suscipit provident facere. Magni, in incidunt. Praesentium dicta nemo nam officiis dolorem odit et, laborum, blanditiis libero ullam assumenda enim esse a id laboriosam eligendi? Voluptate repellendus veniam ipsam, similique fugit adipisci, quasi impedit neque repudiandae blanditiis, rerum magnam fugiat omnis incidunt odio ipsa in obcaecati voluptatem dolore suscipit quisquam ratione pariatur reiciendis? Distinctio totam deleniti odit nulla fugit, repudiandae iste ipsa aliquid! Id eum tenetur quia, cumque vero nisi aperiam ab, delectus debitis alias enim quibusdam necessitatibus ipsam repellendus voluptates! Voluptatem eum inventore molestias nostrum quaerat placeat eaque. Alias molestias debitis dolore assumenda optio similique dolorum provident at neque nobis, adipisci esse autem consectetur voluptate. Nulla, inventore soluta. Repellendus voluptas, consectetur inventore laboriosam beatae soluta? Esse debitis delectus neque, harum facilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores?', 20),
 	(2, 'Chazelle', 'Damien', '1985-01-19', 'M', 'chazelleDamien.jpg', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem quo earum perferendis tempore ex explicabo ut molestias? Velit error necessitatibus distinctio excepturi quo illum laboriosam quas veritatis vitae numquam quidem, illo porro possimus repudiandae facere pariatur sed nobis! Voluptatem quis expedita quae reprehenderit corrupti laudantium facere sed dicta porro dolorum earum facilis autem iusto at assumenda pariatur laboriosam, quas aliquam tenetur nihil deserunt? Quam alias aut perferendis laudantium inventore placeat suscipit voluptatem beatae enim. Quaerat iusto corporis tempore, repudiandae laborum velit qui facere placeat dolore doloremque dignissimos obcaecati nesciunt delectus sed totam? Ex, accusantium voluptate? Minima iste consequuntur corporis harum ab, amet animi quibusdam ut nesciunt quaerat in rerum ad voluptate eveniet saepe cupiditate, nostrum omnis maiores aut. Temporibus quas illum nulla mollitia ab dolore dolorem voluptate aut deserunt ducimus magnam suscipit omnis molestiae, natus sunt harum dicta quo officiis! Ducimus accusantium nostrum repellendus assumenda magnam laborum qui cumque, eligendi deleniti quos quam in quo perferendis dolorum vitae est velit ad placeat consequatur ratione voluptatibus excepturi sit. Quasi officiis, recusandae a consequuntur iste ea dolor similique accusantium perferendis officia id minima dignissimos accusamus libero animi quo doloribus fugiat voluptatibus nisi obcaecati, earum quia quas placeat. Commodi odio ullam dolor natus sint dolorum quae, et omnis at eum in a ratione quisquam ea fugit cum autem accusamus consequatur saepe temporibus eveniet aperiam. Dicta necessitatibus optio ipsa nam explicabo aspernatur ullam consequatur deleniti, consequuntur molestias eum sapiente perferendis voluptate in veniam facilis deserunt ad maiores voluptatem praesentium hic. Modi commodi dolorem praesentium? Expedita, magnam, beatae porro sed repellat doloremque minus esse sunt ratione ut fugiat odit non ea aliquid cupiditate excepturi ullam in molestias quasi, soluta amet libero? Architecto dignissimos, et necessitatibus soluta tempora vitae! Dolorum consequuntur impedit aspernatur ex, a nisi asperiores earum, fuga, vitae ullam illo! Dignissimos asperiores minima porro rem tenetur velit aliquid animi odio dolore. At totam quo voluptatibus cupiditate commodi, laboriosam corporis animi modi, quisquam fuga quidem sint neque ducimus. Odio iste, hic commodi suscipit provident facere. Magni, in incidunt. Praesentium dicta nemo nam officiis dolorem odit et, laborum, blanditiis libero ullam assumenda enim esse a id laboriosam eligendi? Voluptate repellendus veniam ipsam, similique fugit adipisci, quasi impedit neque repudiandae blanditiis, rerum magnam fugiat omnis incidunt odio ipsa in obcaecati voluptatem dolore suscipit quisquam ratione pariatur reiciendis? Distinctio totam deleniti odit nulla fugit, repudiandae iste ipsa aliquid! Id eum tenetur quia, cumque vero nisi aperiam ab, delectus debitis alias enim quibusdam necessitatibus ipsam repellendus voluptates! Voluptatem eum inventore molestias nostrum quaerat placeat eaque. Alias molestias debitis dolore assumenda optio similique dolorum provident at neque nobis, adipisci esse autem consectetur voluptate. Nulla, inventore soluta. Repellendus voluptas, consectetur inventore laboriosam beatae soluta? Esse debitis delectus neque, harum facilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores?', 15),
@@ -251,9 +249,9 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   PRIMARY KEY (`id_realisateur`),
   UNIQUE KEY `id_personne` (`id_personne`),
   CONSTRAINT `realisateur_ibfk_1` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.realisateur : ~11 rows (environ)
+-- Listage des données de la table cinema_asma.realisateur : ~13 rows (environ)
 INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(1, 1),
 	(6, 2),
@@ -261,6 +259,8 @@ INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(5, 4),
 	(7, 5),
 	(9, 6),
+	(15, 7),
+	(16, 8),
 	(3, 10),
 	(11, 69),
 	(12, 71),
@@ -274,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `rolefilm` (
   PRIMARY KEY (`id_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.rolefilm : ~16 rows (environ)
+-- Listage des données de la table cinema_asma.rolefilm : ~18 rows (environ)
 INSERT INTO `rolefilm` (`id_role`, `nom_role`) VALUES
 	(4, 'Silvia'),
 	(5, 'Paolo'),
