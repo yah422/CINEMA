@@ -73,7 +73,7 @@ $syno = $requeteFilmS->fetch();
                     <?php   
                         foreach($requeteCast->fetchAll() as $detailCast) {?>
                             <tr> 
-                                <td> <a href="index.php?action=detailActeur&id=<?= $detailCast["id_acteur"] ?>"><img src='public/images/<?= $detailCast["affiche_acteur"] ?>' alt='Affiche du film'></a> </td>
+                                <td> <a href="index.php?action=detailActeur&id=<?= $detailCast["id_acteur"] ?>"><img style="border-radius: 15px; padding-bottom: 10px;width: 150px; height: 200px;" src='public/images/<?= $detailCast["affiche_acteur"] ?>' alt='Affiche du film'></a> </td>
                                 <td> <a href="index.php?action=detailActeur&id=<?= $detailCast["id_acteur"] ?>"><?= $detailCast["acteurName"] ?></a> </td> 
                                 <td> <a href="index.php?action=detailActeur&id=<?= $detailCast["id_role"] ?>"><?= $detailCast["nom_role"] ?> </a></td>
                             </tr> 
