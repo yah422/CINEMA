@@ -14,6 +14,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
 -- Listage de la structure de la base pour cinema_asma
 CREATE DATABASE IF NOT EXISTS `cinema_asma` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `cinema_asma`;
@@ -25,9 +26,9 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   PRIMARY KEY (`id_acteur`),
   UNIQUE KEY `id_personne` (`id_personne`),
   CONSTRAINT `acteur_ibfk_1` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.acteur : ~32 rows (environ)
+-- Listage des données de la table cinema_asma.acteur : ~33 rows (environ)
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 11),
 	(2, 12),
@@ -60,7 +61,8 @@ INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(44, 60),
 	(47, 63),
 	(48, 64),
-	(49, 65);
+	(49, 65),
+	(58, 70);
 
 -- Listage de la structure de table cinema_asma. categorie
 CREATE TABLE IF NOT EXISTS `categorie` (
@@ -72,18 +74,21 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   CONSTRAINT `categorie_ibfk_2` FOREIGN KEY (`id_genreCine`) REFERENCES `genrecine` (`id_genreCine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.categorie : ~13 rows (environ)
+-- Listage des données de la table cinema_asma.categorie : ~16 rows (environ)
 INSERT INTO `categorie` (`id_film`, `id_genreCine`) VALUES
 	(1, 1),
+	(24, 1),
 	(2, 2),
+	(24, 2),
 	(4, 3),
 	(5, 3),
 	(6, 3),
 	(7, 3),
+	(24, 3),
 	(4, 4),
 	(5, 4),
 	(7, 4),
-	(5, 5),
+	(17, 5),
 	(12, 10),
 	(2, 11),
 	(6, 11);
@@ -101,27 +106,31 @@ CREATE TABLE IF NOT EXISTS `film` (
   PRIMARY KEY (`id_film`),
   KEY `id_realisateur` (`id_realisateur`),
   CONSTRAINT `film_ibfk_1` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.film : ~8 rows (environ)
+-- Listage des données de la table cinema_asma.film : ~12 rows (environ)
 INSERT INTO `film` (`id_film`, `titre_film`, `anneeSortie_film`, `synopsis_film`, `note_film`, `duree_film`, `affiche_film`, `id_realisateur`) VALUES
-	(1, 'Inception', 2010, 'Un voleur d élite est capable dinfiltrer les rêves des autres pour voler leurs secrets les plus précieux.', 5, 148, 'afficheInception.jpg', 1),
-	(2, 'La La Land', 2016, 'Une romance musicale entre une actrice en herbe et un musicien de jazz passionné à Los Angeles.', 5, 128, 'lalalandAffiche.jpg', 6),
-	(4, 'Pulp Fiction', 1994, 'Plusieurs histoires entrelacées sur la vie criminelle à Los Angeles avec humour noir et violence.', 5, 154, 'pulpFiction.jpg', 5),
-	(5, 'The Dark Knight', 2008, 'Batman sallie avec le procureur et le lieutenant de Gotham City pour lutter contre le crime organisé.', 4, 152, 'darkaffiche.jpg', 1),
-	(6, 'Forrest Gump', 1994, 'Un homme simple desprit partage son extraordinaire vie en participant à des moments clés de lhistoire américaine.', 5, 142, 'forest.jpg', 7),
-	(7, 'The Godfather', 1972, 'La saga de la famille Corleone, chef dune puissante famille mafieuse italo-américaine.', 5, 175, 'thegodfather.jpg', 9),
-	(12, 'La Malédiction : L Origine', 2024, 'Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l Église, mais elle est confrontée à des ténèbres qui l amènent à remettre sa foi en question et à découvrir une terrifiante conspiration.', 4, 120, 'malediction.jpg', 3),
-	(13, 'test_asma', 2025, ' Résumé l&#39;histoire . . . ', 2, 120, 'afficheInception.jpg', 11);
+	(1, 'Inception', 2010, 'Un voleur d élite est capable dinfiltrer les rêves des autres pour voler leurs secrets les plus précieux.', 5, 148, './public/images/afficheInception.jpg', 1),
+	(2, 'La La Land', 2016, 'Une romance musicale entre une actrice en herbe et un musicien de jazz passionné à Los Angeles.', 5, 128, './public/images/lalalandAffiche.jpg', 6),
+	(4, 'Pulp Fiction', 1994, 'Plusieurs histoires entrelacées sur la vie criminelle à Los Angeles avec humour noir et violence.', 5, 154, './public/images/pulpFiction.jpg', 5),
+	(5, 'The Dark Knight', 2008, 'Batman sallie avec le procureur et le lieutenant de Gotham City pour lutter contre le crime organisé.', 4, 152, './public/images/darkaffiche.jpg', 1),
+	(6, 'Forrest Gump', 1994, 'Un homme simple desprit partage son extraordinaire vie en participant à des moments clés de lhistoire américaine.', 5, 142, './public/images/forest.jpg', 7),
+	(7, 'The Godfather', 1972, 'La saga de la famille Corleone, chef dune puissante famille mafieuse italo-américaine.', 5, 175, './public/images/thegodfather.jpg', 9),
+	(12, 'La Malédiction : L Origine', 2024, 'Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l Église, mais elle est confrontée à des ténèbres qui l amènent à remettre sa foi en question et à découvrir une terrifiante conspiration.', 4, 120, './public/images/malediction.jpg', 3),
+	(17, 'bababa', 2025, 'agziuazgegaougruoazeguogrz', 4, 120, './public/images/661d1289a2e7e5.94714677.png', 12),
+	(20, 'zgefzae', 2023, 'estrudyufkiukjuytzeeyu', 0, 120, './public/images/661d322f348808.36090135.png', 6),
+	(21, 'Test film', 2000, 'aaa', 4, 123, './public/images/661d322f348808.36090135.png', 6),
+	(22, 'Test film', 2000, 'aaa', 4, 123, './public/images/661d322f348808.36090135.png', 15),
+	(24, 'Test 2', 2000, 'aaa', 4, 120, './public/images/661d3d416c9d57.88758702.png', 5);
 
 -- Listage de la structure de table cinema_asma. genrecine
 CREATE TABLE IF NOT EXISTS `genrecine` (
   `id_genreCine` int NOT NULL AUTO_INCREMENT,
   `nom_genreCine` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_genreCine`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.genrecine : ~9 rows (environ)
+-- Listage des données de la table cinema_asma.genrecine : ~10 rows (environ)
 INSERT INTO `genrecine` (`id_genreCine`, `nom_genreCine`) VALUES
 	(1, 'Science-fiction'),
 	(2, 'Musical'),
@@ -131,7 +140,8 @@ INSERT INTO `genrecine` (`id_genreCine`, `nom_genreCine`) VALUES
 	(7, 'Histoire'),
 	(9, 'Guerre'),
 	(10, 'Horreur'),
-	(11, 'Romance');
+	(11, 'Romance'),
+	(13, 'test_cat');
 
 -- Listage de la structure de table cinema_asma. jouer
 CREATE TABLE IF NOT EXISTS `jouer` (
@@ -146,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `jouer` (
   CONSTRAINT `jouer_ibfk_3` FOREIGN KEY (`id_role`) REFERENCES `rolefilm` (`id_role`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.jouer : ~36 rows (environ)
+-- Listage des données de la table cinema_asma.jouer : ~30 rows (environ)
 INSERT INTO `jouer` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(12, 1, 1),
 	(12, 2, 3),
@@ -190,9 +200,9 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `bibliographie_acteur` text,
   `carriere_personne` int DEFAULT NULL,
   PRIMARY KEY (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.personne : ~33 rows (environ)
+-- Listage des données de la table cinema_asma.personne : ~37 rows (environ)
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `dateNaissance`, `sexe_personne`, `affiche_acteur`, `bibliographie_acteur`, `carriere_personne`) VALUES
 	(1, 'Nolan', 'Christopher', '1970-07-30', 'M', 'christopherNolan.jpg', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem quo earum perferendis tempore ex explicabo ut molestias? Velit error necessitatibus distinctio excepturi quo illum laboriosam quas veritatis vitae numquam quidem, illo porro possimus repudiandae facere pariatur sed nobis! Voluptatem quis expedita quae reprehenderit corrupti laudantium facere sed dicta porro dolorum earum facilis autem iusto at assumenda pariatur laboriosam, quas aliquam tenetur nihil deserunt? Quam alias aut perferendis laudantium inventore placeat suscipit voluptatem beatae enim. Quaerat iusto corporis tempore, repudiandae laborum velit qui facere placeat dolore doloremque dignissimos obcaecati nesciunt delectus sed totam? Ex, accusantium voluptate? Minima iste consequuntur corporis harum ab, amet animi quibusdam ut nesciunt quaerat in rerum ad voluptate eveniet saepe cupiditate, nostrum omnis maiores aut. Temporibus quas illum nulla mollitia ab dolore dolorem voluptate aut deserunt ducimus magnam suscipit omnis molestiae, natus sunt harum dicta quo officiis! Ducimus accusantium nostrum repellendus assumenda magnam laborum qui cumque, eligendi deleniti quos quam in quo perferendis dolorum vitae est velit ad placeat consequatur ratione voluptatibus excepturi sit. Quasi officiis, recusandae a consequuntur iste ea dolor similique accusantium perferendis officia id minima dignissimos accusamus libero animi quo doloribus fugiat voluptatibus nisi obcaecati, earum quia quas placeat. Commodi odio ullam dolor natus sint dolorum quae, et omnis at eum in a ratione quisquam ea fugit cum autem accusamus consequatur saepe temporibus eveniet aperiam. Dicta necessitatibus optio ipsa nam explicabo aspernatur ullam consequatur deleniti, consequuntur molestias eum sapiente perferendis voluptate in veniam facilis deserunt ad maiores voluptatem praesentium hic. Modi commodi dolorem praesentium? Expedita, magnam, beatae porro sed repellat doloremque minus esse sunt ratione ut fugiat odit non ea aliquid cupiditate excepturi ullam in molestias quasi, soluta amet libero? Architecto dignissimos, et necessitatibus soluta tempora vitae! Dolorum consequuntur impedit aspernatur ex, a nisi asperiores earum, fuga, vitae ullam illo! Dignissimos asperiores minima porro rem tenetur velit aliquid animi odio dolore. At totam quo voluptatibus cupiditate commodi, laboriosam corporis animi modi, quisquam fuga quidem sint neque ducimus. Odio iste, hic commodi suscipit provident facere. Magni, in incidunt. Praesentium dicta nemo nam officiis dolorem odit et, laborum, blanditiis libero ullam assumenda enim esse a id laboriosam eligendi? Voluptate repellendus veniam ipsam, similique fugit adipisci, quasi impedit neque repudiandae blanditiis, rerum magnam fugiat omnis incidunt odio ipsa in obcaecati voluptatem dolore suscipit quisquam ratione pariatur reiciendis? Distinctio totam deleniti odit nulla fugit, repudiandae iste ipsa aliquid! Id eum tenetur quia, cumque vero nisi aperiam ab, delectus debitis alias enim quibusdam necessitatibus ipsam repellendus voluptates! Voluptatem eum inventore molestias nostrum quaerat placeat eaque. Alias molestias debitis dolore assumenda optio similique dolorum provident at neque nobis, adipisci esse autem consectetur voluptate. Nulla, inventore soluta. Repellendus voluptas, consectetur inventore laboriosam beatae soluta? Esse debitis delectus neque, harum facilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores?', 20),
 	(2, 'Chazelle', 'Damien', '1985-01-19', 'M', 'chazelleDamien.jpg', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem quo earum perferendis tempore ex explicabo ut molestias? Velit error necessitatibus distinctio excepturi quo illum laboriosam quas veritatis vitae numquam quidem, illo porro possimus repudiandae facere pariatur sed nobis! Voluptatem quis expedita quae reprehenderit corrupti laudantium facere sed dicta porro dolorum earum facilis autem iusto at assumenda pariatur laboriosam, quas aliquam tenetur nihil deserunt? Quam alias aut perferendis laudantium inventore placeat suscipit voluptatem beatae enim. Quaerat iusto corporis tempore, repudiandae laborum velit qui facere placeat dolore doloremque dignissimos obcaecati nesciunt delectus sed totam? Ex, accusantium voluptate? Minima iste consequuntur corporis harum ab, amet animi quibusdam ut nesciunt quaerat in rerum ad voluptate eveniet saepe cupiditate, nostrum omnis maiores aut. Temporibus quas illum nulla mollitia ab dolore dolorem voluptate aut deserunt ducimus magnam suscipit omnis molestiae, natus sunt harum dicta quo officiis! Ducimus accusantium nostrum repellendus assumenda magnam laborum qui cumque, eligendi deleniti quos quam in quo perferendis dolorum vitae est velit ad placeat consequatur ratione voluptatibus excepturi sit. Quasi officiis, recusandae a consequuntur iste ea dolor similique accusantium perferendis officia id minima dignissimos accusamus libero animi quo doloribus fugiat voluptatibus nisi obcaecati, earum quia quas placeat. Commodi odio ullam dolor natus sint dolorum quae, et omnis at eum in a ratione quisquam ea fugit cum autem accusamus consequatur saepe temporibus eveniet aperiam. Dicta necessitatibus optio ipsa nam explicabo aspernatur ullam consequatur deleniti, consequuntur molestias eum sapiente perferendis voluptate in veniam facilis deserunt ad maiores voluptatem praesentium hic. Modi commodi dolorem praesentium? Expedita, magnam, beatae porro sed repellat doloremque minus esse sunt ratione ut fugiat odit non ea aliquid cupiditate excepturi ullam in molestias quasi, soluta amet libero? Architecto dignissimos, et necessitatibus soluta tempora vitae! Dolorum consequuntur impedit aspernatur ex, a nisi asperiores earum, fuga, vitae ullam illo! Dignissimos asperiores minima porro rem tenetur velit aliquid animi odio dolore. At totam quo voluptatibus cupiditate commodi, laboriosam corporis animi modi, quisquam fuga quidem sint neque ducimus. Odio iste, hic commodi suscipit provident facere. Magni, in incidunt. Praesentium dicta nemo nam officiis dolorem odit et, laborum, blanditiis libero ullam assumenda enim esse a id laboriosam eligendi? Voluptate repellendus veniam ipsam, similique fugit adipisci, quasi impedit neque repudiandae blanditiis, rerum magnam fugiat omnis incidunt odio ipsa in obcaecati voluptatem dolore suscipit quisquam ratione pariatur reiciendis? Distinctio totam deleniti odit nulla fugit, repudiandae iste ipsa aliquid! Id eum tenetur quia, cumque vero nisi aperiam ab, delectus debitis alias enim quibusdam necessitatibus ipsam repellendus voluptates! Voluptatem eum inventore molestias nostrum quaerat placeat eaque. Alias molestias debitis dolore assumenda optio similique dolorum provident at neque nobis, adipisci esse autem consectetur voluptate. Nulla, inventore soluta. Repellendus voluptas, consectetur inventore laboriosam beatae soluta? Esse debitis delectus neque, harum facilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores?', 15),
@@ -226,7 +236,11 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `dateN
 	(48, 'Pacino', 'Al', '1940-04-25', 'M', 'pacino.jpg', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem quo earum perferendis tempore ex explicabo ut molestias? Velit error necessitatibus distinctio excepturi quo illum laboriosam quas veritatis vitae numquam quidem, illo porro possimus repudiandae facere pariatur sed nobis! Voluptatem quis expedita quae reprehenderit corrupti laudantium facere sed dicta porro dolorum earum facilis autem iusto at assumenda pariatur laboriosam, quas aliquam tenetur nihil deserunt? Quam alias aut perferendis laudantium inventore placeat suscipit voluptatem beatae enim. Quaerat iusto corporis tempore, repudiandae laborum velit qui facere placeat dolore doloremque dignissimos obcaecati nesciunt delectus sed totam? Ex, accusantium voluptate? Minima iste consequuntur corporis harum ab, amet animi quibusdam ut nesciunt quaerat in rerum ad voluptate eveniet saepe cupiditate, nostrum omnis maiores aut. Temporibus quas illum nulla mollitia ab dolore dolorem voluptate aut deserunt ducimus magnam suscipit omnis molestiae, natus sunt harum dicta quo officiis! Ducimus accusantium nostrum repellendus assumenda magnam laborum qui cumque, eligendi deleniti quos quam in quo perferendis dolorum vitae est velit ad placeat consequatur ratione voluptatibus excepturi sit. Quasi officiis, recusandae a consequuntur iste ea dolor similique accusantium perferendis officia id minima dignissimos accusamus libero animi quo doloribus fugiat voluptatibus nisi obcaecati, earum quia quas placeat. Commodi odio ullam dolor natus sint dolorum quae, et omnis at eum in a ratione quisquam ea fugit cum autem accusamus consequatur saepe temporibus eveniet aperiam. Dicta necessitatibus optio ipsa nam explicabo aspernatur ullam consequatur deleniti, consequuntur molestias eum sapiente perferendis voluptate in veniam facilis deserunt ad maiores voluptatem praesentium hic. Modi commodi dolorem praesentium? Expedita, magnam, beatae porro sed repellat doloremque minus esse sunt ratione ut fugiat odit non ea aliquid cupiditate excepturi ullam in molestias quasi, soluta amet libero? Architecto dignissimos, et necessitatibus soluta tempora vitae! Dolorum consequuntur impedit aspernatur ex, a nisi asperiores earum, fuga, vitae ullam illo! Dignissimos asperiores minima porro rem tenetur velit aliquid animi odio dolore. At totam quo voluptatibus cupiditate commodi, laboriosam corporis animi modi, quisquam fuga quidem sint neque ducimus. Odio iste, hic commodi suscipit provident facere. Magni, in incidunt. Praesentium dicta nemo nam officiis dolorem odit et, laborum, blanditiis libero ullam assumenda enim esse a id laboriosam eligendi? Voluptate repellendus veniam ipsam, similique fugit adipisci, quasi impedit neque repudiandae blanditiis, rerum magnam fugiat omnis incidunt odio ipsa in obcaecati voluptatem dolore suscipit quisquam ratione pariatur reiciendis? Distinctio totam deleniti odit nulla fugit, repudiandae iste ipsa aliquid! Id eum tenetur quia, cumque vero nisi aperiam ab, delectus debitis alias enim quibusdam necessitatibus ipsam repellendus voluptates! Voluptatem eum inventore molestias nostrum quaerat placeat eaque. Alias molestias debitis dolore assumenda optio similique dolorum provident at neque nobis, adipisci esse autem consectetur voluptate. Nulla, inventore soluta. Repellendus voluptas, consectetur inventore laboriosam beatae soluta? Esse debitis delectus neque, harum facilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores?', 35),
 	(49, 'Caan', 'James', '1940-03-26', 'M', 'caan.jpg', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem quo earum perferendis tempore ex explicabo ut molestias? Velit error necessitatibus distinctio excepturi quo illum laboriosam quas veritatis vitae numquam quidem, illo porro possimus repudiandae facere pariatur sed nobis! Voluptatem quis expedita quae reprehenderit corrupti laudantium facere sed dicta porro dolorum earum facilis autem iusto at assumenda pariatur laboriosam, quas aliquam tenetur nihil deserunt? Quam alias aut perferendis laudantium inventore placeat suscipit voluptatem beatae enim. Quaerat iusto corporis tempore, repudiandae laborum velit qui facere placeat dolore doloremque dignissimos obcaecati nesciunt delectus sed totam? Ex, accusantium voluptate? Minima iste consequuntur corporis harum ab, amet animi quibusdam ut nesciunt quaerat in rerum ad voluptate eveniet saepe cupiditate, nostrum omnis maiores aut. Temporibus quas illum nulla mollitia ab dolore dolorem voluptate aut deserunt ducimus magnam suscipit omnis molestiae, natus sunt harum dicta quo officiis! Ducimus accusantium nostrum repellendus assumenda magnam laborum qui cumque, eligendi deleniti quos quam in quo perferendis dolorum vitae est velit ad placeat consequatur ratione voluptatibus excepturi sit. Quasi officiis, recusandae a consequuntur iste ea dolor similique accusantium perferendis officia id minima dignissimos accusamus libero animi quo doloribus fugiat voluptatibus nisi obcaecati, earum quia quas placeat. Commodi odio ullam dolor natus sint dolorum quae, et omnis at eum in a ratione quisquam ea fugit cum autem accusamus consequatur saepe temporibus eveniet aperiam. Dicta necessitatibus optio ipsa nam explicabo aspernatur ullam consequatur deleniti, consequuntur molestias eum sapiente perferendis voluptate in veniam facilis deserunt ad maiores voluptatem praesentium hic. Modi commodi dolorem praesentium? Expedita, magnam, beatae porro sed repellat doloremque minus esse sunt ratione ut fugiat odit non ea aliquid cupiditate excepturi ullam in molestias quasi, soluta amet libero? Architecto dignissimos, et necessitatibus soluta tempora vitae! Dolorum consequuntur impedit aspernatur ex, a nisi asperiores earum, fuga, vitae ullam illo! Dignissimos asperiores minima porro rem tenetur velit aliquid animi odio dolore. At totam quo voluptatibus cupiditate commodi, laboriosam corporis animi modi, quisquam fuga quidem sint neque ducimus. Odio iste, hic commodi suscipit provident facere. Magni, in incidunt. Praesentium dicta nemo nam officiis dolorem odit et, laborum, blanditiis libero ullam assumenda enim esse a id laboriosam eligendi? Voluptate repellendus veniam ipsam, similique fugit adipisci, quasi impedit neque repudiandae blanditiis, rerum magnam fugiat omnis incidunt odio ipsa in obcaecati voluptatem dolore suscipit quisquam ratione pariatur reiciendis? Distinctio totam deleniti odit nulla fugit, repudiandae iste ipsa aliquid! Id eum tenetur quia, cumque vero nisi aperiam ab, delectus debitis alias enim quibusdam necessitatibus ipsam repellendus voluptates! Voluptatem eum inventore molestias nostrum quaerat placeat eaque. Alias molestias debitis dolore assumenda optio similique dolorum provident at neque nobis, adipisci esse autem consectetur voluptate. Nulla, inventore soluta. Repellendus voluptas, consectetur inventore laboriosam beatae soluta? Esse debitis delectus neque, harum facilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores?', 40),
 	(67, 'giugFZEF', 'yo_test', '2024-04-04', 'f&eacute;minin', '660d522d791ff7.64835230.png', 'non renseigner', 4),
-	(69, 'GAROUI', 'Chaima', '1999-08-08', 'f&eacute;minin', 'chaima.png', 'Chaima est une jeune femme talentueuse agée de 24 ans, développeuse scénariste créatid avec l\'imagination débordante, ainsi que coach personnel sur demande. acilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores', 10);
+	(69, 'GAROUI', 'Chaima', '1999-08-08', 'f&eacute;minin', 'chaima.png', 'Chaima est une jeune femme talentueuse agée de 24 ans, développeuse scénariste créatid avec l\'imagination débordante, ainsi que coach personnel sur demande. acilis corrupti hic accusamus fugit reprehenderit aspernatur ipsa ullam nulla vitae explicabo cupiditate ex voluptatibus. Sapiente cumque perspiciatis officiis molestias necessitatibus quia libero similique cupiditate error, tenetur fugiat temporibus reiciendis, magnam quasi facere assumenda deserunt excepturi doloribus, rerum nisi eaque placeat ratione sequi? Ipsa ad eaque eum non dolorem rem asperiores', 10),
+	(70, 'yay', 'Asma_test', '2024-04-02', 'f&eacute;minin', '661cd384659019.44146588.png', ' Résumé son histoire . . .un peu compliquer ', 10),
+	(71, 'hyun', 'test_real', '2023-11-30', 'f&eacute;minin', '660d522d791ff7.64835230.png', 'ryé(yéy\'(', 5),
+	(72, 'sg', 'test_kfaf', '2024-04-02', 'f&eacute;minin', NULL, NULL, 5),
+	(73, 'frjf', 'rfhfh', '2024-04-03', 'f&eacute;minin', NULL, NULL, 4);
 
 -- Listage de la structure de table cinema_asma. realisateur
 CREATE TABLE IF NOT EXISTS `realisateur` (
@@ -235,9 +249,9 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   PRIMARY KEY (`id_realisateur`),
   UNIQUE KEY `id_personne` (`id_personne`),
   CONSTRAINT `realisateur_ibfk_1` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.realisateur : ~8 rows (environ)
+-- Listage des données de la table cinema_asma.realisateur : ~13 rows (environ)
 INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(1, 1),
 	(6, 2),
@@ -245,17 +259,22 @@ INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(5, 4),
 	(7, 5),
 	(9, 6),
+	(15, 7),
+	(16, 8),
 	(3, 10),
-	(11, 69);
+	(11, 69),
+	(12, 71),
+	(13, 72),
+	(14, 73);
 
 -- Listage de la structure de table cinema_asma. rolefilm
 CREATE TABLE IF NOT EXISTS `rolefilm` (
   `id_role` int NOT NULL AUTO_INCREMENT,
   `nom_role` varchar(50) NOT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_asma.rolefilm : ~21 rows (environ)
+-- Listage des données de la table cinema_asma.rolefilm : ~18 rows (environ)
 INSERT INTO `rolefilm` (`id_role`, `nom_role`) VALUES
 	(4, 'Silvia'),
 	(5, 'Paolo'),
@@ -271,7 +290,10 @@ INSERT INTO `rolefilm` (`id_role`, `nom_role`) VALUES
 	(26, 'Forrest Gump Mobile'),
 	(32, 'Michael Corleone'),
 	(33, 'Sonny Corleone'),
-	(51, 'Dom Cobb');
+	(51, 'Dom Cobb'),
+	(57, 'test_yoy'),
+	(58, 'asma_test'),
+	(59, 'valdemor_test');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
