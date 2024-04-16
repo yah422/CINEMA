@@ -7,9 +7,6 @@ $film = $requeteFilm->fetch();
 // Récupération du synopsis du film
 $syno = $requeteFilmS->fetch();
 
-// Récupération des détails du genre
-$genre = $requeteG->fetch();
-
 ?>
 
 <section>
@@ -24,18 +21,20 @@ $genre = $requeteG->fetch();
             <p> Durée : <?= $film["duree_formatee"] ?></p>
             <p> Année de parution : <?= $film["anneeSortie_film"] ?></p>
             <?php
-                if ($genre) {
+                if ($requeteG->fetch()) {
                     ?>
-                    <a href="index.php?action=detailCategorie&id=<?= $genre["id_genreCine"]?>"><p> Catégorie : <?= $genre["nom_genreCine"] ?></p></a>
+                    <a href="index.php?action=detailCategorie&id=<?= $requeteG->fetch()["id_genreCine"]?>"><p> Catégorie : <?= $genre["nom_genreCine"] ?></p></a>
                     <?php
                 }
+           
                 ?>
             <a href="index.php?action=detailRealisateur&id=<?= $film["id_realisateur"] ?>"><p> Réalisateur : <?= $film["realisateurName"] ?> </p></a>
 
             <br>
 
             <div id="note"> Note : <?= $film["note_film"] ?></div>
-        </div>
+        </div> 
+       
     </div>
     
 

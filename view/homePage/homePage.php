@@ -71,17 +71,17 @@ ob_start();
                         <img src="public/images/lalalandAffiche.jpg" alt="lalalandAffiche">
                         <p class="movies"> Lalaland </p>
                     </a>
-                    <a href="index.php?action=detailRealisateur&id=2">
+                    <a href="index.php?action=detailRealisateur&id=15">
                         <p class="directors"> Steven Spielberg </p>
                     </a>
-                    
                 </li>
+
                 <li>
                     <a href="index.php?action=detailFilm&id=4">
                         <img src="public/images/pulpFiction.jpg" alt="affiche_pulpfiction">
                         <p class="movies"> Pulp Fiction </p>
                     </a>
-                    <a href="index.php?action=detailRealisateur&id=4">
+                    <a href="index.php?action=detailRealisateur&id=16">
                         <p class="directors"> The Wachowskis </p>
                     </a>
                 </li>
@@ -90,7 +90,7 @@ ob_start();
                         <img src="public/images/malediction.jpg" alt="affiche_malediction">
                         <p class="movies"> Malédiction : l'Origine</p>
                     </a>
-                    <a href="index.php?action=detailRealisateur&id=9">
+                    <a href="index.php?action=detailRealisateur&id=3">
                         <p class="directors"> Stevenson Arkasha</p>
                     </a>
                 </li>
