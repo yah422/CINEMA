@@ -10,10 +10,6 @@
 ## Description 
 Ce projet est une application web qui fonctionne comme une base de données de cinéma et une plateforme collaborative pour les passionnés de films. Les utilisateurs peuvent contribuer des informations sur les films, les acteurs, les réalisateurs, les genres, et plus encore pour créer des profils détaillés.
 
-## Technologies utilisées
-HTML-CSS | PHP | MySQL | JavaScript 
-
-
 ## Points important
 ▪ Gestion de la Base de Données : Les utilisateurs peuvent ajouter des informations sur les films, les acteurs, les réalisateurs, les genres et d'autres détails connexes.  
 
