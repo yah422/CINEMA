@@ -54,13 +54,6 @@
 
     </header>
 
-        <div id="contenu" style="  display:flex; flex-direction: column;"> 
-            <h1 class="display-1"> Cinéma </h1>
-            <h2 class="h2" > <?= $titre_secondaire ?></h2>
-        </div>
-
-        <br>
-
         <div style="display: flex;
     flex-direction: column;
     align-content: center;

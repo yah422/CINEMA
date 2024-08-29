@@ -7,8 +7,8 @@ ob_start();
     <!-- -------------- carousel ----------------- -->
     <section aria-label="Newest Photos">
         <div class="carousel" data-carousel>
-            <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-            <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+            <button class="carousel-button prev" data-carousel-button="prev">&lang;</button>
+            <button class="carousel-button next" data-carousel-button="next">&rang;</button>
             <ul data-slides>
                 <li class="slide" data-active>
                     <img src="public/images/inception1_carousel.jpg" alt="inception Image #1">

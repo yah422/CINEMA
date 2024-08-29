@@ -1,291 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ------------------- caroussel -------------------- */
+/* Reset */
 * {
     box-sizing: border-box;
-    
+    margin: 0;
+    padding: 0;
+}
 
-  }
-  
-  body {
+body {
     width: 100%;
-  }
-  .carousel {
+    font-family: "Raleway", sans-serif;
+}
+
+/* ------------------- Carrousel -------------------- */
+.carousel {
     width: 100vw;
     height: 100vh;
     position: relative;
-  }
-  
-  .carousel > ul {
+}
+
+.carousel > ul {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  
-  .slide {
+}
+
+.slide {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: 200ms opacity ease-in-out;
-    transition-delay: 200ms;
-  }
-  
-  .slide > img {
-    display: block;
-    width: 80%;
-    height: 80%;
-    /* object-fit: cover;
-    object-position: center; */
-  }
+    transition: opacity 200ms ease-in-out;
+}
 
-  .img {
-    object-fit: cover;
+.slide > img {
+    display: block;
     width: 100%;
     height: 100%;
-  }
-  
-  .slide[data-active] {
+}
+
+.slide[data-active] {
     opacity: 1;
     z-index: 1;
     transition-delay: 0ms;
-  }
-  
-  .carousel-button {
+}
+
+.carousel-button {
     position: absolute;
     z-index: 2;
-    background: none;
     border: none;
     font-size: 4rem;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, .5);
     cursor: pointer;
-    border-radius: .25rem;
-    padding: 0 .5rem;
-    background-color: rgba(0, 0, 0, .1);
-  }
-  
-  .carousel-button:hover,
-  .carousel-button:focus {
-    color: white;
-    background-color: rgba(0, 0, 0, .2);
-  }
-  
-  .carousel-button:focus {
-    outline: 1px solid black;
-  }
-  
-  .carousel-button.prev {
+    border-radius: 0.25rem;
+    padding: 0 0.5rem;
+    background-color: transparent;
+}
+
+.carousel-button.prev {
     left: 1rem;
-  }
-  
-  .carousel-button.next {
+    color: orange;
+}
+
+.carousel-button.next {
     right: 1rem;
-  }
+    color: orange;
+}
 
-/* ----------------- main ------------------- */
-
+/* ----------------- Main ------------------- */
 header {
     width: 100%;
-    height: 200px;
+    height: 100px;
 }
+
 main ul {
     display: flex;
     gap: 100px;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
     align-items: center;
-} 
-
-main ul li {
-    text-decoration: none;
-    font-family: "Raleway", sans-serif;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
     justify-content: center;
-    align-items: center;
-    
 }
 
-main img{
+main ul li {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main img {
     width: 200px;
-    height: 250px;    
+    height: 250px;
 }
 
 main ul li a {
     text-decoration: none;
+    color: black;
 }
 
 main ul li a p {
     margin-top: 15px;
-    text-align: center;
-    color: black;
 }
 
-#citation {
-    background-color:black;
+#citation, #citation2 {
+    background-color: black;
     color: white;
     height: 200px;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: center;
     align-items: center;
 }
 
-#citation p{
-    color: #bd7d07;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
+#citation p, #citation2 p {
+    color: white;
     font-size: large;
 }
 
-.ligneAcceuil{
+.ligneAcceuil {
     border: solid orange;
     width: 150px;
     height: 3px;
-    margin-top: 25px;
-    margin-left: 10px;
-    margin-bottom: 5px;
+    margin: 25px 0 5px 10px;
 }
 
-#alaUne{
-  width: 100%;
-  height: 100%;
-  margin-left: 20px;
+#alaUne, #films, #acteur, #real {
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
 }
 
-#films{
-  width: 100%;
-  height: 100%;
-  margin-left: 20px;
-}
-#acteur{
-  width: 100%;
-  height: 100%;
-  margin-left: 20px;
-}
-#real{
-  width: 100%;
-  height: 100%;
-  margin-left: 20px;
-}
 .title {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 200px;
 }
 
-#alaUne h2 {
+#alaUne h2, #films h2, #acteur h2, #real h2 {
     margin-left: 10px;
 }
 
-#alaUne ul li p {
-    text-align: center;
-}
-
-#films h2 {
-    margin-left: 10px;
-}
-
-#films h2 a{
-    text-decoration: none;
-    color: black;
-}
-
-
-
-#acteur h2 {
-    margin-left: 10px;
-}
-
-#acteur h2 a {
+#films h2 a, #acteur h2 a, #real h2 a {
     text-decoration: none;
     color: black;
 }
 
 .img {
-  width: 150px;
-  height:250px ;
+    width: 150px;
+    height: 250px;
 }
 
-.actorsphoto img {
-  /* width: 200px;
-  height: 200px; */
-  object-fit: cover;
-  border-radius: 5px;
+.actorsphoto img, .realphoto img {
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.realphoto img{
-  width: 200px;
-  height: 200px;
-  border-radius: 5px;
-}
+/* .actorsphoto img {}
+    /* width: 200px;
+    height: 200px; */
 
-#citation2 {
-    background-color:black;
-    color: white;
+#footer {
     width: 100%;
-    height: 200px;
+    height: 180px;
+    background-color: black;
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: center;
     align-items: center;
 }
 
-#citation2 p{
-    color: #bd7d07;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
+#footer p {
+    color: white;
     font-size: large;
+    text-align: center;
 }
 
-#real h2 {
-    margin-left: 10px;
+.movies, .directors {
+    font-family: "Inter", sans-serif;
 }
- #real h2 a {
-    text-decoration: none;
-    color: black;
- }
 
 .movies {
     color: black;
-    font-family: "Inter", sans-serif;
 }
 
-.directors{
+.directors {
     color: #bd7d07;
-    font-family: "Inter", sans-serif;
-}
-
-#footer p{
-    color: white;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    font-size: large;
-}
-
-#footer {
-  font-size: xxx-small; 
-  width:100%; 
-  height: 180px; 
-  background-color: black;  
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
 }
