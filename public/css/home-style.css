@@ -140,11 +140,11 @@ main ul li a p {
 }
 
 #citation p{
-    color: #bd7d07;
+    color: white;
     display: flex;
     text-align: center;
     flex-direction: column;
-    font-size: large;
+    font-size: medium;
 }
 
 .ligneAcceuil{
