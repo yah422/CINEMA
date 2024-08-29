@@ -48,10 +48,6 @@
             </ul>
         </nav> 
 
-        
-
-        
-
     </header>
 
         <div style="display: flex;
