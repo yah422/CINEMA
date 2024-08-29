@@ -245,11 +245,11 @@ main ul li a p {
 }
 
 #citation2 p{
-    color: #bd7d07;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    font-size: large;
+  color: white;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: medium;
 }
 
 #real h2 {
@@ -271,11 +271,11 @@ main ul li a p {
 }
 
 #footer p{
-    color: white;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    font-size: large;
+  color: white;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: medium;
 }
 
 #footer {
