@@ -63,12 +63,6 @@
 
         <div>
 
-            <div class="icons">
-                <img src="facebook.svg" alt="">
-                <img src="icons8-instagram-24.png" alt="">
-                <img src="twitter.svg" alt=""> 
-            </div>
-
             <div class="infos">
                 <p> Terms & Condition &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Contact Us </p>
             </div>

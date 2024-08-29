@@ -344,8 +344,8 @@ ob_start();
 
     </section>
 </main>
-
-<script src="homePage/index.js"></script>
+<!-- 
+<script src="homePage/index.js"></script> -->
 </html>
 
 <?php
