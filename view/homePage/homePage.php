@@ -163,9 +163,9 @@ ob_start();
             </li>
         </ul>
     </div>
-    
-    <button class="carrousel-bouton precedent">&#10094;</button> <!-- Flèche gauche -->
-    <button class="carrousel-bouton suivant">&#10095;</button>   <!-- Flèche droite -->
+<!--     
+    <button class="carrousel-bouton precedent">&#10094;</button> Flèche gauche -->
+    <!-- <button class="carrousel-bouton suivant">&#10095;</button>   Flèche droite -->
 </section>
 
 <!-- ---------------------------------- AJOUT ACTEURS --------------------------- -->

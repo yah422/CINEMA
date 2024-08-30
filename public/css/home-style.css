@@ -329,10 +329,10 @@ main ul li a p {
 .title {
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 200px;
+  /* align-items: center; */
+  gap: 10px;
+  margin-left: 20px;
+  width: 100%;
 }
 
 #alaUne h2 {
