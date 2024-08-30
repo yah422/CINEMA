@@ -374,7 +374,7 @@ ob_start();
 <?php
 
 $titre = " Home ";
-$titre_secondaire = "Nouveauté du moment";
+$titre_secondaire = "Nouveautés du moment";
 $contenu = ob_get_clean();
 require "view/template.php";
 
