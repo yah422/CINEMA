@@ -2,9 +2,10 @@
 
 <div align="center">
     
-<a href="">
-    <img src="public/images/readme.jpg" alt="Logo" width="100%">
-  </a>
+![image](https://github.com/user-attachments/assets/fe652644-ff91-4742-b27b-5d5325c87843)
+
+
+
 </div>
 
 ## Description 
