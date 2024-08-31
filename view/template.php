@@ -54,11 +54,11 @@
 
         <main>
 
-            <h2 style="font-size: xxx-large;
+            <!-- <h2 style="font-size: xxx-large;
             font-family: 'Raleway';
             margin: 50px;">
-                <?= $titre_secondaire ?>
-            </h2>
+                 $titre_secondaire 
+            </h2> -->
             <div style="display: flex;
             flex-direction: column;
             align-content: center;
