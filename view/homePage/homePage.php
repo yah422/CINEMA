@@ -75,7 +75,7 @@ ob_start();
             <ul>
                 <li>
                     <a href="index.php?action=detailFilm&id=2">
-                        <img src="public/images/lalalandAffiche.jpg" alt="La La Land affiche">
+                        <img style="border-radius: 100px;" src="public/images/lalalandAffiche.jpg" alt="La La Land affiche">
                         <p class="movies">La La Land</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=15">
@@ -85,7 +85,7 @@ ob_start();
 
                 <li>
                     <a href="index.php?action=detailFilm&id=4">
-                        <img src="public/images/pulpFiction.jpg" alt="Pulp Fiction affiche">
+                        <img style="border-radius: 100px;" src="public/images/pulpFiction.jpg" alt="Pulp Fiction affiche">
                         <p class="movies">Pulp Fiction</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=16">
@@ -94,7 +94,7 @@ ob_start();
                 </li>
                 <li>
                     <a href="index.php?action=detailFilm&id=12">
-                        <img src="public/images/malediction.jpg" alt="Malédiction affiche">
+                        <img style="border-radius: 100px;" src="public/images/malediction.jpg" alt="Malédiction affiche">
                         <p class="movies">Malédiction : l'Origine</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=3">
