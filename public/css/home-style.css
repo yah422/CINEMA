@@ -91,12 +91,13 @@ header {
     height: 100px;
 }
 main ul {
-    display: flex;
-    gap: 100px;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 } 
 
 main ul li {

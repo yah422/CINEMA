@@ -25,7 +25,7 @@ ob_start();
 
 
         <!-- ------------------------------ AFFICHE NOUVEAUTE ------------------------------ -->
-        <section id="affiche-nouveaute">
+        <!-- <section id="affiche-nouveaute">
             <ul>
                 <li>
                     <a href="index.php?action=detailFilm&id=5">
@@ -55,7 +55,7 @@ ob_start();
                     </a>
                 </li>
             </ul>
-        </section>
+        </section> -->
 
         <br>
 
@@ -106,14 +106,14 @@ ob_start();
 
 <!-- --------------------------------- AJOUT FILMS ----------------------------- --> 
 
-    <section id="carrousel-films">
-        <div class="title" style="margin-left:180px;">
+    <section style="width:100%" id="carrousel-films">
+        <div class="title" style="">
             <div class="ligneAcceuil"> </div>
             <h2> <a href="index.php?action=listFilm"> FILMS </a> </h2>
         </div>
 
-        <div class="carrousel-conteneur" style="margin-left:150px; display: flex;">
-            <ul class="carrousel-elements">
+        <div class="carrousel-conteneur" style="display: flex;">
+            <ul style="flex-wrap: wrap;" class="carrousel-elements">
                 <li class="carrousel-element">
                     <a href="index.php?action=detailFilm&id=5">
                         <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
@@ -141,6 +141,7 @@ ob_start();
                         <p class="directors">Damien Gazelle</p>
                     </a>
                 </li>
+            
                 <li class="carrousel-element">
                     <a href="index.php?action=detailFilm&id=1">
                         <img src="public/images/afficheInception.jpg" alt="affiche_inception">

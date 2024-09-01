@@ -3,8 +3,8 @@ ob_start();
 $nameRole = $requeteRole->fetch(); // Assurez-vous que $nameRole contient une valeur
 ?>
 
-<section id="role">
-    <div id="infoRole">
+<section style="border-radius:0px;" id="role">
+    <div  id="infoRole">
         <?php if ($nameRole): ?>
             <h1><?= $nameRole["nom_role"] ?></h1>
         <?php else: ?>
