@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* ------------------- caroussel -------------------- */
 * {
     box-sizing: border-box;
     
@@ -11,79 +10,7 @@
   body {
     width: 100%;
   }
-  .carousel {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-  }
-  
-  .carousel > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: 200ms opacity ease-in-out;
-    transition-delay: 200ms;
-  }
-  
-  .slide > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    /* object-fit: cover;
-    object-position: center; */
-  }
-
-  .img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .slide[data-active] {
-    opacity: 1;
-    z-index: 1;
-    transition-delay: 0ms;
-  }
-  
-  .carousel-button {
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, .5);
-    cursor: pointer;
-    border-radius: .25rem;
-    padding: 0 .5rem;
-    background-color: rgba(0, 0, 0, .1);
-  }
-  
-  .carousel-button:hover,
-  .carousel-button:focus {
-    color: white;
-    background-color: rgba(0, 0, 0, .2);
-  }
-  
-  .carousel-button:focus {
-    outline: 1px solid black;
-  }
-  
-  .carousel-button.prev {
-    left: 1rem;
-  }
-  
-  .carousel-button.next {
-    right: 1rem;
-  }
-
+ 
 /* ----------------- main ------------------- */
 
 header {
@@ -168,47 +95,36 @@ main ul li a p {
   margin-left: 20px;
 }
 /* ------------------------------  CAROUSSEL FILMS ------------------------------------ */
-/* Style général pour que le carrousel prenne toute la page */
-.carousel {
-  position: relative;
+.carousel img {
   width: 100%;
-  height: 100vh; /* Prend toute la hauteur de la fenêtre */
-  overflow: hidden; /*Cache les éléments en dehors du cadre du carrousel */
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* Style des boutons du carrousel */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.slide[data-active] {
+  opacity: 1;
+}
+
 .carrousel-bouton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les boutons */
-  color: white; /* Couleur des flèches */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  font-size: 3rem; /* Augmente la taille des flèches */
+  font-size: 3rem;
   cursor: pointer;
-  z-index: 10; /* Assure que les boutons sont au-dessus des images */
+  z-index: 10;
   padding: 10px;
-  border-radius: 50%; /* Ajoute un effet arrondi aux boutons */
-}
-
-.carrousel-bouton.precedent {
-  left: 20px; /* Positionne le bouton gauche à 20px du bord */
-}
-
-.carrousel-bouton.suivant {
-  right: 20px; /* Positionne le bouton droit à 20px du bord */
-}
-
-.carrousel-bouton:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* Change la couleur de fond au survol */
-}
-
-/* Style pour les images du carrousel */
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Assure que les images couvrent tout l'espace disponible */
-  object-position: center; /* Centre les images dans le cadre */
+  border-radius: 50%;
 }
 
 /* ---------------------------- CAROUSSEL REALISATEUR  ------------------------------- */

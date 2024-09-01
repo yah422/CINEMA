@@ -10,15 +10,15 @@ ob_start();
             <button class="carrousel-bouton precedent" data-carousel-button="prev">&lang;</button>
             <button class="carrousel-bouton suivant" data-carousel-button="next">&rang;</button>
             <ul data-slides>
-            <li class="slide" data-active>
-                <img src="public/images/inception1_carousel.jpg" alt="Inception Image #1">
-            </li>
-            <li class="slide">
-                <img src="public/images/malediction_caroussel.jpg" alt="Malediction Image #2">
-            </li>
-            <li class="slide">
-                <img src="public/images/lalaland1_carousel.jpg" alt="La La Land Image #3">
-            </li>
+                <li class="slide" data-active>
+                    <img src="public/images/inception1_carousel.jpg" alt="Inception Image #1">
+                </li>
+                <li class="slide">
+                    <img src="public/images/malediction_caroussel.jpg" alt="Malediction Image #2">
+                </li>
+                <li class="slide">
+                    <img src="public/images/lalaland1_carousel.jpg" alt="La La Land Image #3">
+                </li>
             </ul>
         </div>
     </section>
