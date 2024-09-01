@@ -8,8 +8,8 @@ $film = $requeteFilm->fetch();
 $syno = $requeteFilmS->fetch();
 ?>
 
-<section>
-    <div id="wrapper">
+<section style="width:100%;">
+    <div id="wrapper" style="border-radius: 0px;">
         <div>
             <img src='<?= $film["affiche_film"] ?>' alt='Affiche du film'>
         </div>

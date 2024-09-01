@@ -10,7 +10,7 @@ $hasFilms = (count($filmsActeur) > 0 ) ? True : False ;
 ?>
  
 <section style="display: flex; flex-direction: column;">
-    <div id="wrapper">
+    <div id="wrapper" style="border-radius:0px;">
         <div style="margin-left: 30px;">
             <img src='public/images/<?= $acteur["affiche_acteur"] ?>' alt='Affiche du film' style="width:250px;">
         </div>

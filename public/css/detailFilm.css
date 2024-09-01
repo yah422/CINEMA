@@ -19,7 +19,6 @@
     gap: 150px;
     width: 100%;
     height: 500px;
-    border-radius: 15px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
     justify-content: center;

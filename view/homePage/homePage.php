@@ -3,170 +3,177 @@ ob_start();
 
 ?>
 
-<main> 
-    <!-- -------------- carousel ----------------- -->
-    <section aria-label="Newest Photos">
-        <div class="carousel" data-carousel>
-            <button class="carousel-button prev" data-carousel-button="prev">&lang;</button>
-            <button class="carousel-button next" data-carousel-button="next">&rang;</button>
+<main>
+        <!-- -------------- carousel ----------------- -->
+    <section aria-label="Newest Photos" style="width:100%; height: 100vh;">
+        <div class="carousel" style="width: 100%; height: 100vh;" data-carousel>
+            <button class="carrousel-bouton precedent" data-carousel-button="prev">&lang;</button>
+            <button class="carrousel-bouton suivant" data-carousel-button="next">&rang;</button>
             <ul data-slides>
-                <li class="slide" data-active>
-                    <img src="public/images/inception1_carousel.jpg" alt="inception Image #1">
-                </li>
-                <li class="slide">
-                    <img src="public/images/carousel.jpg" alt="lalaland Image #2">
-                </li>
-                <li class="slide">
-                    <img src="public/images/male_carousel.jpg" alt="malediction Image #3">
-                </li>
+            <li class="slide" data-active>
+                <img src="public/images/inception1_carousel.jpg" alt="Inception Image #1">
+            </li>
+            <li class="slide">
+                <img src="public/images/malediction_caroussel.jpg" alt="Malediction Image #2">
+            </li>
+            <li class="slide">
+                <img src="public/images/lalaland1_carousel.jpg" alt="La La Land Image #3">
+            </li>
             </ul>
         </div>
     </section>
-<!-- ------------------------------ AFFICHE NOUVEAUTE ------------------------------ -->
-        <!-- <ul>
-            <li>
-                <a href="index.php?action=detailFilm&id=5">
-                    <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
-                    <p class="movies">The Dark Knight </p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=1">
-                    <p class="directors"> Chritopher Nolan </p>
-                </a>
-            </li>
-            <li>
-                <a href="index.php?action=detailFilm&id=1">
-                    <img src="public/images/afficheInception.jpg" alt="affiche_inception">
-                    <p class="movies"> Inception </p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=1">
-                    <p class="directors"> Christopher Nolan </p>
-                </a>
-            </li>
-            <li>
-                <a href="index.php?action=detailFilm&id=6">
-                    <img src="public/images/forest.jpg" alt="affiche_forestGump">
-                    <p class="movies"> Forrest Gump </p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=5">
-                    <p class="directors"> Quentin Tarantino </p>
-                </a>
-            </li>
-        </ul> -->
-        <br>
-<!-- ---------------------------- SECTION CITATION ------------------------------ -->
-        <section id="citation">
-            <p> “ La vraie séduction de l&rsquo;acteur, c&rsquo;est de faire admettre au public qu&rsquo;il est vraiment le personnage. “</p>
-            <p> Bernard GIRAUDEAU </p>
+
+
+        <!-- ------------------------------ AFFICHE NOUVEAUTE ------------------------------ -->
+        <section id="affiche-nouveaute">
+            <ul>
+                <li>
+                    <a href="index.php?action=detailFilm&id=5">
+                        <img src="public/images/darkaffiche.jpg" alt="The Dark Knight affiche">
+                        <p class="movies">The Dark Knight</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=1">
+                        <p class="directors">Christopher Nolan</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailFilm&id=1">
+                        <img src="public/images/afficheInception.jpg" alt="Inception affiche">
+                        <p class="movies">Inception</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=1">
+                        <p class="directors">Christopher Nolan</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=detailFilm&id=6">
+                        <img src="public/images/forest.jpg" alt="Forrest Gump affiche">
+                        <p class="movies">Forrest Gump</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=5">
+                        <p class="directors">Quentin Tarantino</p>
+                    </a>
+                </li>
+            </ul>
         </section>
-<!-- ------------------------------ AJOUT SECTION A LA UNE ----------------------- -->
+
+        <br>
+
+        <!-- ---------------------------- SECTION CITATION ------------------------------ -->
+        <section id="citation">
+            <p>“ La vraie séduction de l’acteur, c’est de faire admettre au public qu’il est vraiment le personnage. “</p>
+            <p>Bernard GIRAUDEAU</p>
+        </section>
+
+        <!-- ------------------------------ AJOUT SECTION A LA UNE ----------------------- -->
         <section id="alaUne">
             <div class="title">
                 <div class="ligneAcceuil"> </div>
-                <h2> A LA UNE </h2>
+                <h2>A LA UNE</h2>
             </div>
-            
+
             <ul>
                 <li>
                     <a href="index.php?action=detailFilm&id=2">
-                        <img src="public/images/lalalandAffiche.jpg" alt="lalalandAffiche">
-                        <p class="movies"> Lalaland </p>
+                        <img src="public/images/lalalandAffiche.jpg" alt="La La Land affiche">
+                        <p class="movies">La La Land</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=15">
-                        <p class="directors"> Steven Spielberg </p>
+                        <p class="directors">Steven Spielberg</p>
                     </a>
                 </li>
 
                 <li>
                     <a href="index.php?action=detailFilm&id=4">
-                        <img src="public/images/pulpFiction.jpg" alt="affiche_pulpfiction">
-                        <p class="movies"> Pulp Fiction </p>
+                        <img src="public/images/pulpFiction.jpg" alt="Pulp Fiction affiche">
+                        <p class="movies">Pulp Fiction</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=16">
-                        <p class="directors"> The Wachowskis </p>
+                        <p class="directors">The Wachowskis</p>
                     </a>
                 </li>
                 <li>
                     <a href="index.php?action=detailFilm&id=12">
-                        <img src="public/images/malediction.jpg" alt="affiche_malediction">
-                        <p class="movies"> Malédiction : l'Origine</p>
+                        <img src="public/images/malediction.jpg" alt="Malédiction affiche">
+                        <p class="movies">Malédiction : l'Origine</p>
                     </a>
                     <a href="index.php?action=detailRealisateur&id=3">
-                        <p class="directors"> Stevenson Arkasha</p>
+                        <p class="directors">Stevenson Arkasha</p>
                     </a>
                 </li>
             </ul>
-
         </section>
+
 <!-- --------------------------------- AJOUT FILMS ----------------------------- --> 
 
     <section id="carrousel-films">
-        <div class="title">
+        <div class="title" style="margin-left:180px;">
             <div class="ligneAcceuil"> </div>
-            <h2> <a href="index.php?action=listFilm">FILM</a> </h2>
+            <h2> <a href="index.php?action=listFilm"> FILMS </a> </h2>
         </div>
 
-    <div class="carrousel-conteneur">
-        <ul class="carrousel-elements">
-            <li class="carrousel-element">
-                <a href="index.php?action=detailFilm&id=5">
-                    <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
-                    <p class="movies">The Dark Knight</p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=1">
-                    <p class="directors">Christopher Nolan</p>
-                </a>
-            </li>
-            <li class="carrousel-element">
-                <a href="index.php?action=detailFilm&id=6">
-                    <img src="public/images/forest.jpg" alt="affiche_forestGump">
-                    <p class="movies">Forrest Gump</p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=5">
-                    <p class="directors">Quentin Tarantino</p>
-                </a>
-            </li>
-            <li class="carrousel-element">
-                <a href="index.php?action=detailFilm&id=7">
-                    <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
-                    <p class="movies">The GodFather</p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=6">
-                    <p class="directors">Damien Gazelle</p>
-                </a>
-            </li>
-            <li class="carrousel-element">
-                <a href="index.php?action=detailFilm&id=1">
-                    <img src="public/images/afficheInception.jpg" alt="affiche_inception">
-                    <p class="movies">Inception</p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=1">
-                    <p class="directors">Christopher Nolan</p>
-                </a>
-            </li>
-            <li class="carrousel-element">
-                <a href="index.php?action=detailFilm&id=2">
-                    <img src="public/images/lalalandAffiche.jpg" alt="lalalandAffiche">
-                    <p class="movies">Lalaland</p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=2">
-                    <p class="directors">Steven Spielberg</p>
-                </a>
-            </li>
-            <li class="carrousel-element">
-                <a href="index.php?action=detailFilm&id=4">
-                    <img src="public/images/pulpFiction.jpg" alt="affiche_pulpfiction">
-                    <p class="movies">Pulp Fiction</p>
-                </a>
-                <a href="index.php?action=detailRealisateur&id=4">
-                    <p class="directors">The Wachowskis</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-<!--     
-    <button class="carrousel-bouton precedent">&#10094;</button> Flèche gauche -->
-    <!-- <button class="carrousel-bouton suivant">&#10095;</button>   Flèche droite -->
-</section>
+        <div class="carrousel-conteneur" style="margin-left:150px; display: flex;">
+            <ul class="carrousel-elements">
+                <li class="carrousel-element">
+                    <a href="index.php?action=detailFilm&id=5">
+                        <img src="public/images/darkaffiche.jpg" alt="affiche_dark"> 
+                        <p class="movies">The Dark Knight</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=1">
+                        <p class="directors">Christopher Nolan</p>
+                    </a>
+                </li>
+                <li class="carrousel-element">
+                    <a href="index.php?action=detailFilm&id=6">
+                        <img src="public/images/forest.jpg" alt="affiche_forestGump">
+                        <p class="movies">Forrest Gump</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=5">
+                        <p class="directors">Quentin Tarantino</p>
+                    </a>
+                </li>
+                <li class="carrousel-element">
+                    <a href="index.php?action=detailFilm&id=7">
+                        <img src="public/images/thegodfather.jpg" alt="affiche_godfather">
+                        <p class="movies">The GodFather</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=6">
+                        <p class="directors">Damien Gazelle</p>
+                    </a>
+                </li>
+                <li class="carrousel-element">
+                    <a href="index.php?action=detailFilm&id=1">
+                        <img src="public/images/afficheInception.jpg" alt="affiche_inception">
+                        <p class="movies">Inception</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=1">
+                        <p class="directors">Christopher Nolan</p>
+                    </a>
+                </li>
+                <li class="carrousel-element">
+                    <a href="index.php?action=detailFilm&id=2">
+                        <img src="public/images/lalalandAffiche.jpg" alt="lalalandAffiche">
+                        <p class="movies">Lalaland</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=2">
+                        <p class="directors">Steven Spielberg</p>
+                    </a>
+                </li>
+                <li class="carrousel-element">
+                    <a href="index.php?action=detailFilm&id=4">
+                        <img src="public/images/pulpFiction.jpg" alt="affiche_pulpfiction">
+                        <p class="movies">Pulp Fiction</p>
+                    </a>
+                    <a href="index.php?action=detailRealisateur&id=4">
+                        <p class="directors">The Wachowskis</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <!--     
+        <button class="carrousel-bouton precedent">&#10094;</button> Flèche gauche -->
+        <!-- <button class="carrousel-bouton suivant">&#10095;</button>   Flèche droite -->
+    </section>
 
 <!-- ---------------------------------- AJOUT ACTEURS --------------------------- -->
 <section id="carrousel-acteurs" class="carrousel">
