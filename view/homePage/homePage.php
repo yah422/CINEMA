@@ -57,8 +57,6 @@ ob_start();
             </ul>
         </section> -->
 
-        <br>
-
         <!-- ---------------------------- SECTION CITATION ------------------------------ -->
         <section id="citation">
             <p>“ La vraie séduction de l’acteur, c’est de faire admettre au public qu’il est vraiment le personnage. “</p>
@@ -296,7 +294,7 @@ ob_start();
         <h2> <a href="index.php?action=listRealisateur"> REALISATEURS </a> </h2>
     </div>
 
-    <button class="carrousel-bouton precedent" aria-label="Précédent">&#10094;</button>
+    <!-- <button class="carrousel-bouton precedent" aria-label="Précédent">&#10094;</button> -->
 
     <div class="carrousel-conteneur">
         <div class="carrousel-diapositive">
@@ -369,7 +367,7 @@ ob_start();
         </div>
     </div>
 
-    <button class="carrousel-bouton suivant" aria-label="Suivant">&#10095;</button>
+    <!-- <button class="carrousel-bouton suivant" aria-label="Suivant">&#10095;</button> -->
 </section>
     <script src="homePage/index.js"></script>
     <script src="homePage/film.js"></script>
