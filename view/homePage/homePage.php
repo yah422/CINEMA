@@ -8,18 +8,18 @@ ob_start();
     <section aria-label="Newest Photos" style="width:100%; height: 100vh;">
         <div class="carousel" style="width: 100%; height: 100vh;" data-carousel>
             <button class="carrousel-bouton precedent" data-carousel-button="prev">&lang;</button>
-            <button class="carrousel-bouton suivant" data-carousel-button="next">&rang;</button>
             <ul data-slides>
                 <li class="slide" data-active>
                     <img src="public/images/inception1_carousel.jpg" alt="Inception Image #1">
                 </li>
                 <li class="slide">
-                    <img src="public/images/malediction_caroussel.jpg" alt="Malediction Image #2">
+                    <img src="public/images/male_carousel.jpg" alt="Malediction Image #2">
                 </li>
                 <li class="slide">
-                    <img src="public/images/lalaland1_carousel.jpg" alt="La La Land Image #3">
+                    <img src="public/images/lalaland_caroussel.jpg" alt="La La Land Image #3">
                 </li>
-            </ul>
+            </ul>            
+            <button class="carrousel-bouton suivant" data-carousel-button="next">&rang;</button>
         </div>
     </section>
 
@@ -182,8 +182,6 @@ ob_start();
         <h2> <a href="index.php?action=listActeur"> ACTEURS </a> </h2>
     </div>
 
-    <button class="carrousel-bouton precedent" aria-label="Précédent">&#10094;</button>
-
     <div class="carrousel-conteneur">
         <div class="carrousel-diapositive">
             <ul class="liste-acteurs">
@@ -275,7 +273,6 @@ ob_start();
         </div>
     </div>
 
-    <button class="carrousel-bouton suivant" aria-label="Suivant">&#10095;</button>
 </section>
 <br>
     <!-- ------------------- SECTION CITATION part 2 -->
