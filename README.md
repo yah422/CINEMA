@@ -1,5 +1,7 @@
 # CINEMA 
+
 <div align="center">
+ 
 ![image](https://github.com/user-attachments/assets/fe652644-ff91-4742-b27b-5d5325c87843)
 
 
