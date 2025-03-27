@@ -20,6 +20,8 @@ Ce projet est une application web qui fonctionne comme une base de données de c
 
 
 ## Compétence acquise 
+
+
 ▪ Sécurité : Mise en place de mesures de sécurité, notamment lors de la manipulation de la base de données avec des instructions préparées et le filtrage/la désinfection des données.  
 ▪ Opérations CRUD : Réalisation des opérations de Création, Lecture, Mise à jour et Suppression au sein de l'application.  
  
